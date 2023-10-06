@@ -1,6 +1,6 @@
 TP Final Laboratorio IV
 
-Juego de Trivia
+CORTE TRIVIA
 
 Devs:
 Bridi, Malena
