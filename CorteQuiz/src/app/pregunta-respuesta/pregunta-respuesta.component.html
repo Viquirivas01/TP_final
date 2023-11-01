@@ -1,1 +1,11 @@
-<p>pregunta-respuesta works!</p>
+<h2>QUESTION</h2>
+
+<p>{{ pregunta }}</p>
+<ul>
+    <li>{{respuestaCorrecta}}</li>
+    <li>{{respuestasIncorrectas[0]}}</li>
+    <li>{{respuestasIncorrectas[1]}}</li>
+    <li>{{respuestasIncorrectas[2]}}</li>
+</ul>
+
+<button (click)="getPreguntaRespuesta()">New Question</button>
