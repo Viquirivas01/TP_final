@@ -1,11 +1,27 @@
-<h2>QUESTION</h2>
-
-<p>{{ pregunta }}</p>
-<ul>
-    <li>{{respuestaCorrecta}}</li>
-    <li>{{respuestasIncorrectas[0]}}</li>
-    <li>{{respuestasIncorrectas[1]}}</li>
-    <li>{{respuestasIncorrectas[2]}}</li>
-</ul>
-
-<button (click)="getPreguntaRespuesta()">New Question</button>
+<div id="cuadro_q_a">
+    <h2 (click)="getPreguntaRespuesta()">QUESTION</h2>
+    <br>
+    <p>{{ pregunta }}</p>
+    <ul>
+        <li>
+            <button (click)="verificarRespuesta(0)">
+                {{respuestasDesordenadas[0]}}
+            </button>
+        </li>
+        <li>
+            <button (click)="verificarRespuesta(1)">
+                {{respuestasDesordenadas[1]}}
+            </button>
+        </li>
+        <li>
+            <button (click)="verificarRespuesta(2)">
+                {{respuestasDesordenadas[2]}}
+            </button>
+        </li>
+        <li>
+            <button (click)="verificarRespuesta(3)">
+                {{respuestasDesordenadas[3]}}
+            </button>
+        </li>
+    </ul>
+</div>
