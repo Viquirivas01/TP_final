@@ -1,1 +1,27 @@
-<p>pregunta-respuesta works!</p>
+<div id="cuadro_q_a">
+    <h2 (click)="getPreguntaRespuesta()">QUESTION</h2>
+    <br>
+    <p>{{ pregunta }}</p>
+    <ul>
+        <li>
+            <button (click)="verificarRespuesta(0)">
+                {{respuestasDesordenadas[0]}}
+            </button>
+        </li>
+        <li>
+            <button (click)="verificarRespuesta(1)">
+                {{respuestasDesordenadas[1]}}
+            </button>
+        </li>
+        <li>
+            <button (click)="verificarRespuesta(2)">
+                {{respuestasDesordenadas[2]}}
+            </button>
+        </li>
+        <li>
+            <button (click)="verificarRespuesta(3)">
+                {{respuestasDesordenadas[3]}}
+            </button>
+        </li>
+    </ul>
+</div>
