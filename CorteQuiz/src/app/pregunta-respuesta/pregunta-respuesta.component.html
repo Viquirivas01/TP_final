@@ -3,6 +3,12 @@
     <br>
     <p>{{ pregunta }}</p>
     <ul>
+        <li *ngFor="let respuesta of respuestasDesordenadas">
+            <button (click)="verificarRespuesta(respuesta)">
+                {{respuesta}}
+            </button>
+        </li>
+        <!--
         <li>
             <button (click)="verificarRespuesta(0)">
                 {{respuestasDesordenadas[0]}}
@@ -23,5 +29,6 @@
                 {{respuestasDesordenadas[3]}}
             </button>
         </li>
+        --->
     </ul>
 </div>

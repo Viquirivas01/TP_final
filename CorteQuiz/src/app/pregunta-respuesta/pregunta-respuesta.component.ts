@@ -46,8 +46,8 @@ export class PreguntaRespuestaComponent {
 		}
 	}
 
-	verificarRespuesta(posRespuestaElegida: number) {
-		if (this.posRespuestaCorrecta === posRespuestaElegida) {
+	verificarRespuesta(respuestaElegida: string) {
+		if (this.respuestaCorrecta === respuestaElegida) {
 			alert("Correcta!");
 		}
 		else {
