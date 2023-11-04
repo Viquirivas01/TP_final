@@ -1,5 +1,4 @@
 <div id="cuadro_q_a">
-    <h2 (click)="getPreguntaRespuesta()">QUESTION</h2>
     <br>
     <p>{{ pregunta }}</p>
     <ul>
@@ -32,3 +31,9 @@
         --->
     </ul>
 </div>
+
+<ul id="Estadisticas">
+    <li>Respuestas Correctas {{ this.correctas }}</li>
+    <li>Respuestas Incorrectas {{ this.incorrectas}} </li>
+    <li>Preguntas Totales {{ this.preguntasTotales}} </li>
+</ul>
