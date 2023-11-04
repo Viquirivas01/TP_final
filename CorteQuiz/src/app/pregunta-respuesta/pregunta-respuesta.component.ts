@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pregunta-respuesta',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./pregunta-respuesta.component.css']
 })
 
-export class PreguntaRespuestaComponent {
+export class PreguntaRespuestaComponent implements OnInit {
 	url_api: string = "https://the-trivia-api.com/v2/questions/";
 
 	constructor() {}
@@ -16,6 +16,15 @@ export class PreguntaRespuestaComponent {
 	respuestasDesordenadas: string[] = [];
 	posRespuestaCorrecta: number = -1;
 
+	//Los tres aumentan en Verificar respuesta
+	correctas = 0;
+	incorrectas = 0;
+	preguntasTotales =0;
+
+	ngOnInit(){
+		this.getPreguntaRespuesta();
+
+	}
 	async getPreguntaRespuesta() {
 		try {
 			const response = await fetch(this.url_api);
@@ -49,10 +58,13 @@ export class PreguntaRespuestaComponent {
 	verificarRespuesta(respuestaElegida: string) {
 		if (this.respuestaCorrecta === respuestaElegida) {
 			alert("Correcta!");
+			this.correctas++;
 		}
 		else {
 			alert("Respuesta incorrecta: Respuesta es " + this.respuestaCorrecta);
+			this.incorrectas++;
 		}
+		this.preguntasTotales++;
 		this.getPreguntaRespuesta();
 	}
 	
