@@ -18,7 +18,8 @@ export class JuegoComponent implements OnInit{
       this.jugar=false;
   }
 
-  partida(){
-    this.jugar = !this.jugar; 
+  finalizar(){
+    this.start=0;
+    this.jugar=true;
   }
 }
