@@ -67,6 +67,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 		this.preguntasTotales++;
 		this.getPreguntaRespuesta();
 	}
+
 	
 }
 

@@ -7,33 +7,12 @@
                 {{respuesta}}
             </button>
         </li>
-        <!--
-        <li>
-            <button (click)="verificarRespuesta(0)">
-                {{respuestasDesordenadas[0]}}
-            </button>
-        </li>
-        <li>
-            <button (click)="verificarRespuesta(1)">
-                {{respuestasDesordenadas[1]}}
-            </button>
-        </li>
-        <li>
-            <button (click)="verificarRespuesta(2)">
-                {{respuestasDesordenadas[2]}}
-            </button>
-        </li>
-        <li>
-            <button (click)="verificarRespuesta(3)">
-                {{respuestasDesordenadas[3]}}
-            </button>
-        </li>
-        --->
     </ul>
 </div>
-
-<ul id="Estadisticas">
-    <li>Respuestas Correctas {{ this.correctas }}</li>
-    <li>Respuestas Incorrectas {{ this.incorrectas}} </li>
-    <li>Preguntas Totales {{ this.preguntasTotales}} </li>
-</ul>
+<div id="estadisticas_q_a">
+    <ul>
+        <li>Respuestas Correctas {{ this.correctas }}</li>
+        <li>Respuestas Incorrectas {{ this.incorrectas}} </li>
+        <li>Preguntas Totales {{ this.preguntasTotales}} </li>
+    </ul>
+</div>

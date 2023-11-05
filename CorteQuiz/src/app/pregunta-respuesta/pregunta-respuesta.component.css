@@ -1,4 +1,4 @@
-#cuadro_q_a {
+#cuadro_q_a, #estadisticas_q_a {
     font: "roboto", sans-serif;
     display: flex;
     flex-direction: column;
@@ -26,4 +26,14 @@ ul, li {
 
 #Estadisticas{
     color: aliceblue;
+}
+
+@keyframes correcta_reveal {
+    from {background-color: #0188a5;}
+    to {background-color: #358436;}
+}
+
+@keyframes incorrecta_reveal {
+    from {background-color: #0188a5;}
+    to {background-color: #692323;}
 }
