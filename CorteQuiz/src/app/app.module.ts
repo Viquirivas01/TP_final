@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { PreguntaRespuestaComponent } from './pregunta-respuesta/pregunta-respuesta.component';
 import { TimerComponent } from './timer/timer.component';
 import { JuegoComponent } from './juego/juego.component';
+import { RegistroLoginComponent } from './registro-login/registro-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PreguntaRespuestaComponent,
     TimerComponent,
-    JuegoComponent
+    JuegoComponent,
+    RegistroLoginComponent
   ],
   imports: [
     BrowserModule,
