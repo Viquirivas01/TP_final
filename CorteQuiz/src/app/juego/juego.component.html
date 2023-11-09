@@ -1,6 +1,14 @@
-<button *ngIf="jugar"  (click)="comenzar()">Jugar</button>
+<div id="botones_modo_juego" class="image-div">
+    <img *ngIf="jugar" (click)="comenzar(0)" src="assets\img\time trial.jpg"> <!--Contrarreloj-->
+    <img *ngIf="jugar" (click)="comenzar(1)" src="assets\img\three strikes.jpg"> <!--Vidas-->
+    <img *ngIf="jugar" (click)="comenzar(2)" src="assets\img\categories.jpg"> <!--Categoria-->
+    <img *ngIf="jugar" (click)="comenzar(3)" src="assets\img\multiplayer.jpg"> <!--Multijugador-->
+    
+
+    <app-timer *ngIf="modo_juego == 0"></app-timer>  <!-- Modo de juego contrarreloj -->
+    <!-- Modo de juego Vidas -->
+    <!-- Modo de juego categorias -->
+    <!-- Modo de juego multijugador -->
 
 
-<app-timer *ngIf="start>0"></app-timer>
-
-
+</div>
