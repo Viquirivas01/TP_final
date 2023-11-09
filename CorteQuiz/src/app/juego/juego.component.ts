@@ -7,19 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JuegoComponent implements OnInit{
 
-  start: number = 0;
+  modo_juego: number = -1;
   jugar: boolean = true;
 
   constructor(){}
   ngOnInit(){}
 
-  comenzar(){
-      this.start=1;
+  comenzar(modo_seleccionado: number){
+      this.modo_juego = modo_seleccionado;
       this.jugar=false;
   }
 
   finalizar(){
-    this.start=0;
+    this.modo_juego = -1;
     this.jugar=true;
   }
 }
