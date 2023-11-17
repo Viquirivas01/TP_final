@@ -31,7 +31,7 @@ export class TimerComponent implements OnInit {
 
     }
     else{
-      alert('A finalizado el tiempo de juego');
+      alert('Ha finalizado el tiempo de juego');
     }
   }
 }
