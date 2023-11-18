@@ -1,0 +1,19 @@
+<h2>USUARIO ACTUAL</h2>
+
+<p style="color: aliceblue; font-size:larger;"> {{usuariosService.getUsuarioActual() | json}}</p>
+
+<br>
+<br>
+
+<h2>USUARIOS REGISTRADOS</h2>
+
+<ul>
+    <li style="color: aliceblue; font-size:larger;" *ngFor="let user of usuariosService.getUsuarioRegistradoList()">
+        {{user.nombre}} |
+        {{user.apellido}} |
+        {{user.email}} |
+        {{user.username}} |
+        {{user.password}} |
+        <br>
+    </li>
+</ul>
