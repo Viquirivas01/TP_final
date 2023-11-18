@@ -6,10 +6,16 @@ import { usuarioRegistrado } from 'src/app/models/usuarioRegistrado';
   providedIn: 'root'
 })
 export class UsuariosService {
-  protected usuarioRegistradoList: usuarioRegistrado[] = [{"nombre": "Martin", "apellido": "Leonardi", "email": "mtnleonardi@gmail.com", "username": "mtnleo", "password": "Asd123"}]; // Cargo uno así ya está cargado y puedo hacer pruebas
+  protected usuarioRegistradoList: usuarioRegistrado[] = []; // Cargo uno así ya está cargado y puedo hacer pruebas
   protected usuarioActual: usuarioRegistrado = new usuarioRegistrado;
 
-  constructor() { }
+  constructor() {
+    const usrRegList = localStorage.getItem("usuarioRegistradoList");
+    this.usuarioRegistradoList = usrRegList ? JSON.parse(usrRegList) : [];
+
+    const usrAct = localStorage.getItem("usuarioActual");
+    this.usuarioActual = usrAct ? JSON.parse(usrAct) : [];
+  }
 
   getUsuarioRegistradoList(): usuarioRegistrado[] {
     return this.usuarioRegistradoList;
@@ -29,7 +35,15 @@ export class UsuariosService {
 
   setUsuarioActual(nuevoUser: usuarioRegistrado): void {
     this.usuarioActual = nuevoUser;
+    this.cargarLocalStorage();
   }
+
+  cargarLocalStorage(): void {
+    localStorage.setItem("usuarioRegistradoList", JSON.stringify(this.usuarioRegistradoList));
+    localStorage.setItem("usuarioActual", JSON.stringify(this.usuarioActual));
+  }
+
+
 
   isLogged(): boolean {
     if (this.usuarioActual.username === "") {
