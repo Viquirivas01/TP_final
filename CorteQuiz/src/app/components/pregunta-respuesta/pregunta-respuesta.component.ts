@@ -19,12 +19,12 @@ export class PreguntaRespuestaComponent implements OnInit {
 	//Los tres aumentan en Verificar respuesta
 	correctas = 0;
 	incorrectas = 0;
-	preguntasTotales =0;
+	preguntasTotales = 0;
 
 	ngOnInit(){
 		this.getPreguntaRespuesta();
-
 	}
+
 	async getPreguntaRespuesta() {
 		try {
 			const response = await fetch(this.url_api);

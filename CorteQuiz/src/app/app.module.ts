@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+import { PruebaVerUsuariosComponent } from './prueba-ver-usuarios/prueba-ver-usuarios.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatChipsModule } from '@angular/material/chips';
     PreguntaRespuestaComponent,
     TimerComponent,
     JuegoComponent,
-    RegistroLoginComponent
+    RegistroLoginComponent,
+    PruebaVerUsuariosComponent
   ],
   imports: [
     BrowserModule,
