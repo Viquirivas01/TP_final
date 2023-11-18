@@ -111,8 +111,10 @@ export class RegistroLoginComponent implements OnInit {
 		if (usuarioBuscado === undefined) {
 			this.usuarioRegistradoList.push(nuevoUsuarioRegistrado);
 			console.log("Nuevo usuario cargado con exito");
-			console.log(this.usuarioRegistradoList);
 			this.usuarioActual = nuevoUsuarioRegistrado;
+			this.usuariosService.setUsuarioActual(nuevoUsuarioRegistrado);
+			this.usuariosService.cargarLocalStorage();
+			
 		}
 		else {
 			console.log("|X| El usuario que se intentó cargar ya existe |X|");
