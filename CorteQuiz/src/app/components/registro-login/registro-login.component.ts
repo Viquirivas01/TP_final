@@ -20,9 +20,14 @@ export class RegistroLoginComponent implements OnInit {
 	registerForm: FormGroup;
 	loginForm: FormGroup;
 
+	errorMessageRegister: string;
+	usernameUsed: boolean = false;
+	emailUsed: boolean = false;
+
 	constructor(private fb: FormBuilder) {
 		this.usuarioRegistradoList = this.usuariosService.getUsuarioRegistradoList();
 		this.usuarioActual = this.usuariosService.getUsuarioActual();
+		this.errorMessageRegister = "";
 	}
 
   
@@ -154,19 +159,41 @@ export class RegistroLoginComponent implements OnInit {
 	checkEmailExists(email_check: string): boolean {
 		for (let user of this.usuarioRegistradoList) {
 			if (user.email === email_check) {
+				this.emailUsed = true;
 				return true;
 			}
 		}
+		this.emailUsed = false;
 		return false; // no existe
 	}
 
 	checkUsernameExists(username_check: string): boolean {
 		for (let user of this.usuarioRegistradoList) {
 			if (user.username === username_check) {
+				this.usernameUsed = true;
 				return true;
 			}
 		}
+		this.errorMessageRegister = "";
+		this.usernameUsed = false;
 		return false;
+	}
+
+	getErrorMessage(): string {
+		let message = "";
+		if (this.emailUsed && !this.usernameUsed) {
+			message = "El email cargado ya está registrado.";
+		}
+		else if (this.emailUsed && this.usernameUsed) {
+			message = "El username y el email cargados ya están registrados.";
+		}
+		else if (!this.emailUsed && this.usernameUsed) {
+			message = "El username ya está en uso.";
+		}
+		else {
+			message = "";
+		}
+		return message;
 	}
 
 	/*
