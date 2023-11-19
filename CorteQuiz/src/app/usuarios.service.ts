@@ -43,8 +43,6 @@ export class UsuariosService {
     localStorage.setItem("usuarioActual", JSON.stringify(this.usuarioActual));
   }
 
-
-
   isLogged(): boolean {
     if (this.usuarioActual.username === "") {
 			return false;
