@@ -1,0 +1,12 @@
+form{
+    text-align: center;
+    display:grid;
+}
+
+mat-form-field{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+h1,h2{
+    color: white;
+}
