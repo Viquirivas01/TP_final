@@ -1,0 +1,19 @@
+<div id="cuadro_q_a">
+    <br>
+    <p>{{ pregunta }}</p>
+    <ul>
+        <li *ngFor="let respuesta of respuestasDesordenadas">
+            <button (click)="verificarRespuesta(respuesta)">
+                {{respuesta}}
+            </button>
+        </li>
+    </ul>
+</div>
+<div id="estadisticas_q_a">
+    <ul>
+        <li>Respuestas Correctas {{ this.correctas }}</li>
+        <li>Respuestas Incorrectas {{ this.incorrectas}} </li>
+        <li>Preguntas Totales {{ this.preguntasTotales}} </li>
+    </ul>
+</div>
+

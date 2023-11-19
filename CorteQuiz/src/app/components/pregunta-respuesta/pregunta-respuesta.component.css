@@ -1,0 +1,39 @@
+#cuadro_q_a, #estadisticas_q_a {
+    font: "roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    text-align: center;
+    margin: 3rem;
+    
+}
+
+button {
+    border-radius: 5px;
+    background-color: #0188a5;
+    border: none;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ul, li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+#Estadisticas{
+    color: aliceblue;
+}
+
+@keyframes correcta_reveal {
+    from {background-color: #0188a5;}
+    to {background-color: #358436;}
+}
+
+@keyframes incorrecta_reveal {
+    from {background-color: #0188a5;}
+    to {background-color: #692323;}
+}
