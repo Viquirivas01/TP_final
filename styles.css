@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Good Times';
-    src: url('/fonts/good\ times\ rg.otf');
+    src: url('/corte_quiz/fonts/good\ times\ rg.otf');
 }
 
 /* ESTILOS INDEX */
@@ -53,7 +53,7 @@ body {
 
 #background-container::before {
     content: "";
-    background-image: url('/img/pattern.png');
+    background-image: url('/corte_quiz/img/pattern.png');
     pointer-events: none;
     background-repeat: repeat;
     opacity: 0.1;
