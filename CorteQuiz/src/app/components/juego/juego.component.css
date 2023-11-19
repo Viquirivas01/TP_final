@@ -3,8 +3,8 @@
 }
 
 #botones_modo_juego {
-    display: flex;
-    
+    display:block;
+    text-align: center;    
 }
 
 .image-div img {
@@ -16,7 +16,14 @@
 .image-div {
     text-align: center;
     transition: transform 0.3s, border 0.3s;
-    margin: 10px;
+    margin: 25px;
     width: 220px;
     border-radius: 5px;
+    margin-top: 10%;
+}
+
+nav{
+    text-align: left;
+    margin-left: 3%;
+    margin-top: 2%;
 }

@@ -1,3 +1,5 @@
+<body>
+
 <h1> {{ usuarioActual.username }} </h1>
 
 <p>Nombre: {{ usuarioActual.nombre + " " + usuarioActual.apellido}}</p>
@@ -27,3 +29,9 @@
     <li>Preguntas incorrectas: {{ usuarioActual.preguntas_incorrectas_cat }}</li>
     <li>High Score: {{ usuarioActual.preguntas_correctas_high_score_cat }} </li>
 </ul>
+
+<ul>
+    <button (click)="logOut()">Cerrar sesion</button>
+</ul>
+    
+</body>

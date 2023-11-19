@@ -11,4 +11,8 @@ export class PerfilComponent {
   usuariosService: UsuariosService = inject(UsuariosService);
 
   usuarioActual: usuarioRegistrado = this.usuariosService.getUsuarioActual();
+
+  logOut(){
+   this.usuariosService.setUsuarioActual(new usuarioRegistrado);
+  }
 }
