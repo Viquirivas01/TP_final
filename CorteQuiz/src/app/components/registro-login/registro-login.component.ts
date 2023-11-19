@@ -162,7 +162,7 @@ export class RegistroLoginComponent implements OnInit {
 
 	checkUsernameExists(username_check: string): boolean {
 		for (let user of this.usuarioRegistradoList) {
-			if (user.email === username_check) {
+			if (user.username === username_check) {
 				return true;
 			}
 		}
