@@ -1,4 +1,6 @@
-
+* {
+    color: aliceblue;
+}
 
 #botones_modo_juego {
     display: flex;

@@ -1,13 +1,11 @@
-<app-registro-login></app-registro-login>
-<!-- 
-<app-juego></app-juego>
- -->
+<app-registro-login *ngIf="!usuariosService.isLogged()"></app-registro-login>
 
+<app-juego *ngIf="usuariosService.isLogged()"></app-juego>
 
 <br>
 <br>
 <br>
 
-<app-prueba-ver-usuarios></app-prueba-ver-usuarios>
+<app-prueba-ver-usuarios ></app-prueba-ver-usuarios>
 
 

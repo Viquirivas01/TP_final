@@ -44,7 +44,7 @@ export class UsuariosService {
   }
 
   isLogged(): boolean {
-    if (this.usuarioActual.username === "") {
+    if (this.usuarioActual.username === "" || this.usuarioActual.username === undefined) {
 			return false;
 		}
 		else {
