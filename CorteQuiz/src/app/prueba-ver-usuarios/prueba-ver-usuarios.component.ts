@@ -17,4 +17,8 @@ export class PruebaVerUsuariosComponent {
 		this.usuarioActual = this.usuariosService.getUsuarioActual();
 		this.usuarioRegistradoList = this.usuariosService.getUsuarioRegistradoList();
 	}
+
+	borrarTodo() {
+		localStorage.clear();
+	}
 }
