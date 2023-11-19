@@ -10,6 +10,7 @@ export class JuegoComponent implements OnInit{
   modo_juego: number = -1;
   jugar: boolean = true;
   perfil: boolean = false;
+  visual: boolean = true;
 
   constructor(){}
   ngOnInit(){}
@@ -17,11 +18,13 @@ export class JuegoComponent implements OnInit{
   comenzar(modo_seleccionado: number){
       this.modo_juego = modo_seleccionado;
       this.jugar=false;
+      this.visual=false;
   }
 
   finalizar(){
     this.modo_juego = -1;
     this.jugar=true;
+    this.visual=true;
   }
 
   entrarPerfil() {

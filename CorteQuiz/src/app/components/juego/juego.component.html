@@ -1,6 +1,6 @@
 <div id="botones_modo_juego">
 
-    <nav (click)="entrarPerfil()" *ngIf="jugar" >Perfil 🍑</nav>
+    <nav (click)="entrarPerfil()" *ngIf="visual">Perfil 🍑</nav>
 
     <img class="image-div" *ngIf="jugar" (click)="comenzar(0)" src="assets\img\time trial.jpg"> <!--Contrarreloj-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(1)" src="assets\img\three strikes.jpg"> <!--Vidas-->
