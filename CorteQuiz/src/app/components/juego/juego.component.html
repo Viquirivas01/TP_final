@@ -1,6 +1,6 @@
 <div id="botones_modo_juego">
 
-    <nav (click)="entrarPerfil()" *ngIf="visual">Perfil 🍑</nav>
+    <nav (click)="entrarPerfil()" *ngIf="visual">🍑</nav>
 
     <img class="image-div" *ngIf="jugar" (click)="comenzar(0)" src="assets\img\time trial.jpg"> <!--Contrarreloj-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(1)" src="assets\img\three strikes.jpg"> <!--Vidas-->
@@ -11,8 +11,8 @@
 
     <app-timer *ngIf="modo_juego == 0"></app-timer>  <!-- Modo de juego contrarreloj -->
     <app-vidas *ngIf="modo_juego == 1"></app-vidas>   <!-- Modo de juego Vidas -->
-    <!-- Modo de juego categorias -->
-    <!-- Modo de juego multijugador -->
+    <app-categorias *ngIf="modo_juego == 2"></app-categorias><!-- Modo de juego categorias -->
+    <app-multijugador *ngIf="modo_juego == 3"></app-multijugador><!-- Modo de juego multijugador -->
 
     <app-perfil *ngIf="perfil"></app-perfil>  <!-- Entra al perfil -->
 </div>
