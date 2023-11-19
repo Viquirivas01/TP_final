@@ -47,7 +47,7 @@
         </mat-error>
     </mat-form-field>
 
-    <button mat-raised-button (click)="onSubmitRegister()">Registrarse</button>
+    <button mat-raised-button [disabled]="getRegisterPassword().invalid || getRegisterEmail().invalid || getRegisterUsername().invalid || getRegisterApellido().invalid || getRegisterNombre().invalid" (click)="onSubmitRegister()">Registrarse</button>
 
 </form>
 
