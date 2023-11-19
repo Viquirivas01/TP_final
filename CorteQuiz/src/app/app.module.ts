@@ -18,7 +18,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
 import { PruebaVerUsuariosComponent } from './prueba-ver-usuarios/prueba-ver-usuarios.component';
+import { VidasComponent } from './vidas/vidas.component';
 
+import { usuarioLog } from 'src/app/models/usuarioLog';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,11 @@ import { PruebaVerUsuariosComponent } from './prueba-ver-usuarios/prueba-ver-usu
     TimerComponent,
     JuegoComponent,
     RegistroLoginComponent,
-    PruebaVerUsuariosComponent
+    PruebaVerUsuariosComponent,
+    VidasComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
