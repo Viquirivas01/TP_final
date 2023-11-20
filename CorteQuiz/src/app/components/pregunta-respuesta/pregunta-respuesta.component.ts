@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { UsuariosService } from 'src/app/usuarios.service';
+import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
 @Component({
   selector: 'app-pregunta-respuesta',
@@ -8,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class PreguntaRespuestaComponent implements OnInit {
 	url_api: string = "https://the-trivia-api.com/v2/questions/";
+
+	usuariosService: UsuariosService = inject(UsuariosService);
+	infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
 	constructor() {}
 
@@ -58,17 +63,19 @@ export class PreguntaRespuestaComponent implements OnInit {
 	verificarRespuesta(respuestaElegida: string) {
 		if (this.respuestaCorrecta === respuestaElegida) {
 			alert("Correcta!");
+			this.infoJuegoService.addCorrecta();
 			this.correctas++;
 		}
 		else {
 			alert("Respuesta incorrecta: Respuesta es " + this.respuestaCorrecta);
+			this.infoJuegoService.addIncorrecta();
 			this.incorrectas++;
 		}
 		this.preguntasTotales++;
 		this.getPreguntaRespuesta();
 	}
 
-	
+
 }
 
 // LA API FUNCIONA PERFECTAMENTE

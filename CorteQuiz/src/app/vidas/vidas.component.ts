@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
 @Component({
   selector: 'app-vidas',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vidas.component.css']
 })
 export class VidasComponent implements OnInit{
+  infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
   vidas: number;
 

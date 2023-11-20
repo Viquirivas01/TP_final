@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
 @Component({
   selector: 'app-timer',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class TimerComponent implements OnInit {
   tiempoString: string = ""; // Para que se muestren los 0
   tiempo: number = 60;
+  infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
   constructor(){}
 
@@ -31,6 +33,8 @@ export class TimerComponent implements OnInit {
 
     }
     else{
+      this.infoJuegoService.cargarDatosUsuarioActual();
+      this.infoJuegoService.reiniciarDatos();
       alert('Ha finalizado el tiempo de juego');
     }
   }
