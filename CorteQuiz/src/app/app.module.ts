@@ -22,6 +22,8 @@ import { VidasComponent } from './vidas/vidas.component';
 
 import { usuarioLog } from 'src/app/models/usuarioLog';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+import { MultijugadorComponent } from './components/multijugador/multijugador.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     RegistroLoginComponent,
     PruebaVerUsuariosComponent,
     VidasComponent,
-    PerfilComponent
+    PerfilComponent,
+    CategoriasComponent,
+    MultijugadorComponent
   ],
   imports: [
     AppRoutingModule,
