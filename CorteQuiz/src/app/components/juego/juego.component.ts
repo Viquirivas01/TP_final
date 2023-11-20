@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
 @Component({
   selector: 'app-juego',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./juego.component.css']
 })
 export class JuegoComponent implements OnInit{
+  infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
   modo_juego: number = -1;
   jugar: boolean = true;
@@ -19,12 +21,15 @@ export class JuegoComponent implements OnInit{
       this.modo_juego = modo_seleccionado;
       this.jugar=false;
       this.visual=false;
+      this.infoJuegoService.setModoJuego(modo_seleccionado);
   }
 
   finalizar(){
     this.modo_juego = -1;
     this.jugar=true;
     this.visual=true;
+    this.infoJuegoService.cargarDatosUsuarioActual();
+    this.infoJuegoService.reiniciarDatos();
   }
 
   entrarPerfil() {

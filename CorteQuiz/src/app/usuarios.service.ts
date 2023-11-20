@@ -38,6 +38,21 @@ export class UsuariosService {
     this.cargarLocalStorage();
   }
 
+  actualizarArregloUsuarioActual(usuarioActualizar: usuarioRegistrado): void {
+    let index_buscado: number = -1;
+    let i = 0;
+    for (let user of this.usuarioRegistradoList) {
+      if (user.username === usuarioActualizar.username) {
+        index_buscado = i;
+        break;
+      }
+      i++;
+    }
+
+    (this.usuarioRegistradoList)[index_buscado] = usuarioActualizar;
+    this.cargarLocalStorage();
+  }
+ 
   cargarLocalStorage(): void {
     localStorage.setItem("usuarioRegistradoList", JSON.stringify(this.usuarioRegistradoList));
     localStorage.setItem("usuarioActual", JSON.stringify(this.usuarioActual));
