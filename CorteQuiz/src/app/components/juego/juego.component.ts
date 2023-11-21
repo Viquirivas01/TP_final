@@ -23,7 +23,7 @@ export class JuegoComponent implements OnInit{
       this.visual=false;
       this.infoJuegoService.setModoJuego(modo_seleccionado);
   }
-
+/*
   finalizar(){
     this.modo_juego = -1;
     this.jugar=true;
@@ -31,7 +31,7 @@ export class JuegoComponent implements OnInit{
     this.infoJuegoService.cargarDatosUsuarioActual();
     this.infoJuegoService.reiniciarDatos();
   }
-
+*/
   entrarPerfil() {
     this.jugar = !this.jugar;
     this.perfil = !this.perfil;

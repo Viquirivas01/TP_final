@@ -31,21 +31,51 @@ export class PreguntaRespuestaComponent implements OnInit {
 	}
 
 	async getPreguntaRespuesta() {
-		try {
-			const response = await fetch(this.url_api);
-			if (response.ok) {
-				const data = await response.json();
-
-				this.pregunta = data[0].question["text"];
-				this.respuestaCorrecta = data[0].correctAnswer;
-				this.desordenarRespuestas(data[0].incorrectAnswers);
+		let diffs = ["easy", "medium", "hard"];
+		if (this.infoJuegoService.getDificultad() === -1) {
+			try {
+				const response = await fetch(this.url_api);
+				if (response.ok) {
+					const data = await response.json();
+	
+					this.pregunta = data[0].question["text"];
+					this.respuestaCorrecta = data[0].correctAnswer;
+					this.desordenarRespuestas(data[0].incorrectAnswers);
+				}
+				else {
+					throw new Error("Error status code: " + response.status);
+				}
+			} catch (error) {
+				console.error("Error! ", error);
 			}
-			else {
-				throw new Error("Error status code: " + response.status);
-			}
-		} catch (error) {
-			console.error("Error! ", error);
 		}
+		else {
+			let ok_diff = false;
+			while (!ok_diff) { // Trata hasta que obtenga una de la dificultad especifica
+				try {
+					const response = await fetch(this.url_api);
+					if (response.ok) {
+						const data = await response.json();
+		
+						for (let preg of data) {
+							if (preg.difficulty === diffs[this.infoJuegoService.getDificultad()] && !ok_diff) {
+								this.pregunta = preg.question["text"];
+								this.respuestaCorrecta = preg.correctAnswer;
+								this.desordenarRespuestas(preg.incorrectAnswers);
+
+								ok_diff = true;
+							}
+						}
+					}
+					else {
+						throw new Error("Error status code: " + response.status);
+					}
+				} catch (error) {
+					console.error("Error! ", error);
+				}
+			}
+		}
+		
 	}
 
 	desordenarRespuestas(respuestasIncorrectas: string[]) {
@@ -70,6 +100,9 @@ export class PreguntaRespuestaComponent implements OnInit {
 			alert("Respuesta incorrecta: Respuesta es " + this.respuestaCorrecta);
 			this.infoJuegoService.addIncorrecta();
 			this.incorrectas++;
+			if (this.infoJuegoService.getModoJuego() === 1) {
+				this.infoJuegoService.restarVida();
+			} // si es three strikes
 		}
 		this.preguntasTotales++;
 		this.getPreguntaRespuesta();

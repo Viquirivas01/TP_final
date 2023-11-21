@@ -1,3 +1,4 @@
+import { NumberInput } from '@angular/cdk/coercion';
 import { Injectable, inject } from '@angular/core';
 import { usuarioRegistrado } from 'src/app/models/usuarioRegistrado';
 import { UsuariosService } from 'src/app/usuarios.service';
@@ -13,12 +14,20 @@ export class InformacionJuegoService {
                                   2 -> Categoria
                                   3 -> Multijugador */
 
+  protected dificultad: number; /* -1 -> Aleatorio
+                                   0 -> Easy
+                                   1 -> Medium
+                                   2 -> Hard */
+
   protected preguntasCorrectas: number;   // TODOS modos
   protected preguntasIncorrectas: number; // TODOS modos menos VIDAS
   protected preguntasTotales: number;     // TODOS modos
   protected vidasRestantes: number;       // Solo modo VIDAS
 
+  
+
   constructor() {
+    this.dificultad = -1; // CAMBIAR
     this.modoJuego = -1;
     this.preguntasCorrectas = 0;
     this.preguntasIncorrectas = 0;
@@ -31,7 +40,7 @@ export class InformacionJuegoService {
     this.preguntasCorrectas = 0;
     this.preguntasIncorrectas = 0;
     this.preguntasTotales = 0;
-    this.vidasRestantes = 3;
+    this.dificultad = -1;
   }
 
   addCorrecta() {
@@ -51,6 +60,26 @@ export class InformacionJuegoService {
 
   setModoJuego(modoNum: number) {
     this.modoJuego = modoNum;
+  }
+
+  getVidas(): number {
+    return this.vidasRestantes;
+  }
+
+  setVidas(): void {
+    this.vidasRestantes = 3;
+  }
+
+  getModoJuego(): number {
+    return this.modoJuego;
+  }
+
+  getDificultad() {
+    return this.dificultad;
+  }
+
+  setDificultad(dif: number) {
+    this.dificultad = dif;
   }
 
   cargarDatosUsuarioActual() {
