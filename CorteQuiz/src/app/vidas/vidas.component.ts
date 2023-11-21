@@ -10,12 +10,34 @@ export class VidasComponent implements OnInit{
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
   vidas: number;
+  terminado: boolean;
 
   ngOnInit(): void {
-    this.vidas=3;
+    this.terminado = false;
+    this.vidas = 3;
+    this.infoJuegoService.setVidas();
+    this.empezarThreeStrikes();
   }
 
+  empezarThreeStrikes() {
+    if (this.infoJuegoService.getVidas() > 0) {
+
+      setTimeout(() => {this.empezarThreeStrikes();
+      }, 500);
+    }
+    else {
+      
+      this.infoJuegoService.cargarDatosUsuarioActual();
+      this.infoJuegoService.reiniciarDatos();
+      this.terminado = true;
+      alert('Se te acabaron las vidas');
+    }
+  }
+
+  /*
   restarVida(){
     this.vidas=this.vidas-1;
+    this.infoJuegoService.restarVida();
   }
+  */
 }
