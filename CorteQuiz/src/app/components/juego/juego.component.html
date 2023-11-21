@@ -7,12 +7,12 @@
     <img class="image-div" *ngIf="jugar" (click)="comenzar(2)" src="assets\img\categories.jpg"> <!--Categoria-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(3)" src="assets\img\multiplayer.jpg"> <!--Multijugador-->
     
-    
+    <app-elegir-dificultad *ngIf="!infoJuegoService.getDificultadElegida()"></app-elegir-dificultad>
 
-    <app-timer *ngIf="modo_juego == 0"></app-timer>  <!-- Modo de juego contrarreloj -->
-    <app-vidas *ngIf="modo_juego == 1"></app-vidas>   <!-- Modo de juego Vidas -->
-    <app-categorias *ngIf="modo_juego == 2"></app-categorias><!-- Modo de juego categorias -->
-    <app-multijugador *ngIf="modo_juego == 3"></app-multijugador><!-- Modo de juego multijugador -->
+    <app-timer *ngIf="modo_juego == 0 && infoJuegoService.getDificultadElegida()"></app-timer>  <!-- Modo de juego contrarreloj -->
+    <app-vidas *ngIf="modo_juego == 1 && infoJuegoService.getDificultadElegida()"></app-vidas>   <!-- Modo de juego Vidas -->
+    <app-categorias *ngIf="modo_juego == 2 && infoJuegoService.getDificultadElegida()"></app-categorias><!-- Modo de juego categorias -->
+    <app-multijugador *ngIf="modo_juego == 3 && infoJuegoService.getDificultadElegida()"></app-multijugador><!-- Modo de juego multijugador -->
 
     <app-perfil *ngIf="perfil"></app-perfil>  <!-- Entra al perfil -->
 </div>

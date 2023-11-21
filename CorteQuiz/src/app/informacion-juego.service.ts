@@ -24,7 +24,7 @@ export class InformacionJuegoService {
   protected preguntasTotales: number;     // TODOS modos
   protected vidasRestantes: number;       // Solo modo VIDAS
 
-  
+  protected dificultadElegida: boolean;
 
   constructor() {
     this.dificultad = -1; // CAMBIAR
@@ -33,6 +33,15 @@ export class InformacionJuegoService {
     this.preguntasIncorrectas = 0;
     this.preguntasTotales = 0;
     this.vidasRestantes = 3;
+    this.dificultadElegida = true;
+  }
+
+  setDificultadElegida(elegida: boolean) { 
+    this.dificultadElegida = elegida;
+  }
+
+  getDificultadElegida(): boolean { // get si ya se eligió la dificultad
+    return this.dificultadElegida;
   }
 
   reiniciarDatos() {

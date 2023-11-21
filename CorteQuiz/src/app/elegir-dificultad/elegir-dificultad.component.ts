@@ -11,5 +11,6 @@ export class ElegirDificultadComponent {
 
   elegirDificultad(dif: number): void {
     this.infoJuegoService.setDificultad(dif);
+    this.infoJuegoService.setDificultadElegida(true);
   }
 }
