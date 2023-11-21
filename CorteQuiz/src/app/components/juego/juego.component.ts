@@ -13,11 +13,13 @@ export class JuegoComponent implements OnInit{
   jugar: boolean = true;
   perfil: boolean = false;
   visual: boolean = true;
+  dificultad_elegida: boolean = true;
 
   constructor(){}
   ngOnInit(){}
 
   comenzar(modo_seleccionado: number){
+      this.infoJuegoService.setDificultadElegida(false);
       this.modo_juego = modo_seleccionado;
       this.jugar=false;
       this.visual=false;
