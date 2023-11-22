@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, Input } from '@angular/core';
 import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
 @Component({
@@ -15,25 +15,33 @@ export class JuegoComponent implements OnInit{
   visual: boolean = true;
   dificultad_elegida: boolean = true;
 
-  constructor(){}
+  constructor(private getNotificacion: InformacionJuegoService){
+    this.getNotificacion.partidaTerminada$.subscribe(() => {
+      this.finalizar();
+     });
+  }
   ngOnInit(){}
+
+  
+
+
 
   comenzar(modo_seleccionado: number){
       this.infoJuegoService.setDificultadElegida(false);
+      this.infoJuegoService.setModoJuego(modo_seleccionado);
       this.modo_juego = modo_seleccionado;
       this.jugar=false;
       this.visual=false;
-      this.infoJuegoService.setModoJuego(modo_seleccionado);
+      console.log("Modo seleccionado: " + this.infoJuegoService.getModoJuego());
   }
-/*
+
   finalizar(){
+    console.log("corre");
     this.modo_juego = -1;
     this.jugar=true;
     this.visual=true;
-    this.infoJuegoService.cargarDatosUsuarioActual();
-    this.infoJuegoService.reiniciarDatos();
   }
-*/
+
   entrarPerfil() {
     this.jugar = !this.jugar;
     this.perfil = !this.perfil;

@@ -33,6 +33,7 @@ export class TimerComponent implements OnInit {
 
     }
     else{
+      this.infoJuegoService.notificarPartidaTerminada();
       this.infoJuegoService.cargarDatosUsuarioActual();
       this.infoJuegoService.reiniciarDatos();
       alert('Ha finalizado el tiempo de juego');

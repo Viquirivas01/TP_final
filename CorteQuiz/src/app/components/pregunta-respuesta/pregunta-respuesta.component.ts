@@ -63,6 +63,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
 
+								console.log(preg.difficulty)
 								ok_diff = true;
 							}
 						}
