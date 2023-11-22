@@ -11,10 +11,12 @@ export class TimerComponent implements OnInit {
   tiempoString: string = ""; // Para que se muestren los 0
   tiempo: number = 60;
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
+  continuar: boolean;
 
   constructor(){}
 
   ngOnInit(){
+    this.continuar = false;
     this.empezarTemporizador()
   }
 
@@ -31,13 +33,6 @@ export class TimerComponent implements OnInit {
       setTimeout(() => {this.empezarTemporizador();
       }, 1000);
 
-    }
-    else{
-      this.infoJuegoService.notificarPartidaTerminada();
-      this.infoJuegoService.cargarDatosUsuarioActual();
-      this.infoJuegoService.reiniciarDatos();
-      alert('Ha finalizado el tiempo de juego');
-      
     }
   }
 }

@@ -1,0 +1,54 @@
+.modal {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+    position:absolute;
+    z-index: 1;
+    overflow: auto;
+    left: 37.5%;
+    top: 10%;
+    width: 25%;
+    height: 65%;
+    background-color: rgb(15, 31, 46);
+
+    border-radius: 1.875rem;
+    box-shadow: 0px 0px 20px;
+}
+
+.modalContent {
+    margin: 10% auto;
+    margin-top: 8%;
+    padding: 1rem;
+
+    font-family: "Roboto";
+    color: azure;
+    font-size: large;
+    font-weight: bold;
+    
+}
+
+.subtitle {
+    font-size:x-large;
+    font-weight:bolder;
+}
+
+.title {
+    font-size:x-large;
+    font-weight:bolder;
+    margin-bottom: 2.3rem;
+}
+
+
+button {
+    padding: 0.938rem;
+    margin: 0.125rem;
+    margin-top: 0.625rem;
+    font-size: 1.1rem;
+
+    font-weight: bold;
+    color: #efefef;
+    background-color: rgb(15, 52, 125);
+    border-radius: 0.313rem;
+    border: none;
+}

@@ -40,6 +40,8 @@ export class InformacionJuegoService {
   }
 
   notificarPartidaTerminada() {
+    this.cargarDatosUsuarioActual();
+    this.reiniciarDatos();
     this.procesoCompletadoSubject.next();
   }
 
@@ -67,6 +69,18 @@ export class InformacionJuegoService {
   addIncorrecta() {
     this.preguntasIncorrectas+=1;
     this.preguntasTotales += 1;
+  }
+
+  getPreguntasCorrectas() {
+    return this.preguntasCorrectas;
+  }
+
+  getPreguntasIncorrectas() {
+    return this.preguntasIncorrectas;
+  }
+
+  getPreguntasTotales() {
+    return this.preguntasTotales;
   }
 
   restarVida() {
