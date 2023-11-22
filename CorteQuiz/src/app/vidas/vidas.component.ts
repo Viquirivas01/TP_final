@@ -28,12 +28,14 @@ export class VidasComponent implements OnInit{
       }, 500);
     }
     else {
-      
+
       this.infoJuegoService.notificarPartidaTerminada();
       this.infoJuegoService.cargarDatosUsuarioActual();
       this.infoJuegoService.reiniciarDatos();
       this.terminado = true;
       alert('Se te acabaron las vidas');
+      
+      
     }
   }
 

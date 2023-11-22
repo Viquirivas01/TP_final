@@ -2,8 +2,37 @@ import { Component, OnInit, inject } from '@angular/core';
 import { UsuariosService } from 'src/app/usuarios.service';
 import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
+import {
+	trigger,
+	state,
+	style,
+	animate,
+	transition,
+	// ...
+  } from '@angular/animations';
+
 @Component({
   selector: 'app-pregunta-respuesta',
+  animations: [
+    trigger('mostrarCorrecta', [
+      // ...
+      state('default', style({
+        backgroundColor: "#0188a5",
+      })),
+      state('erronea', style({
+        backgroundColor: "red",
+      })),
+	  state('acertada', style({
+        backgroundColor: "green",
+      })),
+      transition('default => acertada', [
+        animate('0.2s')
+      ]),
+      transition('default => erronea', [
+        animate('0.2s')
+      ]),
+    ]),
+  ],
   templateUrl: './pregunta-respuesta.component.html',
   styleUrls: ['./pregunta-respuesta.component.css']
 })
@@ -15,6 +44,8 @@ export class PreguntaRespuestaComponent implements OnInit {
 	infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
 	constructor() {}
+
+	isDefault: boolean = true;
 
 	pregunta: string = "";
 	respuestaCorrecta: string = "";
@@ -31,6 +62,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 	}
 
 	async getPreguntaRespuesta() {
+		
 		let diffs = ["easy", "medium", "hard"];
 		if (this.infoJuegoService.getDificultad() === -1) {
 			try {
@@ -38,9 +70,11 @@ export class PreguntaRespuestaComponent implements OnInit {
 				if (response.ok) {
 					const data = await response.json();
 	
+					this.isDefault = true;
 					this.pregunta = data[0].question["text"];
 					this.respuestaCorrecta = data[0].correctAnswer;
 					this.desordenarRespuestas(data[0].incorrectAnswers);
+					
 				}
 				else {
 					throw new Error("Error status code: " + response.status);
@@ -59,6 +93,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 		
 						for (let preg of data) {
 							if (preg.difficulty === diffs[this.infoJuegoService.getDificultad()] && !ok_diff) {
+								this.isDefault = true;
 								this.pregunta = preg.question["text"];
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
@@ -93,22 +128,39 @@ export class PreguntaRespuestaComponent implements OnInit {
 
 	verificarRespuesta(respuestaElegida: string) {
 		if (this.respuestaCorrecta === respuestaElegida) {
-			alert("Correcta!");
+			this.isDefault = false;
 			this.infoJuegoService.addCorrecta();
 			this.correctas++;
+
+			// ANIMACION 
+			this.isDefault = false;
 		}
 		else {
-			alert("Respuesta incorrecta: Respuesta es " + this.respuestaCorrecta);
 			this.infoJuegoService.addIncorrecta();
 			this.incorrectas++;
 			if (this.infoJuegoService.getModoJuego() === 1) {
 				this.infoJuegoService.restarVida();
 			} // si es three strikes
+
+			// ANIMACION 
+			this.isDefault = false;
 		}
 		this.preguntasTotales++;
-		this.getPreguntaRespuesta();
+		setTimeout(() => {
+			this.getPreguntaRespuesta();
+		}, 700); // para tener tiempo para ver la respuesta nomás
+		
 	}
 
+	getCorrectaIncorrecta(respuesta: string): string {
+		if (respuesta === this.respuestaCorrecta) {
+			return "acertada";
+		}
+		else {
+			return "erronea";
+		}
+	}
+ 
 
 }
 
