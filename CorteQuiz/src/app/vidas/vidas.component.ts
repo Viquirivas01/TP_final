@@ -12,6 +12,8 @@ export class VidasComponent implements OnInit{
   vidas: number;
   terminado: boolean;
 
+  constructor() {}
+
   ngOnInit(): void {
     this.terminado = false;
     this.vidas = 3;
@@ -27,6 +29,7 @@ export class VidasComponent implements OnInit{
     }
     else {
       
+      this.infoJuegoService.notificarPartidaTerminada();
       this.infoJuegoService.cargarDatosUsuarioActual();
       this.infoJuegoService.reiniciarDatos();
       this.terminado = true;

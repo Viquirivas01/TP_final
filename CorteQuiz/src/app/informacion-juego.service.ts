@@ -1,5 +1,5 @@
-import { NumberInput } from '@angular/cdk/coercion';
 import { Injectable, inject } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { usuarioRegistrado } from 'src/app/models/usuarioRegistrado';
 import { UsuariosService } from 'src/app/usuarios.service';
 
@@ -7,6 +7,9 @@ import { UsuariosService } from 'src/app/usuarios.service';
   providedIn: 'root'
 })
 export class InformacionJuegoService {
+  private procesoCompletadoSubject = new BehaviorSubject<void>(undefined);
+  partidaTerminada$ = this.procesoCompletadoSubject.asObservable();
+
   usuariosService: UsuariosService = inject(UsuariosService);
 
   protected modoJuego: number; /* 0 -> Contrarreloj
@@ -24,7 +27,7 @@ export class InformacionJuegoService {
   protected preguntasTotales: number;     // TODOS modos
   protected vidasRestantes: number;       // Solo modo VIDAS
 
-  protected dificultadElegida: boolean;
+  protected dificultadElegida: boolean; // si ya se eligió una dificultad
 
   constructor() {
     this.dificultad = -1; // CAMBIAR
@@ -34,6 +37,10 @@ export class InformacionJuegoService {
     this.preguntasTotales = 0;
     this.vidasRestantes = 3;
     this.dificultadElegida = true;
+  }
+
+  notificarPartidaTerminada() {
+    this.procesoCompletadoSubject.next();
   }
 
   setDificultadElegida(elegida: boolean) { 
