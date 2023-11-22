@@ -25,6 +25,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { MultijugadorComponent } from './components/multijugador/multijugador.component';
 import { ElegirDificultadComponent } from './elegir-dificultad/elegir-dificultad.component';
+import { ModalGameOverComponent } from './modal-game-over/modal-game-over.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ElegirDificultadComponent } from './elegir-dificultad/elegir-dificultad
     PerfilComponent,
     CategoriasComponent,
     MultijugadorComponent,
-    ElegirDificultadComponent
+    ElegirDificultadComponent,
+    ModalGameOverComponent
   ],
   imports: [
     AppRoutingModule,
