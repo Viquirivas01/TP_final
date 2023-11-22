@@ -40,6 +40,7 @@ export class JuegoComponent implements OnInit{
     this.modo_juego = -1;
     this.jugar=true;
     this.visual=true;
+    this.infoJuegoService.setDificultadElegida(true);
   }
 
   entrarPerfil() {

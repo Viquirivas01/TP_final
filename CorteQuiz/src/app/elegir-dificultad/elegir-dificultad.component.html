@@ -4,5 +4,5 @@
 <h3 (click)="elegirDificultad(1)">Medium</h3>
 <h3 (click)="elegirDificultad(2)">Hard</h3>
 <h3 (click)="elegirDificultad(-1)">Random</h3>
-<button>Back</button>
+<button (click)="this.infoJuegoService.notificarPartidaTerminada()">Back</button> <!-- Si cliquea esto vuelve atrás -->
 </div>
