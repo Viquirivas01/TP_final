@@ -3,7 +3,7 @@
     <p>{{ pregunta }}</p>
     <ul>
         <li *ngFor="let respuesta of respuestasDesordenadas">
-            <button (click)="verificarRespuesta(respuesta)">
+            <button [@mostrarCorrecta]="isDefault ? 'default' : getCorrectaIncorrecta(respuesta)"  (click)="verificarRespuesta(respuesta)">
                 {{respuesta}}
             </button>
         </li>
