@@ -1,69 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
-/* FUENTES */
-
 @font-face {
     font-family: 'Good Times';
     src: url('/fonts/good\ times\ rg.otf');
 }
 
-/* ESTILOS INDEX */
-
-#div-header {
-    display: flex;
-    align-items: center;
-    color: white;
-    background: #003688;
-    background-image: linear-gradient(135deg, #003688 0%, #001f4e 100%);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    margin: 0;
-    padding: 0;
-    height: 60px;
-}
-
-#div-header button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-#div-header header {
-    margin: 0;
-    flex-grow: 1;
-}
-
-h1 {
-    font-family: 'Good Times', sans-serif;
-    font-style: oblique;
-    font-size: 35px;
-    text-align: center;
-}
-
-h1:hover {
-    text-shadow: none;
-}
-
 body {
-    background: #003688;
-    background-image: linear-gradient(135deg, #003688 0%, #001f4e 100%);
-    margin: 0;
-    padding: 0;
-}
-
-#background-container::before {
-    content: "";
-    background-image: url('/img/pattern.png');
-    pointer-events: none;
-    background-repeat: repeat;
-    opacity: 0.1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    background-size: cover;
+    background:
+        linear-gradient(135deg, rgba(0, 54, 136, 1) 0%, rgba(0, 31, 78, 1) 100%),
+        /* Gradiente azul sin opacidad */
+        url('/CorteQuiz/src/assets/img/pattern.png') repeat;
+    /* Patrón que se repite */
 }
 
 #menu {
@@ -148,5 +94,37 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.botones {
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #003688 0%, #001f4e 100%);
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.info-superior {
+    font-size: 30px;
+    font: "roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    text-align: center;
+    margin: 3rem;
+}

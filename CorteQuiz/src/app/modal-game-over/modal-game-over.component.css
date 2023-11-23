@@ -1,54 +1,28 @@
 .modal {
-    text-align: center;
     display: flex;
+    align-items: center;
     justify-content: center;
-
-    position:absolute;
-    z-index: 1;
-    overflow: auto;
-    left: 37.5%;
-    top: 10%;
-    width: 25%;
-    height: 65%;
-    background-color: rgb(15, 31, 46);
-
-    border-radius: 1.875rem;
-    box-shadow: 0px 0px 20px;
+    height: 100vh;
 }
 
 .modalContent {
-    margin: 10% auto;
-    margin-top: 8%;
-    padding: 1rem;
-
-    font-family: "Roboto";
-    color: azure;
-    font-size: large;
-    font-weight: bold;
-    
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #001f4e;
+    color: #fff;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
-    font-size:x-large;
-    font-weight:bolder;
+    font-size: x-large;
+    margin-bottom: 25px;
 }
 
 .title {
-    font-size:x-large;
-    font-weight:bolder;
+    font-size: x-large;
+    font-weight: bolder;
+    letter-spacing: 4px;
     margin-bottom: 2.3rem;
-}
-
-
-button {
-    padding: 0.938rem;
-    margin: 0.125rem;
-    margin-top: 0.625rem;
-    font-size: 1.1rem;
-
-    font-weight: bold;
-    color: #efefef;
-    background-color: rgb(15, 52, 125);
-    border-radius: 0.313rem;
-    border: none;
 }

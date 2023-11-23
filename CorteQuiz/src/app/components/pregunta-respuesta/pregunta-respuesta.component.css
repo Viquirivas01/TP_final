@@ -1,39 +1,49 @@
-#cuadro_q_a, #estadisticas_q_a {
-    font: "roboto", sans-serif;
-    display: flex;
-    flex-direction: column;
-    color: aliceblue;
+#cuadro_q_a {
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 0.2px solid #fff;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #003688 0%, #001f4e 100%);
+    color: #fff;
     text-align: center;
-    margin: 3rem;
-    
 }
 
-button {
+#estadisticas_q_a {
+    padding-top: 40px;
+}
+
+.texto-respuestas-estadisticas {
+    font-size: 25px;
+    padding: 10px;
+}
+
+#pregunta {
+    font-size: 25px;
+}
+
+.respuesta {
     border-radius: 5px;
-    background-color: #0188a5;
     border: none;
-    color: aliceblue;
+    color: white;
     margin-top: 10px;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-ul, li {
-    text-decoration: none;
+li {
     list-style-type: none;
 }
 
-#Estadisticas{
-    color: aliceblue;
-}
-
 @keyframes correcta_reveal {
-    from {background-color: #0188a5;}
-    to {background-color: #358436;}
+    from {background-color: violet;}
+    to {background-color: pink;}
 }
 
 @keyframes incorrecta_reveal {
-    from {background-color: #0188a5;}
-    to {background-color: #692323;}
+    from {background-color: yellow;}
+    to {background-color: orange;}
 }

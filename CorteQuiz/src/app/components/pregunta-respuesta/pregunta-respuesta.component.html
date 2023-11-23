@@ -1,19 +1,20 @@
 <div id="cuadro_q_a">
     <br>
-    <p>{{ pregunta }}</p>
+    <p id="pregunta">{{ pregunta }}</p>
     <ul>
         <li *ngFor="let respuesta of respuestasDesordenadas">
-            <button [@mostrarCorrecta]="isDefault ? 'default' : getCorrectaIncorrecta(respuesta)"  (click)="verificarRespuesta(respuesta)">
+            <button class="respuesta" [@mostrarCorrecta]="isDefault ? 'default' : getCorrectaIncorrecta(respuesta)"
+                (click)="verificarRespuesta(respuesta)">
                 {{respuesta}}
             </button>
         </li>
     </ul>
 </div>
+
 <div id="estadisticas_q_a">
     <ul>
-        <li>Respuestas Correctas {{ this.correctas }}</li>
-        <li>Respuestas Incorrectas {{ this.incorrectas}} </li>
-        <li>Preguntas Totales {{ this.preguntasTotales}} </li>
+        <p class="texto-respuestas-estadisticas">✅ Correct answers: {{ this.correctas }}</p>
+        <p class="texto-respuestas-estadisticas">❌ Incorrect answers: {{ this.incorrectas}} </p>
+        <p class="texto-respuestas-estadisticas">❔ Total questions answered: {{ this.preguntasTotales}} </p>
     </ul>
 </div>
-

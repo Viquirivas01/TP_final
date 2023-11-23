@@ -1,17 +1,87 @@
-form{
-    text-align: center;
-    display:grid;
+#div-header {
+    display: flex;
+    align-items: center;
+    color: white;
+    background: #003688;
+    background-image: linear-gradient(135deg, #003688 0%, #001f4e 100%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 0;
+    height: 60px;
 }
 
-mat-form-field{
-    margin-left: 10%;
-    margin-right: 10%;
+#div-header h1 {
+    margin: 0;
+    flex-grow: 1;
 }
-h1{
-    background-color: black;
-    color: white;
-    padding: 2%;
+
+h1 {
+    font-family: 'Good Times', sans-serif;
+    font-style: oblique;
+    font-size: 35px;
+    text-align: center;
 }
-h2{
+
+.inicio-subtitulos {
+    color: aliceblue;
+    font-size: large;
+    text-align: center;
+    font-weight:500;
+    margin-bottom: 30px;
+}
+
+#form-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+form {
+    flex: 0 0 45%; /* Ocupa el 45% del espacio disponible, sin crecer ni encoger */
+    max-width: 400px;
+    margin: 50px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+input.mat-input {
     color: white;
+}
+
+button.mat-raised-button {
+    width: 100%;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #003688 0%, #001f4e 100%);
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+#form-container form button.mat-raised-button {
+    margin: 15px 0; /* Ajusta el espacio alrededor del botón dentro del form-container */
+}
+
+.inicio-botones {
+    width: 100%; /* Añadido para ocupar todo el ancho del contenedor */
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #003688 0%, #001f4e 100%);
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1.5px;
 }
