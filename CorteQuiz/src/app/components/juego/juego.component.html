@@ -19,5 +19,5 @@
     <app-categorias *ngIf="modo_juego == 2"></app-categorias>     <!-- Modo de juego categorias -->
     <app-multijugador *ngIf="modo_juego == 3"></app-multijugador> <!-- Modo de juego multijugador -->
 
-    <app-perfil *ngIf="perfil"></app-perfil>  <!-- Entra al perfil -->
+    <app-perfil *ngIf="infoJuegoService.isPerfilAbierto()"></app-perfil>  <!-- Entra al perfil -->
 </div>
