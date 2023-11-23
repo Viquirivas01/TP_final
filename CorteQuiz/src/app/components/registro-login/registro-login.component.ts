@@ -128,6 +128,7 @@ export class RegistroLoginComponent implements OnInit {
 		
 	}
 
+
 	// login getters 
 	getLoginUsername() {
 		return this.loginForm.get("username_login") || this.fb.control(null);

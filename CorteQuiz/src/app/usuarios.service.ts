@@ -66,4 +66,11 @@ export class UsuariosService {
 			return true;
 		}
   }
+
+  isLoggedIn ():boolean{
+		const isLoggedIn = localStorage.getItem('1') !== null
+		console.log('usuario autenticado ', isLoggedIn)
+		return isLoggedIn
+	}
+
 }
