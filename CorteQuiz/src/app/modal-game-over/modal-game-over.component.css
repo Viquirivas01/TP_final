@@ -21,8 +21,10 @@
 }
 
 .title {
-    font-size: x-large;
-    font-weight: bolder;
-    letter-spacing: 4px;
-    margin-bottom: 2.3rem;
+    font-family: 'Good Times', sans-serif;
+    font-style: oblique;
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 45px;
 }
