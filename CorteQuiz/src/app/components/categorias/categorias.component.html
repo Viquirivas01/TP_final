@@ -42,7 +42,8 @@
 </div>
 <div *ngIf="categoria_elegida">
     <br>
-    <p class = "info-superior" *ngIf="this.infoJuegoService.getVidas()>0">❤️  {{ this.infoJuegoService.getVidas() }}</p>
+    <br>
+    <p class = "info-superior" *ngIf="this.infoJuegoService.getVidas()>0">🩵 x {{ this.infoJuegoService.getVidas() }}</p>
     <br>
     <app-pregunta-respuesta *ngIf="this.infoJuegoService.getVidas()>0"></app-pregunta-respuesta>
     <app-modal-game-over *ngIf="this.infoJuegoService.getVidas()===0"></app-modal-game-over>

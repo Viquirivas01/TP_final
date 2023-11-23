@@ -4,21 +4,21 @@
 
 <div id="form-container">
 <form [formGroup]="registerForm">
-    <p class = "inicio-subtitulos">Registrarse</p>
+    <p class = "inicio-subtitulos">Sign Up</p>
 
     <mat-form-field>
-        <input matInput placeholder="Nombre" formControlName="nombre">
+        <input matInput placeholder="Name" formControlName="nombre">
 
         <mat-error *ngIf="getRegisterNombre().invalid && getRegisterNombre().touched">
-            Escriba un nombre válido
+            Insert a valid name
         </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-        <input matInput placeholder="Apellido" formControlName="apellido">
+        <input matInput placeholder="Last name" formControlName="apellido">
 
         <mat-error *ngIf="getRegisterApellido().invalid && getRegisterApellido().touched">
-            Escriba un apellido válido
+            Insert a valid last name
         </mat-error>
     </mat-form-field>
 
@@ -27,7 +27,7 @@
             formControlName="username">
 
         <mat-error *ngIf="getRegisterUsername().invalid && getRegisterUsername().touched">
-            Escriba un username válido
+            Insert a valid username
         </mat-error>
     </mat-form-field>
 
@@ -36,7 +36,7 @@
             formControlName="email">
 
         <mat-error *ngIf="getRegisterEmail().invalid && getRegisterEmail().touched">
-            Escriba un email válido
+            Insert a valid email
         </mat-error>
     </mat-form-field>
 
@@ -46,8 +46,7 @@
         <mat-hint *ngIf="getRegisterPassword().dirty">Debe tener 1 mayus, 1 minuscula y 1 digito</mat-hint>
 
         <mat-error *ngIf="getRegisterPassword().invalid && getRegisterPassword().touched">
-            Escriba una contraseña válida.
-            Al menos 1 mayuscula, 1 minuscula y 1 digito.
+            Passowrd must contain at least 1 uppercase letter, 1 lowercase letter y 1 digit.
         </mat-error>
     </mat-form-field>
 
@@ -66,7 +65,7 @@
         <input matInput placeholder="Username" formControlName="username_login">
 
         <mat-error *ngIf="getLoginUsername().invalid && getLoginUsername().touched">
-            Escriba un username válido
+            Insert a valid username
         </mat-error>
     </mat-form-field>
 
@@ -74,7 +73,7 @@
         <input matInput type="password" placeholder="Password" formControlName="password_login">
 
         <mat-error *ngIf="getLoginPassword().invalid && getLoginPassword().touched">
-            Escriba una contraseña válida.
+            Insert a valid password
         </mat-error>
     </mat-form-field>
 

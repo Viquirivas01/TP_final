@@ -13,6 +13,7 @@ export class JuegoComponent implements OnInit{
   jugar: boolean = true;
   visual: boolean = true;
   dificultad_elegida: boolean = true;
+  
 
   constructor(private getNotificacion: InformacionJuegoService){
     this.getNotificacion.partidaTerminada$.subscribe(() => {
