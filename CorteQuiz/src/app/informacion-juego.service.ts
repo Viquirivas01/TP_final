@@ -30,8 +30,10 @@ export class InformacionJuegoService {
   protected dificultadElegida: boolean; // si ya se eligió una dificultad
   protected categoriaElegida: string;
   protected elegirCat: boolean; // si todavia no eligio categoria
+  protected perfilAbierto: boolean;
 
   constructor() {
+    this.perfilAbierto = false;
     this.categoriaElegida = "";
     this.dificultad = -1; // CAMBIAR
     this.modoJuego = -1;
@@ -41,6 +43,14 @@ export class InformacionJuegoService {
     this.vidasRestantes = 3;
     this.dificultadElegida = true;
     this.elegirCat = false;
+  }
+
+  isPerfilAbierto(): boolean {
+    return this.perfilAbierto;
+  }
+
+  setPerfilAbierto(abierto: boolean) {
+    this.perfilAbierto = abierto;
   }
 
   setElegirCat(elegido: boolean): void {
@@ -63,6 +73,7 @@ export class InformacionJuegoService {
     if (this.modoJuego === 2) {
       this.setElegirCat(true);
     }
+    this.setPerfilAbierto(false);
     this.cargarDatosUsuarioActual();
     this.reiniciarDatos();
     this.procesoCompletadoSubject.next();

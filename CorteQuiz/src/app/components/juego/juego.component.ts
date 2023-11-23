@@ -11,7 +11,6 @@ export class JuegoComponent implements OnInit{
 
   modo_juego: number = -1;
   jugar: boolean = true;
-  perfil: boolean = false;
   visual: boolean = true;
   dificultad_elegida: boolean = true;
 
@@ -43,6 +42,6 @@ export class JuegoComponent implements OnInit{
 
   entrarPerfil() {
     this.jugar = !this.jugar;
-    this.perfil = !this.perfil;
+    this.infoJuegoService.setPerfilAbierto(!this.infoJuegoService.isPerfilAbierto());
   }
 }
