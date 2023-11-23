@@ -17,13 +17,13 @@ import {
     trigger('mostrarCorrecta', [
       // ...
       state('default', style({
-        backgroundColor: "#0188a5",
+        backgroundColor: "#003688",
       })),
       state('erronea', style({
-        backgroundColor: "red",
+        backgroundColor: "#f92f60",
       })),
 	  state('acertada', style({
-        backgroundColor: "green",
+        backgroundColor: "#00d26a",
       })),
       transition('default => acertada', [
         animate('0.2s')
