@@ -27,3 +27,41 @@ nav{
     padding-top: 3%;
     padding-left: 3%;
 }
+
+#div-header {
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background-image: linear-gradient(135deg, #003688 0%, #001f4e 100%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 0;
+    height: 60px;
+}
+
+#div-header h1 {
+    margin: 0;
+    flex-grow: 1;
+}
+
+h1 {
+    font-family: 'Good Times', sans-serif;
+    font-style: oblique;
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+nav p {
+    margin-left: 2rem;
+    font-size: xx-large;
+    margin-top: 13px;
+}
+
+#corte-quiz-titulo:hover {
+    cursor: pointer;
+}
+
+.hub {
+    cursor: pointer;
+}
