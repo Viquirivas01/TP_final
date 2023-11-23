@@ -1,0 +1,16 @@
+
+.image-div img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    
+    gap: 10px 20px;
+}
+
+.image-div {
+    column-gap: 10px ;
+    transition: transform 0.3s, border 0.3s;
+    margin: 25px;
+    width: 220px;
+    border-radius: 10px;
+}
