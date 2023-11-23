@@ -1,6 +1,11 @@
-<div id="botones_modo_juego">
+<nav id="div-header">
+    <p *ngIf="visual" class="hub" (click)="entrarPerfil()">≡</p>
+    <h1 id="corte-quiz-titulo" (click)="infoJuegoService.notificarPartidaTerminada()">CORTE QUIZ</h1>
+</nav>
 
-    <nav (click)="entrarPerfil()" *ngIf="visual">≡</nav>
+<div id="botones_modo_juego">
+<!--
+    <nav (click)="entrarPerfil()" *ngIf="visual">≡</nav> -->
 
     <img class="image-div" *ngIf="jugar" (click)="comenzar(0)" src="assets\img\time trial.jpg">      <!--Contrarreloj-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(1)" src="assets\img\three strikes.jpg">   <!--Vidas-->

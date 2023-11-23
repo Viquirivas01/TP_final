@@ -84,7 +84,6 @@ export class InformacionJuegoService {
   }
 
   restarVida() {
-    this.preguntasTotales += 1;
     this.vidasRestantes -= 1;
   }
 
