@@ -1,4 +1,3 @@
-<p *ngIf="this.infoJuegoService.getVidas()>0">Vidas restantes: {{ this.infoJuegoService.getVidas() }}</p>
+<p class = "info-superior" *ngIf="this.infoJuegoService.getVidas()>0">Lives: {{ this.infoJuegoService.getVidas() }}</p>
 <app-pregunta-respuesta *ngIf="this.infoJuegoService.getVidas()>0"></app-pregunta-respuesta>
 <app-modal-game-over *ngIf="this.infoJuegoService.getVidas()===0"></app-modal-game-over>
-

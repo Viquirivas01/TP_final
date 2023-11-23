@@ -1,0 +1,8 @@
+p {
+    font: "roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    text-align: center;
+    margin: 3rem;
+}

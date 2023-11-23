@@ -1,0 +1,34 @@
+#elegir-dificultad-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#elegir-dificultad-div {
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #001f4e;
+    color: #fff;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#elegir-dificultad-titulo {
+    font-family: 'Good Times', sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+.elegir-dificultad-cuerpo {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.elegir-dificultad-cuerpo:hover {
+    border: 0.2px solid white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}

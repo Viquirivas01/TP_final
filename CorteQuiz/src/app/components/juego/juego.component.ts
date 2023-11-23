@@ -22,10 +22,6 @@ export class JuegoComponent implements OnInit{
   }
   ngOnInit(){}
 
-  
-
-
-
   comenzar(modo_seleccionado: number){
       this.infoJuegoService.setDificultadElegida(false);
       this.infoJuegoService.setModoJuego(modo_seleccionado);

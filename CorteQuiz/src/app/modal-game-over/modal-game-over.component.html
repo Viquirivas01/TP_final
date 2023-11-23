@@ -1,17 +1,11 @@
 <div class="modal">
     <div class="modalContent">
         <h3 class="title">GAME OVER</h3>
+        <p class="subtitle">✅ Correct answers: {{ infoJuegoService.getPreguntasCorrectas() }}</p>
+        <p class="subtitle">❌ Incorrect answers: {{ infoJuegoService.getPreguntasIncorrectas() }}</p>
+        <p class="subtitle">❔ Total questions answered: {{ infoJuegoService.getPreguntasTotales() }}</p>
+        <p class="subtitle">🏆 High score: {{ getHighScore() }}</p>
 
-        <p class="subtitle">PREGUNTAS CORRECTAS</p>
-        <p>{{ infoJuegoService.getPreguntasCorrectas() }}</p>
-        <p class="subtitle">PREGUNTAS INCORRECTAS</p>
-        <p >{{ infoJuegoService.getPreguntasIncorrectas() }}</p>
-        <p class="subtitle">PREGUNTAS TOTALES</p>
-        <p>{{ infoJuegoService.getPreguntasTotales() }}</p>
-        <p class="subtitle">HIGH SCHORE</p>
-        <p>{{ getHighScore() }}</p>
-
-        <button (click)="infoJuegoService.notificarPartidaTerminada()">CONTINUAR</button>
+        <button class = "botones" (click)="infoJuegoService.notificarPartidaTerminada()">OK</button>
     </div>
-    
 </div>
