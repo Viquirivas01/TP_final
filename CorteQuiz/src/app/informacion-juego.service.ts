@@ -28,8 +28,11 @@ export class InformacionJuegoService {
   protected vidasRestantes: number;       // Solo modo VIDAS
 
   protected dificultadElegida: boolean; // si ya se eligió una dificultad
+  protected categoriaElegida: string;
+  protected elegirCat: boolean; // si todavia no eligio categoria
 
   constructor() {
+    this.categoriaElegida = "";
     this.dificultad = -1; // CAMBIAR
     this.modoJuego = -1;
     this.preguntasCorrectas = 0;
@@ -37,9 +40,29 @@ export class InformacionJuegoService {
     this.preguntasTotales = 0;
     this.vidasRestantes = 3;
     this.dificultadElegida = true;
+    this.elegirCat = false;
+  }
+
+  setElegirCat(elegido: boolean): void {
+    this.elegirCat = elegido;
+  }
+
+  getElegirCat(): boolean {
+    return this.elegirCat;
+  }
+ 
+  getCategoriaElegida(): string {
+    return this.categoriaElegida;
+  }
+
+  setCategoriaElegida(cat: string): void {
+    this.categoriaElegida = cat;
   }
 
   notificarPartidaTerminada() {
+    if (this.modoJuego === 2) {
+      this.setElegirCat(true);
+    }
     this.cargarDatosUsuarioActual();
     this.reiniciarDatos();
     this.procesoCompletadoSubject.next();
@@ -97,6 +120,10 @@ export class InformacionJuegoService {
 
   setVidas(): void {
     this.vidasRestantes = 3;
+  }
+
+  setVidasCategorias(): void {
+    this.vidasRestantes = 5;
   }
 
   getModoJuego(): number {
