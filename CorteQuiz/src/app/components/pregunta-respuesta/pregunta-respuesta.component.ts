@@ -65,23 +65,54 @@ export class PreguntaRespuestaComponent implements OnInit {
 		
 		let diffs = ["easy", "medium", "hard"];
 		if (this.infoJuegoService.getDificultad() === -1) {
-			try {
-				const response = await fetch(this.url_api);
-				if (response.ok) {
-					const data = await response.json();
-	
-					this.isDefault = true;
-					this.pregunta = data[0].question["text"];
-					this.respuestaCorrecta = data[0].correctAnswer;
-					this.desordenarRespuestas(data[0].incorrectAnswers);
-					
+			if (this.infoJuegoService.getModoJuego() === 2) { // ES CATEGORIAS
+				let ok_cat = false;
+			while (!ok_cat) { // Trata hasta que obtenga una de la dificultad especifica
+				try {
+					const response = await fetch(this.url_api);
+					if (response.ok) {
+						const data = await response.json();
+		
+						for (let preg of data) {
+							if (preg.category === this.infoJuegoService.getCategoriaElegida() && !ok_cat) {
+								this.isDefault = true;
+								this.pregunta = preg.question["text"];
+								this.respuestaCorrecta = preg.correctAnswer;
+								this.desordenarRespuestas(preg.incorrectAnswers);
+
+								console.log(preg.category)
+								ok_cat = true;
+							}
+						}
+					}
+					else {
+						throw new Error("Error status code: " + response.status);
+					}
+				} catch (error) {
+					console.error("Error! ", error);
 				}
-				else {
-					throw new Error("Error status code: " + response.status);
-				}
-			} catch (error) {
-				console.error("Error! ", error);
 			}
+			}
+			else { // NO ES CATEGORíAS
+				try {
+					const response = await fetch(this.url_api);
+					if (response.ok) {
+						const data = await response.json();
+		
+						this.isDefault = true;
+						this.pregunta = data[0].question["text"];
+						this.respuestaCorrecta = data[0].correctAnswer;
+						this.desordenarRespuestas(data[0].incorrectAnswers);
+						
+					}
+					else {
+						throw new Error("Error status code: " + response.status);
+					}
+				} catch (error) {
+					console.error("Error! ", error);
+				}
+			}
+			
 		}
 		else {
 			let ok_diff = false;
@@ -98,7 +129,6 @@ export class PreguntaRespuestaComponent implements OnInit {
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
 
-								console.log(preg.difficulty)
 								ok_diff = true;
 							}
 						}
@@ -138,9 +168,10 @@ export class PreguntaRespuestaComponent implements OnInit {
 		else {
 			this.infoJuegoService.addIncorrecta();
 			this.incorrectas++;
-			if (this.infoJuegoService.getModoJuego() === 1) {
+			let modoJuego = this.infoJuegoService.getModoJuego();
+			if (modoJuego === 1 || modoJuego === 2) {
 				this.infoJuegoService.restarVida();
-			} // si es three strikes
+			} // si es three strikes ó categorías
 
 			// ANIMACION 
 			this.isDefault = false;

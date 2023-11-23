@@ -1,1 +1,49 @@
-<p>categorias works!</p>
+<div *ngIf="!categoria_elegida"  id="image-container-categories">
+    <div class="image-div">
+        <img src="../assets/img/music.jpg" (click)="comenzarCat('music')" alt="Music">
+    </div>
+    <div class="image-div">
+            <img src="../assets/img/sports.jpg"  (click)="comenzarCat('sports_and_leisure')" alt="Sports">
+    </div>
+    <div class="image-div">
+            <img src="../assets/img/film.jpg"  (click)="comenzarCat('film_and_tv')" alt="Film and TV">
+    </div>
+    <div class="image-div">
+            <img src="../assets/img/arts.jpg" (click)="comenzarCat('arts_and_literature')" alt="Arts and Literature">
+
+    </div>
+    <div class="image-div">
+            <img src="../assets/img/history.jpg" (click)="comenzarCat('history')" alt="History">
+    </div>
+    <div class="image-div">
+            <img src="../assets/img/society.jpg" (click)="comenzarCat('society_and_culture')" alt="Society and Culture">
+
+    </div>
+    <div class="image-div">
+
+            <img src="../assets/img/science.jpg" (click)="comenzarCat('science')" alt="Science">
+
+    </div>
+    <div class="image-div">
+
+            <img src="../assets/img/geography.jpg" (click)="comenzarCat('geography')" alt="Geography">
+
+    </div>
+    <div class="image-div">
+
+            <img src="../assets/img/food.jpg" (click)="comenzarCat('food_and_drink')" alt="Food and Drink">
+
+    </div>
+    <div class="image-div">
+
+            <img src="../assets/img/knowledge.jpg" (click)="comenzarCat('general_knowledge')" alt="General Knowledge">
+
+    </div>
+</div>
+<div *ngIf="categoria_elegida">
+    <br>
+    <p class = "info-superior" *ngIf="this.infoJuegoService.getVidas()>0">❤️  {{ this.infoJuegoService.getVidas() }}</p>
+    <br>
+    <app-pregunta-respuesta *ngIf="this.infoJuegoService.getVidas()>0"></app-pregunta-respuesta>
+    <app-modal-game-over *ngIf="this.infoJuegoService.getVidas()===0"></app-modal-game-over>
+</div>

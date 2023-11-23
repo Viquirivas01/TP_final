@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, Input } from '@angular/core';
+import { Component, OnInit, inject, Input, numberAttribute } from '@angular/core';
 import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
 @Component({
@@ -23,12 +23,14 @@ export class JuegoComponent implements OnInit{
   ngOnInit(){}
 
   comenzar(modo_seleccionado: number){
+    if (modo_seleccionado < 2) {
       this.infoJuegoService.setDificultadElegida(false);
-      this.infoJuegoService.setModoJuego(modo_seleccionado);
-      this.modo_juego = modo_seleccionado;
-      this.jugar=false;
-      this.visual=false;
-      console.log("Modo seleccionado: " + this.infoJuegoService.getModoJuego());
+    }
+      
+    this.infoJuegoService.setModoJuego(modo_seleccionado);
+    this.modo_juego = modo_seleccionado;
+    this.jugar=false;
+    this.visual=false;
   }
 
   finalizar(){
