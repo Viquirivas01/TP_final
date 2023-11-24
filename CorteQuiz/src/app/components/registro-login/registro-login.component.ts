@@ -148,7 +148,6 @@ export class RegistroLoginComponent implements OnInit {
 		let usuarioBuscado = this.usuariosService.getUsuarioRegistradoLogin(nuevoUsuarioLog.username_login, nuevoUsuarioLog.password_login);
 
 		if (usuarioBuscado !== undefined) {
-			console.log("Logueo exitoso");
 			this.usuarioActual = usuarioBuscado;
 			this.usuariosService.setUsuarioActual(usuarioBuscado);
 		}
@@ -196,35 +195,4 @@ export class RegistroLoginComponent implements OnInit {
 		}
 		return message;
 	}
-
-	/*
-	userExistsRegister(user_add: usuarioRegistrado): boolean { // getUsuarioRegistradoRegister
-		for (let user_compare of this.usuarioRegistradoList) {
-			if (user_add.username === user_compare.username || user_add.email === user_compare.email) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	userExistsLogin(user_log: usuarioLog): usuarioRegistrado { // getUsuarioRegistradoLogin
-		let user_devuelto = new usuarioRegistrado;
-		for (let user of this.usuarioRegistradoList) {
-			if (user_log.username_login === user.username && user_log.password_login === user.password) {
-				return user; // lo encontró
-			}
-		}
-		return user_devuelto;
-	}*/
-
-	/*isLogged(): boolean { // isLogged
-		if (this.usuarioActual.username === "") {
-			return false;
-		}
-		else {
-			return true;
-		}
-	} //chequear si hay un usuario en el sistema para cargarle los puntos (usuarioActual)
-  */
 }

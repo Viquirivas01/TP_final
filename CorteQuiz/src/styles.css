@@ -15,7 +15,7 @@ body {
 
 body {
     background:
-        linear-gradient(135deg, rgba(0, 54, 136, 1) 0%, rgba(0, 31, 78, 1)),
+        linear-gradient(135deg, rgba(0, 54, 136, .9) 0%, rgba(0, 31, 78, .9)),
         url('/assets/img/pattern.png') repeat;
     font-family: 'Trebuchet MS', sans-serif;
 }

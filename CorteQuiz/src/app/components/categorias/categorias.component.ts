@@ -39,7 +39,10 @@ export class CategoriasComponent {
       }, 500);
     }
     else {
-      this.terminado = true;
+      setTimeout(() => {
+        this.terminado = true;
+      }, 500)
+      
     }
   }
 }
