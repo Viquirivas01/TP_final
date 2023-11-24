@@ -13,6 +13,7 @@ export class JuegoComponent implements OnInit{
   jugar: boolean = true;
   visual: boolean = true;
   dificultad_elegida: boolean = true;
+  aboutUs: boolean = false; 
   
 
   constructor(private getNotificacion: InformacionJuegoService){
@@ -43,5 +44,10 @@ export class JuegoComponent implements OnInit{
   entrarPerfil() {
     this.jugar = !this.jugar;
     this.infoJuegoService.setPerfilAbierto(!this.infoJuegoService.isPerfilAbierto());
+  }
+
+  entrarAboutUs(){
+    this.aboutUs = !this.aboutUs;
+    this.jugar=!this.jugar;
   }
 }
