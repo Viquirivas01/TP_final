@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Route, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { UsuariosService } from './usuarios.service'; 
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
+import { UsuariosService } from './usuarios.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,17 +10,20 @@ import { UsuariosService } from './usuarios.service';
 export class noCreadoGuard implements CanActivate {
   constructor(
     private usuarioService: UsuariosService, 
-    private router: Router 
+    private router: Router
   ){  }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     console.log('Guard activado');
     if (this.usuarioService.isLoggedIn()) {
       return true; // Usuario autenticado, permite el acceso a la ruta
     } else {
       // Redirige al componente de inicio de sesión si el usuario no está autenticado
-      this.router.navigate(['/login']);
-      return false; // Impide el acceso a la ruta
+      // this.router.navigate(['/login']);
+      return this.router.parseUrl('/logIn'); // Impide el acceso a la ruta
     }
   }
 }

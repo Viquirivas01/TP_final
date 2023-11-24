@@ -122,7 +122,7 @@ export class RegistroLoginComponent implements OnInit {
 			
 		}
 		else {
-			console.log("|X| El usuario que se intentó cargar ya existe |X|");
+			alert("|X| El usuario que se intentó cargar ya existe |X|");
 		}
 		
 		
@@ -153,7 +153,7 @@ export class RegistroLoginComponent implements OnInit {
 			this.usuariosService.setUsuarioActual(usuarioBuscado);
 		}
 		else {
-			console.log("|X| El username o la contraseña no coinciden |X|");
+			alert("|X| El username o la contraseña no coinciden |X|");
 		}
 	}
 
