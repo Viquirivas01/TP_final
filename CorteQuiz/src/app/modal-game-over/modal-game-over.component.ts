@@ -7,7 +7,7 @@ import { UsuariosService } from 'src/app/usuarios.service';
   templateUrl: './modal-game-over.component.html',
   styleUrls: ['./modal-game-over.component.css']
 })
-export class ModalGameOverComponent {
+export class ModalGameOverComponent{
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
   
 	usuariosService: UsuariosService = inject(UsuariosService);
