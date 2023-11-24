@@ -9,8 +9,6 @@
 
 <div id="botones_modo_juego">
 
-    <app-about-us *ngIf="aboutUs"></app-about-us>
-    
     <img class="image-div" *ngIf="jugar" (click)="comenzar(0)" src="assets\img\time trial.jpg">      <!--Contrarreloj-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(1)" src="assets\img\three strikes.jpg">   <!--Vidas-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(2)" src="assets\img\categories.jpg">      <!--Categoria-->
@@ -23,5 +21,6 @@
     <app-categorias *ngIf="modo_juego == 2"></app-categorias>     <!-- Modo de juego categorias -->
     <app-multijugador *ngIf="modo_juego == 3"></app-multijugador> <!-- Modo de juego multijugador -->
 
+    <app-about-us *ngIf="infoJuegoService.isAboutUsAbierto()"></app-about-us>
     <app-perfil *ngIf="infoJuegoService.isPerfilAbierto()"></app-perfil>  <!-- Entra al perfil -->
 </div>

@@ -2,7 +2,7 @@ import {Component, OnInit, inject} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { usuarioLog } from 'src/app/models/usuarioLog';
 import { usuarioRegistrado } from 'src/app/models/usuarioRegistrado';
-import { UsuariosService } from 'src/app/usuarios.service';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-registro-login',

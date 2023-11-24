@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, Input, numberAttribute } from '@angular/core';
-import { InformacionJuegoService } from 'src/app/informacion-juego.service';
+import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
 
 @Component({
   selector: 'app-juego',
@@ -13,7 +13,6 @@ export class JuegoComponent implements OnInit{
   jugar: boolean = true;
   visual: boolean = true;
   dificultad_elegida: boolean = true;
-  aboutUs: boolean = false; 
   
 
   constructor(private getNotificacion: InformacionJuegoService){
@@ -42,12 +41,22 @@ export class JuegoComponent implements OnInit{
   }
 
   entrarPerfil() {
-    this.jugar = !this.jugar;
-    this.infoJuegoService.setPerfilAbierto(!this.infoJuegoService.isPerfilAbierto());
+    
+    if(!this.infoJuegoService.isAboutUsAbierto()) {
+      this.jugar=!this.jugar;
+    }
+    this.infoJuegoService.setAboutUsAbierto(false); // para evitar conflictos/errores
+    this.infoJuegoService.setPerfilAbierto(!this.infoJuegoService.isPerfilAbierto()); 
   }
 
   entrarAboutUs(){
-    this.aboutUs = !this.aboutUs;
-    this.jugar=!this.jugar;
+    //this.aboutUs = !this.aboutUs;
+    
+    if(!this.infoJuegoService.isPerfilAbierto()) {
+      this.jugar=!this.jugar;
+    }
+  
+    this.infoJuegoService.setPerfilAbierto(false); // para evitar conflictos/errores
+    this.infoJuegoService.setAboutUsAbierto(!this.infoJuegoService.isAboutUsAbierto());
   }
 }

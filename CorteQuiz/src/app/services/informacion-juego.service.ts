@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { usuarioRegistrado } from 'src/app/models/usuarioRegistrado';
-import { UsuariosService } from 'src/app/usuarios.service';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +31,10 @@ export class InformacionJuegoService {
   protected categoriaElegida: string;
   protected elegirCat: boolean; // si todavia no eligio categoria
   protected perfilAbierto: boolean;
+  protected aboutUsAbierto: boolean;
 
   constructor() {
+    this.aboutUsAbierto = false;
     this.perfilAbierto = false;
     this.categoriaElegida = "";
     this.dificultad = -1; // CAMBIAR
@@ -43,6 +45,14 @@ export class InformacionJuegoService {
     this.vidasRestantes = 3;
     this.dificultadElegida = true;
     this.elegirCat = false;
+  }
+
+  setAboutUsAbierto(abierto: boolean): void {
+    this.aboutUsAbierto = abierto;
+  }
+
+  isAboutUsAbierto(): boolean {
+    return this.aboutUsAbierto;
   }
 
   isPerfilAbierto(): boolean {
@@ -73,6 +83,8 @@ export class InformacionJuegoService {
     if (this.modoJuego === 2) {
       this.setElegirCat(true);
     }
+
+    this.setAboutUsAbierto(false);
     this.setPerfilAbierto(false);
     this.cargarDatosUsuarioActual();
     this.reiniciarDatos();

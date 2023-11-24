@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { usuarioRegistrado } from 'src/app/models/usuarioRegistrado';
-import { UsuariosService } from 'src/app/usuarios.service';
-import { InformacionJuegoService } from 'src/app/informacion-juego.service';
+import { UsuariosService } from 'src/app/services/usuarios.service';
+import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
 
 @Component({
   selector: 'app-perfil',

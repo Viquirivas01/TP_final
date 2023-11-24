@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 
-import { UsuariosService } from 'src/app/usuarios.service';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-root',
