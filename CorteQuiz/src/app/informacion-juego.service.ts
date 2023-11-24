@@ -53,6 +53,7 @@ export class InformacionJuegoService {
     this.perfilAbierto = abierto;
   }
 
+
   setElegirCat(elegido: boolean): void {
     this.elegirCat = elegido;
   }

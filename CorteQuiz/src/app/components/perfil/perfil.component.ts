@@ -8,11 +8,14 @@ import { UsuariosService } from 'src/app/usuarios.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent {
+
   usuariosService: UsuariosService = inject(UsuariosService);
 
   usuarioActual: usuarioRegistrado = this.usuariosService.getUsuarioActual();
 
   logOut(){
-   this.usuariosService.setUsuarioActual(new usuarioRegistrado);
+    console.log(this.usuarioActual);
+   this.usuariosService.setLogout();
+   console.log(this.usuarioActual);
   }
 }
