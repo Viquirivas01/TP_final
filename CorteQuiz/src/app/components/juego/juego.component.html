@@ -1,13 +1,16 @@
 <nav id="div-header">
     <img src = "/assets/img/user.png" *ngIf="visual" class="hub" (click)="entrarPerfil()">
     <h1 id="corte-quiz-titulo" (click)="infoJuegoService.notificarPartidaTerminada()">CORTE QUIZ</h1>
+    <img src="/assets/img/question-mark.png" *ngIf="visual" class="hub" (click)="entrarAboutUs()">
+    <!-- <img sr *ngIf="visual" class="hub" (click)="">?</img>
+    <p *ngIf="visual" class="hub" (click)=""">| About us</p> -->
 
 </nav>
 
 <div id="botones_modo_juego">
-<!--
-    <nav (click)="entrarPerfil()" *ngIf="visual">≡</nav> -->
 
+    <app-about-us *ngIf="aboutUs"></app-about-us>
+    
     <img class="image-div" *ngIf="jugar" (click)="comenzar(0)" src="assets\img\time trial.jpg">      <!--Contrarreloj-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(1)" src="assets\img\three strikes.jpg">   <!--Vidas-->
     <img class="image-div" *ngIf="jugar" (click)="comenzar(2)" src="assets\img\categories.jpg">      <!--Categoria-->

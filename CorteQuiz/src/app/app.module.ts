@@ -27,6 +27,7 @@ import { MatChipsModule } from '@angular/material/chips';
 
 import { usuarioLog } from 'src/app/models/usuarioLog';
 import { UsuariosService } from './usuarios.service';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UsuariosService } from './usuarios.service';
     CategoriasComponent,
     MultijugadorComponent,
     ElegirDificultadComponent,
-    ModalGameOverComponent
+    ModalGameOverComponent,
+    AboutUsComponent
   ],
   imports: [
     AppRoutingModule,
