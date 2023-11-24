@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
-import { AppComponent } from './app.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { JuegoComponent } from './components/juego/juego.component';
 import { MultijugadorComponent } from './components/multijugador/multijugador.component';
@@ -18,7 +16,6 @@ import { VidasComponent } from './vidas/vidas.component';
 import { noCreadoGuard } from './no-creado.guard';
 
 const routes: Routes = [
-  { path: 'app', component: AppComponent},
   { path: 'categorias', component: CategoriasComponent, canActivate: [noCreadoGuard] },
   { path: 'juego', component: JuegoComponent, canActivate: [noCreadoGuard] },
   { path: 'multijugador', component: MultijugadorComponent, canActivate: [noCreadoGuard] },
