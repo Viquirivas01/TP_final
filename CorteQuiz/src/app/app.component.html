@@ -1,10 +1,15 @@
-<app-registro-login *ngIf="!usuariosService.isLogged()"></app-registro-login>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corte Quiz</title>
+</head>
+<body>
+    <app-registro-login *ngIf="!usuariosService.isLogged()"></app-registro-login>
 
-<!-- *ngIf="!usuariosService.getUsuarioActual()" -->
     <app-juego *ngIf="usuariosService.isLogged()"></app-juego> 
 
-<br>
-<br>
-<br>
-<!-- <app-prueba-ver-usuarios ></app-prueba-ver-usuarios> -->
+</body>
+</html>
 

@@ -9,7 +9,7 @@ import { InformacionJuegoService } from 'src/app/informacion-juego.service';
 
 export class TimerComponent implements OnInit {
   tiempoString: string = ""; // Para que se muestren los 0
-  tiempo: number = 60;
+  tiempo: number = 61;
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
   continuar: boolean;
 
@@ -17,7 +17,7 @@ export class TimerComponent implements OnInit {
 
   ngOnInit(){
     this.continuar = false;
-    this.empezarTemporizador()
+    this.empezarTemporizador();
   }
 
   empezarTemporizador(){
