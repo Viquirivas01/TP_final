@@ -42,6 +42,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 
 	usuariosService: UsuariosService = inject(UsuariosService);
 	infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
+	verificandoRespuesta: boolean = false;
 
 	constructor() {}
 
@@ -79,8 +80,8 @@ export class PreguntaRespuestaComponent implements OnInit {
 								this.pregunta = preg.question["text"];
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
+								this.verificandoRespuesta = false;
 
-								console.log(preg.category)
 								ok_cat = true;
 							}
 						}
@@ -103,6 +104,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 						this.pregunta = data[0].question["text"];
 						this.respuestaCorrecta = data[0].correctAnswer;
 						this.desordenarRespuestas(data[0].incorrectAnswers);
+						this.verificandoRespuesta = false;
 						
 					}
 					else {
@@ -128,7 +130,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 								this.pregunta = preg.question["text"];
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
-
+								this.verificandoRespuesta = false;
 								ok_diff = true;
 							}
 						}
@@ -157,6 +159,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 	}
 
 	verificarRespuesta(respuestaElegida: string) {
+		this.verificandoRespuesta = true;
 		if (this.respuestaCorrecta === respuestaElegida) {
 			this.isDefault = false;
 			this.infoJuegoService.addCorrecta();

@@ -34,7 +34,6 @@ export class JuegoComponent implements OnInit{
   }
 
   finalizar(){
-    console.log("corre");
     this.modo_juego = -1;
     this.jugar=true;
     this.visual=true;
