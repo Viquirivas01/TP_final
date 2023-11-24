@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { UsuariosService } from 'src/app/usuarios.service';
-import { InformacionJuegoService } from 'src/app/informacion-juego.service';
+import { UsuariosService } from 'src/app/services/usuarios.service';
+import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
 
 import {
 	trigger,

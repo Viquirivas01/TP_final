@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { InformacionJuegoService } from 'src/app/informacion-juego.service';
-import { UsuariosService } from 'src/app/usuarios.service';
+import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-modal-game-over',
