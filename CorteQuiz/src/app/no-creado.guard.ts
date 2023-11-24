@@ -13,11 +13,11 @@ export class noCreadoGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     console.log('Guard activado');
-    if (this.usuarioService.isLoggedIn()) {
+    if (this.usuarioService.isLogged()) {
       return true; // Usuario autenticado, permite el acceso a la ruta
     } else {
       // Redirige al componente de inicio de sesión si el usuario no está autenticado
-      this.router.navigate(['/login']);
+      this.router.navigate(['/components/registro-login']);
       return false; // Impide el acceso a la ruta
     }
   }
