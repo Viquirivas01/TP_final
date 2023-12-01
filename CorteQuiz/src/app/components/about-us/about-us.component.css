@@ -2,8 +2,14 @@ ul{
     list-style-type: none;
 }
 
+p, a, li {
+    font-size: larger;
+    color: aliceblue;
+    text-decoration: none;
+}
+
 #aboutUs  {
-    display: colum;
+    display: column;
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
     padding: 15px;
@@ -30,4 +36,8 @@ h2 {
 
 footer{
     text-align: center;
+}
+
+img {
+    height: 20px;
 }
