@@ -3,8 +3,10 @@
 }
 
 #botones_modo_juego {
-    display:block;
-    text-align: center;    
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
 }
 
 .image-div img {
@@ -19,7 +21,6 @@
     margin: 25px;
     width: 220px;
     border-radius: 5px;
-    margin-top: 10%;
 }
 
 nav{
