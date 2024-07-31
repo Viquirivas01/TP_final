@@ -13,19 +13,21 @@ import { ModalGameOverComponent } from '../components/modal-game-over/modal-game
 import { VidasComponent } from '../components/vidas/vidas.component';
 
 import { noCreadoGuard } from '../guards/no-creado.guard';
+import { AboutUsComponent } from '../components/about-us/about-us.component';
 
 const routes: Routes = [
-  { path: 'categorias', component: CategoriasComponent, canActivate: [noCreadoGuard] },
-  { path: '', component: JuegoComponent, canActivate: [noCreadoGuard] },
-  { path: 'multijugador', component: MultijugadorComponent, canActivate: [noCreadoGuard] },
-  { path: 'perfil', component: PerfilComponent, canActivate: [noCreadoGuard] },
-  { path: 'preguntaRespuesta', component: PreguntaRespuestaComponent, canActivate: [noCreadoGuard] },
-  { path: 'registroLogin', component: RegistroLoginComponent},
-  { path: 'timer', component: TimerComponent, canActivate: [noCreadoGuard] },
-  { path: 'elegirDificultas', component: ElegirDificultadComponent, canActivate: [noCreadoGuard] },
-  { path: 'modalGameOver', component: ModalGameOverComponent, canActivate: [noCreadoGuard] },
-  { path: 'vidas', component: VidasComponent, canActivate: [noCreadoGuard] },
-  { path: '**', redirectTo: '', pathMatch: 'full'}
+  { path: 'categorias', component: CategoriasComponent },
+  { path: 'juego', component: JuegoComponent },
+  { path: 'multijugador', component: MultijugadorComponent },
+  { path: 'perfil', component: PerfilComponent },
+  { path: 'preguntaRespuesta', component: PreguntaRespuestaComponent },
+  { path: 'signup', component: RegistroLoginComponent},
+  { path: 'timer', component: TimerComponent },
+  { path: 'elegirDificultas', component: ElegirDificultadComponent },
+  { path: 'modalGameOver', component: ModalGameOverComponent },
+  { path: 'vidas', component: VidasComponent},
+  { path: 'about', component: AboutUsComponent},
+  { path: '**', redirectTo: 'juego', pathMatch: 'full'}
   
 ];
 

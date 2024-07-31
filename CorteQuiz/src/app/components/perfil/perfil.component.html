@@ -4,7 +4,9 @@
 
         <p><strong>Name: </strong>{{ usuarioActual.nombre + " " + usuarioActual.apellido}}</p>
         <p><strong>Email: </strong>{{ usuarioActual.email }}</p>
-        <button class = "botones" (click)="logOut()">Log Out</button>
+        <a routerLink="signup">
+            <button class = "botones"  (click)="logOut()" >Log Out</button>
+        </a>
     </div>
 
     <div class = "divs-perfil">

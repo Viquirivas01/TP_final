@@ -28,6 +28,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { usuarioLog } from 'src/app/models/usuarioLog';
 import { UsuariosService } from './services/usuarios.service';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     MatButtonModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatChipsModule
+    MatChipsModule,
+    FontAwesomeModule
   ],
   providers: [UsuariosService],
   bootstrap: [AppComponent]
