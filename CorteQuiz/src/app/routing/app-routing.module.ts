@@ -16,7 +16,7 @@ import { noCreadoGuard } from '../guards/no-creado.guard';
 
 const routes: Routes = [
   { path: 'categorias', component: CategoriasComponent, canActivate: [noCreadoGuard] },
-  { path: 'juego', component: JuegoComponent, canActivate: [noCreadoGuard] },
+  { path: '', component: JuegoComponent, canActivate: [noCreadoGuard] },
   { path: 'multijugador', component: MultijugadorComponent, canActivate: [noCreadoGuard] },
   { path: 'perfil', component: PerfilComponent, canActivate: [noCreadoGuard] },
   { path: 'preguntaRespuesta', component: PreguntaRespuestaComponent, canActivate: [noCreadoGuard] },
@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'elegirDificultas', component: ElegirDificultadComponent, canActivate: [noCreadoGuard] },
   { path: 'modalGameOver', component: ModalGameOverComponent, canActivate: [noCreadoGuard] },
   { path: 'vidas', component: VidasComponent, canActivate: [noCreadoGuard] },
+  { path: '**', redirectTo: '', pathMatch: 'full'}
   
 ];
 
