@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { usuarioRegistrado } from 'src/app/models/usuarioRegistrado';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -67,10 +68,10 @@ export class UsuariosService {
 		}
   }
 
-  isLoggedIn ():boolean{
-		const isLoggedIn = localStorage.getItem('1') !== null
-		console.log('usuario autenticado ', isLoggedIn)
-		return isLoggedIn
+  isLoggedIn(): Observable<boolean>{
+		const isLoggedIn = localStorage.getItem('1') !== null;
+		console.log('usuario autenticado ', isLoggedIn);
+		return of(isLoggedIn);
 	}
 
 }

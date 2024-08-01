@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class noCreadoGuard implements CanActivate {
+export class noCreadoGuard  {
   constructor(
     private usuarioService: UsuariosService, 
     private router: Router
@@ -22,8 +22,8 @@ export class noCreadoGuard implements CanActivate {
       return true; // Usuario autenticado, permite el acceso a la ruta
     } else {
       // Redirige al componente de inicio de sesión si el usuario no está autenticado
-      // this.router.navigate(['/login']);
-      return this.router.parseUrl('/logIn'); // Impide el acceso a la ruta
+      this.router.navigate(['/signup']);
+      return this.router.parseUrl('/signup'); // Impide el acceso a la ruta
     }
   }
 }

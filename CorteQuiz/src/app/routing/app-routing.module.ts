@@ -14,10 +14,11 @@ import { VidasComponent } from '../components/vidas/vidas.component';
 
 import { noCreadoGuard } from '../guards/no-creado.guard';
 import { AboutUsComponent } from '../components/about-us/about-us.component';
+import { notLoggedGuard } from '../guards/not-logged.guard';
 
 const routes: Routes = [
   { path: 'categorias', component: CategoriasComponent },
-  { path: 'juego', component: JuegoComponent },
+  { path: 'juego', component: JuegoComponent, canActivate: [notLoggedGuard]},
   { path: 'multijugador', component: MultijugadorComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'preguntaRespuesta', component: PreguntaRespuestaComponent },

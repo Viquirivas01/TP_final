@@ -10,6 +10,7 @@ html,
 body {
     height: 100%;
     margin: 0;
+    color: aliceblue;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
         linear-gradient(135deg, rgba(0, 54, 136, .9) 0%, rgba(0, 31, 78, .9)),
         url('/assets/img/pattern.png') repeat;
     font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
 }
 
 body::after {
@@ -82,10 +84,6 @@ body::after {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-body {
-    margin: 0;
 }
 
 .info-superior {
