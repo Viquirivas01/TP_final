@@ -69,7 +69,7 @@ export class UsuariosService {
   }
 
   isLoggedIn(): Observable<boolean>{
-		const isLoggedIn = localStorage.getItem('1') !== null;
+		const isLoggedIn = this.isLogged();
 		console.log('usuario autenticado ', isLoggedIn);
 		return of(isLoggedIn);
 	}
