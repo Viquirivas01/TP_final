@@ -8,22 +8,17 @@
 <body>
     <nav id="div-header">
     
-        <a routerLink="perfil">
+        <a routerLink="profile">
             <fa-icon [icon]="faUser" size="2x"></fa-icon>
         </a>
-        <a routerLink="juego">
+        <a routerLink="game">
             <h1 id="corte-quiz-titulo" (click)="infoJuegoService.notificarPartidaTerminada()">CORTE QUIZ</h1> <!--Funciona sólo cuando esté en el menu principal-->
         </a>
         <a routerLink="about">
             <fa-icon [icon]="faQuestion" size="2x"></fa-icon>
         </a>
     </nav>
-    <!--
-    <app-registro-login *ngIf="!usuariosService.isLogged()"></app-registro-login>
 
-    <app-juego *ngIf="usuariosService.isLogged()"></app-juego> 
-    <app-registro-login *ngIf="!usuariosService.isLogged()"></app-registro-login>
-    -->
     <router-outlet></router-outlet>
 </body>
 </html>

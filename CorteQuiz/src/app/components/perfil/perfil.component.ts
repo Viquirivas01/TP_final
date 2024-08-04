@@ -15,7 +15,6 @@ export class PerfilComponent {
   usuarioActual: usuarioRegistrado = this.usuariosService.getUsuarioActual();
 
   logOut(){
-    this.infoJuegoService.setPerfilAbierto(false);
     this.usuariosService.setUsuarioActual(new usuarioRegistrado);
   }
 }

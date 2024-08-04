@@ -7,27 +7,23 @@ import { MultijugadorComponent } from '../components/multijugador/multijugador.c
 import { PerfilComponent } from '../components/perfil/perfil.component';
 import { PreguntaRespuestaComponent } from '../components/pregunta-respuesta/pregunta-respuesta.component';
 import { RegistroLoginComponent } from '../components/registro-login/registro-login.component';
-import { TimerComponent } from '../components/timer/timer.component';
 import { ElegirDificultadComponent } from '../components/elegir-dificultad/elegir-dificultad.component';
-import { ModalGameOverComponent } from '../components/modal-game-over/modal-game-over.component';
-import { VidasComponent } from '../components/vidas/vidas.component';
-
 import { AboutUsComponent } from '../components/about-us/about-us.component';
 import { notLoggedGuard } from '../guards/not-logged.guard';
+import { TimerComponent } from '../components/timer/timer.component';
+import { VidasComponent } from '../components/vidas/vidas.component';
 
 const routes: Routes = [
-  { path: 'categorias', component: CategoriasComponent },
-  { path: 'juego', component: JuegoComponent, canActivate: [notLoggedGuard]},
-  { path: 'multijugador', component: MultijugadorComponent },
-  { path: 'perfil', component: PerfilComponent, canActivate: [notLoggedGuard] },
-  { path: 'preguntaRespuesta', component: PreguntaRespuestaComponent },
-  { path: 'signup', component: RegistroLoginComponent},
-  { path: 'timer', component: TimerComponent },
-  { path: 'elegirDificultas', component: ElegirDificultadComponent },
-  { path: 'modalGameOver', component: ModalGameOverComponent },
-  { path: 'vidas', component: VidasComponent},
-  { path: 'about', component: AboutUsComponent},
-  { path: '**', redirectTo: 'juego', pathMatch: 'full'}
+  { path: 'categories', component: CategoriasComponent , canActivate: [notLoggedGuard]},
+  { path: 'multiplayer', component: MultijugadorComponent, canActivate: [notLoggedGuard] },
+  { path: 'time-trial', component: TimerComponent, canActivate: [notLoggedGuard] },
+  { path: 'strikes', component: VidasComponent, canActivate: [notLoggedGuard] },
+  { path: 'game', component: JuegoComponent, canActivate: [notLoggedGuard]},
+  { path: 'profile', component: PerfilComponent, canActivate: [notLoggedGuard] },
+  { path: 'signup', component: RegistroLoginComponent, },
+  { path: 'elegirDificultad', component: ElegirDificultadComponent , canActivate: [notLoggedGuard]},
+  { path: 'about', component: AboutUsComponent, canActivate: [notLoggedGuard]},
+  { path: '**', redirectTo: 'game', pathMatch: 'full'}
   
 ];
 
