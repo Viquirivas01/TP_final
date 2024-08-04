@@ -40,23 +40,4 @@ export class JuegoComponent implements OnInit{
     this.infoJuegoService.setDificultadElegida(true);
   }
 
-  entrarPerfil() {
-    
-    if(!this.infoJuegoService.isAboutUsAbierto()) {
-      this.jugar=!this.jugar;
-    }
-    this.infoJuegoService.setAboutUsAbierto(false); // para evitar conflictos/errores
-    this.infoJuegoService.setPerfilAbierto(!this.infoJuegoService.isPerfilAbierto()); 
-  }
-
-  entrarAboutUs(){
-    //this.aboutUs = !this.aboutUs;
-    
-    if(!this.infoJuegoService.isPerfilAbierto()) {
-      this.jugar=!this.jugar;
-    }
-  
-    this.infoJuegoService.setPerfilAbierto(false); // para evitar conflictos/errores
-    this.infoJuegoService.setAboutUsAbierto(!this.infoJuegoService.isAboutUsAbierto());
-  }
 }
