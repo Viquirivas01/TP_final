@@ -5,6 +5,9 @@
 .container_q_a {
     display: grid;
     grid-template-rows: 1fr 1fr;
+
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* ******************************* */
@@ -24,6 +27,8 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
     font-size: 30px;
+
+    padding: 20px;
 }
 
 #pregunta {
@@ -38,13 +43,21 @@
 /* RESPUESTA */
 #respuestas {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
     grid-template-rows: 1fr 1fr;
+
+}
+
+#respuestas > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .respuesta_btn {
     width: 80%;
     height: auto;
+
 
     border-radius: 5px;
     border: none;
@@ -53,6 +66,7 @@
     padding: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 
     font-size: x-large;
 }
