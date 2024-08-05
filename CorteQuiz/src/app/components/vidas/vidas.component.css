@@ -6,3 +6,11 @@ p {
     text-align: center;
     margin: 3rem;
 }
+.game-container {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
