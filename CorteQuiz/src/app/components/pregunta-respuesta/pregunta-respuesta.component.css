@@ -1,16 +1,67 @@
-#cuadro_q_a {
-    display: inline-block;
-    padding-top: 2px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    border: none;
+/* ************** */
+/*   CONTAINER    */
+/* ************** */
+
+.container_q_a {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+/* ******************************* */
+/*      PREGUNTAS Y RESPUESTAS     */
+/* ******************************* */
+
+/* PREGUNTA */
+
+.cuadro_q_a {
+    text-align: center;
+    width: auto;
+
+
     border-radius: 10px;
     background: linear-gradient(135deg, #003688 0%, #001f4e 100%);
     color: aliceblue;
-    text-align: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    font-size: 30px;
 }
+
+#pregunta {
+    padding-top: 15px;
+
+    margin: auto;
+    max-width: 40rem;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+/* RESPUESTA */
+#respuestas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.respuesta_btn {
+    width: 80%;
+    height: auto;
+
+    border-radius: 5px;
+    border: none;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-size: x-large;
+}
+
+
+
+/* ************** */
+/*  ESTADISTICAS  */
+/* ************** */
 
 #estadisticas_q_a {
     display: flex;
@@ -22,22 +73,4 @@
 .texto-respuestas-estadisticas {
     font-size: 25px;
     padding: 10px;
-}
-
-#pregunta {
-    font-size: 25px;
-}
-
-.respuesta {
-    border-radius: 5px;
-    border: none;
-    color: aliceblue;
-    margin-top: 10px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-li {
-    list-style-type: none;
 }

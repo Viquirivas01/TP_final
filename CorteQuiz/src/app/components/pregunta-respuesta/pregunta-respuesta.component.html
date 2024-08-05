@@ -1,20 +1,41 @@
-<div id="cuadro_q_a">
-    <br>
-    <p id="pregunta">{{ pregunta }}</p>
-    <ul>
-        <li *ngFor="let respuesta of respuestasDesordenadas">
-            <button [disabled]="verificandoRespuesta" class="respuesta" [@mostrarCorrecta]="isDefault ? 'default' : getCorrectaIncorrecta(respuesta)"
-                (click)="verificarRespuesta(respuesta)">
-                {{respuesta}}
-            </button>
-        </li>
-    </ul>
-</div>
+<div class="container_q_a">
+        
 
-<div id="estadisticas_q_a">
-    <ul>
-        <p class="texto-respuestas-estadisticas">✅ Correct answers: {{ this.correctas }}</p>
-        <p class="texto-respuestas-estadisticas">❌ Incorrect answers: {{ this.incorrectas}} </p>
-        <p class="texto-respuestas-estadisticas">❔ Total questions answered: {{ this.preguntasTotales}} </p>
-    </ul>
+    <div class="cuadro_q_a">
+        
+        <div id="pregunta">
+            <p >{{ pregunta }}</p>
+
+        </div>
+        <div id="respuestas">
+
+            <div *ngFor="let respuesta of respuestasDesordenadas">
+                <button [disabled]="verificandoRespuesta" class="respuesta_btn" [@mostrarCorrecta]="isDefault ? 'default' : getCorrectaIncorrecta(respuesta)"
+                    (click)="verificarRespuesta(respuesta)">
+                    {{respuesta}}
+                </button>
+            </div>
+
+            <!--
+            <ul>
+                <li *ngFor="let respuesta of respuestasDesordenadas">
+                    <button [disabled]="verificandoRespuesta" class="respuesta_btn" [@mostrarCorrecta]="isDefault ? 'default' : getCorrectaIncorrecta(respuesta)"
+                        (click)="verificarRespuesta(respuesta)">
+                        {{respuesta}}
+                    </button>
+                </li>
+            </ul>
+            -->
+        </div>
+    </div>
+
+    <div id="estadisticas_q_a">
+        <ul>
+            <p class="texto-respuestas-estadisticas">✅ Correct answers: {{ this.correctas }}</p>
+            <p class="texto-respuestas-estadisticas">❌ Incorrect answers: {{ this.incorrectas}} </p>
+            <p class="texto-respuestas-estadisticas">❔ Total questions answered: {{ this.preguntasTotales}} </p>
+        </ul>
+    </div>
+
+
 </div>
