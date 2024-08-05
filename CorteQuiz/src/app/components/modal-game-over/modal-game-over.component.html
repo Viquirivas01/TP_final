@@ -6,6 +6,8 @@
         <p class="subtitle">❔ Total questions answered: {{ infoJuegoService.getPreguntasTotales() }}</p>
         <p class="subtitle">🏆 High score: {{ getHighScore() }}</p>
 
-        <button class = "botones" (click)="infoJuegoService.notificarPartidaTerminada()">OK</button>
+        <a routerLink="game">
+            <button class = "botones" (click)="infoJuegoService.notificarPartidaTerminada()">OK</button>
+        </a>
     </div>
 </div>
