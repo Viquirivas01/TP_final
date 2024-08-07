@@ -41,11 +41,16 @@
 }
 
 /* RESPUESTA */
+
+
 #respuestas {
     display: grid;
     grid-template-columns: repeat(2, minmax(160px, 1fr));
     grid-template-rows: 1fr 1fr;
 
+    align-items: center;
+
+    
 }
 
 #respuestas > div {
@@ -87,4 +92,17 @@
 .texto-respuestas-estadisticas {
     font-size: 25px;
     padding: 10px;
+}
+
+@media (max-width: 550px) {
+    #respuestas {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        grid-template-rows: 1fr 1fr;
+    
+        align-items: center;
+    
+        
+    }
+    
 }
