@@ -9,9 +9,6 @@ import { InformacionJuegoService } from 'src/app/services/informacion-juego.serv
 export class JuegoComponent implements OnInit{
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
-  modo_juego: number = -1;
-  jugar: boolean = true;
-  visual: boolean = true;
   dificultad_elegida: boolean = true;
   
 
@@ -28,15 +25,10 @@ export class JuegoComponent implements OnInit{
     }
       
     this.infoJuegoService.setModoJuego(modo_seleccionado);
-    this.modo_juego = modo_seleccionado;
-    this.jugar=false;
-    this.visual=false;
+
   }
 
   finalizar(){
-    this.modo_juego = -1;
-    this.jugar=true;
-    this.visual=true;
     this.infoJuegoService.setDificultadElegida(true);
   }
 
