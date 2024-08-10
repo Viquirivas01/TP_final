@@ -11,12 +11,13 @@ export class TimerComponent implements OnInit {
   tiempoString: string = ""; // Para que se muestren los 0
   tiempo: number = 61;
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
-  continuar: boolean;
-
+  
   constructor(){}
 
   ngOnInit(){
-    this.continuar = false;
+    this.infoJuegoService.setDificultadElegida(false); // Promptea que elija dificultad
+    this.infoJuegoService.setModoJuego(0); // Le avisa que es el modo de juego de Time Trial
+    
     this.empezarTemporizador();
   }
 
