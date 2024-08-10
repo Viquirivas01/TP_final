@@ -1,5 +1,6 @@
-<div *ngIf="!categoria_elegida"  id="image-container-categories">
-    <div class="image-div">
+<div class="categorias-container">
+    
+    <div class="cats-div" *ngIf="!categoria_elegida">
         <img src="../assets/img/music.jpg" (click)="comenzarCat('music')" alt="Music">
         <img src="../assets/img/sports.jpg"  (click)="comenzarCat('sport_and_leisure')" alt="Sports">
         <img src="../assets/img/film.jpg"  (click)="comenzarCat('film_and_tv')" alt="Film and TV">
@@ -11,12 +12,14 @@
         <img src="../assets/img/food.jpg" (click)="comenzarCat('food_and_drink')" alt="Food and Drink">
         <img src="../assets/img/knowledge.jpg" (click)="comenzarCat('general_knowledge')" alt="General Knowledge">
     </div>
-</div>
-<div *ngIf="categoria_elegida">
-    <br>
-    <br>
-    <p class = "info-superior" *ngIf="this.infoJuegoService.getVidas()>0">🩵 x {{ this.infoJuegoService.getVidas() }}</p>
-    <br>
-    <app-pregunta-respuesta *ngIf="!terminado"></app-pregunta-respuesta>
-    <app-modal-game-over *ngIf="terminado"></app-modal-game-over>
+    
+    <div *ngIf="categoria_elegida">
+        <br>
+        <br>
+        <p class = "info-superior" *ngIf="this.infoJuegoService.getVidas()>0">🩵 x {{ this.infoJuegoService.getVidas() }}</p>
+        <br>
+        <app-pregunta-respuesta *ngIf="!terminado"></app-pregunta-respuesta>
+        <app-modal-game-over *ngIf="terminado"></app-modal-game-over>
+    </div>
+
 </div>

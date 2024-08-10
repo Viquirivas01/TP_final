@@ -15,6 +15,9 @@ export class VidasComponent implements OnInit{
   constructor() {}
 
   ngOnInit(): void {
+    this.infoJuegoService.setDificultadElegida(false); // Promptea que elija dificultad
+    this.infoJuegoService.setModoJuego(1); // Le avisa que es el modo de juego de Three Strikes
+
     this.terminado = false;
     this.vidas = 3;
     this.infoJuegoService.setVidas();

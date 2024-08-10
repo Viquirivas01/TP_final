@@ -2,5 +2,5 @@
 <div *ngIf="infoJuegoService.getDificultadElegida()">
     <p class = "info-superior" *ngIf="tiempo>0"> ⏱️ 00:{{ tiempoString }}</p>
     <app-pregunta-respuesta *ngIf="tiempo>0"></app-pregunta-respuesta>
-    <app-modal-game-over *ngIf="tiempo===0"></app-modal-game-over>
+    <app-modal-game-over *ngIf="tiempo<=0"></app-modal-game-over>
 </div>

@@ -6,8 +6,9 @@ p {
     text-align: center;
     margin: 3rem;
 }
+
 .game-container {
-    height: 100%;
+    height: 90vh;
 
     display: flex;
     flex-direction: column;

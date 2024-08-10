@@ -9,13 +9,17 @@ p, a, li {
 }
 
 #aboutUs  {
-    display: column;
+    display: flex;
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
+    
+    flex-direction: column;
+    align-content: center; 
+    justify-content: center; 
+
     padding: 15px;
     margin-top: 5%;
-    align-items: center; 
-    justify-content: center; 
+    width: 100%;
 }
 
 .divs-perfil {
