@@ -132,6 +132,8 @@ export class PreguntaRespuestaComponent implements OnInit {
 								this.desordenarRespuestas(preg.incorrectAnswers);
 								this.verificandoRespuesta = false;
 								ok_diff = true;
+
+								console.log(preg.difficulty);
 							}
 						}
 					}
