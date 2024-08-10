@@ -9,7 +9,6 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 })
 export class ModalGameOverComponent{
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
-  
 	usuariosService: UsuariosService = inject(UsuariosService);
 
   getHighScore(): number {

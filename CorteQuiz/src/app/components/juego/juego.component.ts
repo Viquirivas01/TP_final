@@ -7,27 +7,6 @@ import { InformacionJuegoService } from 'src/app/services/informacion-juego.serv
   styleUrls: ['./juego.component.css']
 })
 export class JuegoComponent implements OnInit{
-  infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
-  
-
-  constructor(private getNotificacion: InformacionJuegoService){
-    this.getNotificacion.partidaTerminada$.subscribe(() => {
-      //this.finalizar();
-     });
-  }
   ngOnInit(){}
-
-  /*
-  comenzar(modo_seleccionado: number){
-    if (modo_seleccionado < 2) {
-      this.infoJuegoService.setDificultadElegida(false);
-    }
-
-  }
-  
-  finalizar(){
-    this.infoJuegoService.setDificultadElegida(true);
-  }
-    */
 
 }

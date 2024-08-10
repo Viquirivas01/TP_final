@@ -18,9 +18,9 @@ export class InformacionJuegoService {
                                   3 -> Multijugador */
 
   protected dificultad: number; /* -1 -> Aleatorio
-                                   0 -> Easy
-                                   1 -> Medium
-                                   2 -> Hard */
+                                    0 -> Easy
+                                    1 -> Medium
+                                    2 -> Hard */
 
   protected preguntasCorrectas: number;   // TODOS modos
   protected preguntasIncorrectas: number; // TODOS modos menos VIDAS
@@ -29,7 +29,7 @@ export class InformacionJuegoService {
 
   protected dificultadElegida: boolean; // si ya se eligió una dificultad
   protected categoriaElegida: string;
-  protected elegirCat: boolean; // si todavia no eligio categoria
+  protected elegirCat: boolean;         // si todavia no eligio categoria
 
   constructor() {
     this.categoriaElegida = "";
