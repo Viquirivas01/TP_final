@@ -1,4 +1,4 @@
-p {
+.game-container p {
     font: "roboto", sans-serif;
     display: flex;
     flex-direction: column;

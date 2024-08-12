@@ -1,4 +1,4 @@
-#perfil  {
+/*#perfil  {
     display: flex;
     font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
@@ -22,4 +22,159 @@ h1{
 
 h3 {
     font-family: "Good Times";
+}*/
+h3 {
+    font-family: "Good Times";
+    font-size: x-large;
+}
+
+/* PERFIL CONTAINER*/
+
+.perfil-container {
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PERFIL GRID */
+
+.perfil {
+    width: 90vw;
+
+    display: grid;
+    grid-template-columns: repeat(6, minmax(130px, 1fr));
+    grid-auto-rows: 1fr;
+
+    gap: 2rem;
+
+}
+
+.perfil > div:nth-child(1) {
+    grid-row: 1 / 2;
+    grid-column: 1 / span 3;
+}
+
+.perfil > div:nth-child(2) {
+    grid-row: 1 / 2;
+    grid-column: 4 / -1;
+}
+
+.perfil > div:nth-child(3) {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+}
+
+.perfil > div:nth-child(4) {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 2;
+}
+
+.perfil > div:nth-child(5) {
+    grid-row: 2 / span 1;
+    grid-column: 5 / span 2;
+}
+
+
+
+/* PERFIL CHILDREN STYLE */
+
+.perfil > div {
+    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
+
+    border-radius: 15px;
+    filter: drop-shadow(2px 2px 15px rgba(2, 0, 21, 0.466));
+
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ######################################## */
+/* ############# DIVS DESIGNS ############# */
+/* ######################################## */
+
+/* TOTAL STATS */
+
+.total-stats {
+    height: 68%;
+
+    overflow: hidden;
+}
+
+.total-stats img {
+    display: block;
+    width: 6.9rem;
+    opacity: 30%;
+
+    translate: 380% -15%;
+    rotate: 13deg;
+}
+
+/* USER */
+
+.user-profile {
+    height: 68%;
+
+    overflow: hidden;
+}
+
+.user-profile img {
+    display: block;
+    width: 6.6rem;
+    opacity: 30%;
+
+    translate: 400% -35%;
+    rotate: 20deg;
+}
+
+/* THREE STRIKES */
+
+.three-strikes-stats {
+    height: 68%;
+
+    overflow: hidden;
+}
+
+.three-strikes-stats img {
+    display: block;
+    width: 6.6rem;
+    opacity: 30%;
+
+    translate: 210% -15%;
+    rotate: 20deg;
+}
+
+/* TIME TRIAL */
+
+.time-trial-stats {
+    height: 68%;
+
+    overflow: hidden;
+}
+
+.time-trial-stats img {
+    display: block;
+    width: 6.6rem;
+    opacity: 40%;
+
+    translate: 210% -30%;
+    rotate: 20deg;
+}
+
+/* CATEGORIES */
+
+.categories-stats {
+    height: 68%;
+
+    overflow: hidden;
+}
+
+.categories-stats img {
+    display: block;
+    width: 6.6rem;
+    opacity: 40%;
+
+    translate: 210% -30%;
+    rotate: 20deg;
 }
