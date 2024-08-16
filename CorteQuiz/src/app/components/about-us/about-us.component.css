@@ -1,4 +1,62 @@
-ul{
+/* ************** */
+/* MAIN CONTAINER */
+/* ************** */
+
+/* MAIN CONTAINER */
+.main-container {
+    height: 90%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ABOUT CONTAINER */
+.about-container {
+    width: 90vw;
+    gap: 2rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    grid-template-rows: 1fr;
+}
+
+/* CHILDREN POSITION AND STYLE */
+
+.about-container > div:nth-child(1) {
+    grid-column: 1 / 4;
+}
+
+.about-container > div:nth-child(2) {
+    grid-column: 4 / -1;
+}
+
+.about-container > div {
+    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
+
+    border-radius: 15px;
+    filter: drop-shadow(2px 2px 15px rgba(2, 0, 21, 0.466));
+
+    padding: 2rem;
+    text-align: center;
+}
+
+/* ********************* */
+/* HOW TO PLAY CONTAINER */
+/* ********************* */
+
+
+
+
+
+
+
+/* ********************* */
+/*  ABOUT US CONTAINER   */
+/* ********************* */
+
+/*ul{
     list-style-type: none;
 }
 
@@ -44,4 +102,4 @@ footer{
 
 img {
     height: 20px;
-}
+}*/

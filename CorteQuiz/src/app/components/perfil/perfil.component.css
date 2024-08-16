@@ -3,7 +3,9 @@ h3 {
     font-size: x-large;
 }
 
-/* PERFIL CONTAINER*/
+/* **************** */
+/* PERFIL CONTAINER */
+/* **************** */
 
 .perfil-container {
     height: 90%;
@@ -13,7 +15,9 @@ h3 {
     align-items: center;
 }
 
-/* PERFIL GRID */
+/* **************** */
+/*   PERFIL GRID    */
+/* **************** */
 
 .perfil {
     width: 90vw;
@@ -161,7 +165,9 @@ h3 {
     z-index: 3;
 }
 
+/* ####################################### */
 /* ############### BUTTONS ############### */
+/* ####################################### */
 
 button {
     width: 40%;
