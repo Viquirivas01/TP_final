@@ -16,7 +16,7 @@
             <h3> Total Stats </h3>
             <p><strong>Played Games: </strong>{{ usuarioActual.partidas_jugadas_cr + usuarioActual.partidas_jugadas_v + usuarioActual.partidas_jugadas_cat }}</p>
             <p><strong>Right answers: </strong>{{ usuarioActual.preguntas_correctas_cr + usuarioActual.preguntas_correctas_v + usuarioActual.preguntas_correctas_cat}}</p>
-            <p><strong>Ratio: </strong>{{(usuarioActual.partidas_jugadas_cr + usuarioActual.partidas_jugadas_v + usuarioActual.partidas_jugadas_cat ) / (usuarioActual.preguntas_correctas_cr + usuarioActual.preguntas_correctas_v + usuarioActual.preguntas_correctas_cat) + " right answer per game"}}</p>
+            <p><strong>Average: </strong>{{(((usuarioActual.preguntas_correctas_cr + usuarioActual.preguntas_correctas_v + usuarioActual.preguntas_correctas_cat) / (usuarioActual.partidas_jugadas_cr + usuarioActual.partidas_jugadas_v + usuarioActual.partidas_jugadas_cat ) ) | number) + " right answer per game"}}</p>
             <img src="../../assets/img/hashtag-icon.png" >
         </div>
     

@@ -21,6 +21,14 @@
     gap: 20px;
 }
 
+.cats-div > img:nth-child(9) {
+    grid-column: 2 / 3;
+}
+
+.cats-div > img:nth-child(10) {
+    grid-column: 3 / 4;
+}
+
 .cats-div > img {
     max-width: 100%;
     height: auto;

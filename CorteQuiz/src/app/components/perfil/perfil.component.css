@@ -1,34 +1,11 @@
-/*#perfil  {
-    display: flex;
-    font-family: 'Trebuchet MS', sans-serif;
-    text-align: center;
-    padding: 15px;
-    margin-top: 11%;
-    align-items: center; 
-    justify-content: center; 
-}
-
-.divs-perfil {
-    text-align: center;
-    transition: transform 0.3s, border 0.3s;
-    margin: 10px;
-    width: 220px;
-    border-radius: 5px;
-}
-
-h1{
-    margin-top: 2%;
-}
-
-h3 {
-    font-family: "Good Times";
-}*/
 h3 {
     font-family: "Good Times";
     font-size: x-large;
 }
 
-/* PERFIL CONTAINER*/
+/* **************** */
+/* PERFIL CONTAINER */
+/* **************** */
 
 .perfil-container {
     height: 90%;
@@ -38,17 +15,20 @@ h3 {
     align-items: center;
 }
 
-/* PERFIL GRID */
+/* **************** */
+/*   PERFIL GRID    */
+/* **************** */
 
 .perfil {
     width: 90vw;
 
     display: grid;
-    grid-template-columns: repeat(6, minmax(130px, 1fr));
+    grid-template-columns: repeat(6, minmax(133px, 600px));
     grid-auto-rows: 1fr;
 
     gap: 2rem;
 
+    z-index: 1;
 }
 
 .perfil > div:nth-child(1) {
@@ -105,9 +85,9 @@ h3 {
 .total-stats img {
     display: block;
     width: 6.9rem;
-    opacity: 30%;
+    opacity: 20%;
 
-    translate: 380% -15%;
+    translate: calc(100vw / 3) -15%;
     rotate: 13deg;
 }
 
@@ -117,15 +97,19 @@ h3 {
     height: 68%;
 
     overflow: hidden;
+
+    z-index: 2;
 }
 
 .user-profile img {
     display: block;
     width: 6.6rem;
-    opacity: 30%;
+    opacity: 20%;
 
-    translate: 400% -35%;
+    translate: calc(100vw / 3) -35%;
     rotate: 20deg;
+
+    z-index: 1;
 }
 
 /* THREE STRIKES */
@@ -139,9 +123,9 @@ h3 {
 .three-strikes-stats img {
     display: block;
     width: 6.6rem;
-    opacity: 30%;
+    opacity: 20%;
 
-    translate: 210% -15%;
+    translate: calc(100vw / 5.2) -15%;
     rotate: 20deg;
 }
 
@@ -156,9 +140,9 @@ h3 {
 .time-trial-stats img {
     display: block;
     width: 6.6rem;
-    opacity: 40%;
+    opacity: 26%;
 
-    translate: 210% -30%;
+    translate: calc(100vw / 5.2) -30%;
     rotate: 20deg;
 }
 
@@ -173,8 +157,33 @@ h3 {
 .categories-stats img {
     display: block;
     width: 6.6rem;
-    opacity: 40%;
+    opacity: 20%;
 
-    translate: 210% -30%;
+    translate: calc(100vw / 5.2) -30%;
     rotate: 20deg;
+
+    z-index: 3;
+}
+
+/* ####################################### */
+/* ############### BUTTONS ############### */
+/* ####################################### */
+
+button {
+    width: 40%;
+    height: auto;
+
+
+    border-radius: 5px;
+    border: none;
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+
+    font-size: large;
+
+    z-index: 7;
 }
