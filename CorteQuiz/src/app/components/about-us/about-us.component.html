@@ -5,25 +5,70 @@
             <div class="how-to-title">
                 <h2>How to Play</h2>
             </div>
+            
+            <div class="game-mode-container">
+                
+                <!-- TIME TRIAL -->
+                <div>
+                    <h3>Time Trial</h3>
+                </div>
+                <div>
+                    <p>You got 60 seconds to answer as many questions as you can.</p>
+                </div>
+                <div>
+                    <img src="../../assets/img/time-trial-icon.png">
+                </div>
 
 
-            <div class="time-trial-exp">
-                <h3>Time Trial</h3>
-                <p>You got 60 seconds to answer as many questions as you can.</p>
-                <img src="../../assets/img/time-trial-icon.png">
+                <!-- THREE STRIKES -->
+                <div>
+                    <h3>Three Strikes</h3>
+                </div>
+                <div>
+                    <p>You got 3 lives, answer poorly 3 times and you're out!</p>
+                </div>
+                <div>
+                    <img src="../../assets/img/three-strikes-icon.png">
+                </div>
+
+
+                <!-- CATEGORIES -->
+                <div>
+                    <h3>Categories</h3>
+                </div>
+                <div>
+                    <p>You got 5 lives to answer as many questions as you can in the category that you choose
+                </div>
+                <div>
+                    <img src="../../assets/img/categories-icon.png">
+                </div>
+            
             </div>
 
-            <div class="three-strikes-exp">
-                <h3>Three Strikes</h3>
-                <p>You got 3 lives, answer poorly 3 times and you're out!</p>
-                <img src="../../assets/img/three-strikes-icon.png">
-            </div>
-
-            <div class="categories-exp">
-                <h3>Categories</h3>
-                <p>You got 5 lives to answer as many questions as you can before running out of lives in the category that you choose
-                <img src="../../assets/img/categories-icon.png">
-            </div>
+            <!-- 
+                <div class="game-mode-container">
+    
+                    <div class="time-trial-exp">
+                        <h3>Time Trial</h3>
+                        <p>You got 60 seconds to answer as many questions as you can.</p>
+                        <img src="../../assets/img/time-trial-icon.png">
+                    </div>
+        
+                    <div class="three-strikes-exp">
+                        <h3>Three Strikes</h3>
+                        <p>You got 3 lives, answer poorly 3 times and you're out!</p>
+                        <img src="../../assets/img/three-strikes-icon.png">
+                    </div>
+        
+                    <div class="categories-exp">
+                        <h3>Categories</h3>
+                        <p>You got 5 lives to answer as many questions as you can before running out of lives in the category that you choose
+                        <img src="../../assets/img/categories-icon.png">
+                    </div>
+    
+                </div>
+            -->
+                
 
         </div>
     
@@ -38,24 +83,25 @@
 
                 <p>
                     <a href="https://www.linkedin.com/in/malena-bridi-1b6b3b291/">
-                        <img src="../../assets/img/linkedin.png"> 
+                        <!--<i class="fa-brands fa-linkedin" size="2x" style="color: #ffffff;" >Malena Bridi</i>-->
+                        <fa-icon [icon]="faLinkedin" size="2x" style="color: white;"></fa-icon>
                         Malena Bridi
                     </a>
                     <br/>
                     <a href="https://www.linkedin.com/in/martin-leonardi-/">
-                        <img src="../../assets/img/linkedin.png"> 
+                        <fa-icon [icon]="faLinkedin" size="2x" style="color: white;"></fa-icon>
                         Martin Leonardi
                     </a>
                     <br/>
                     <a href="https://www.linkedin.com/in/victoria-rivas-855184170/">
-                        <img src="../../assets/img/linkedin.png"> 
+                        <fa-icon [icon]="faLinkedin" size="2x" style="color: white;"></fa-icon>
                         Victoria Rivas
                     </a>
                 </p>
                 
             
                 <a href="https://github.com/Viquirivas01/TP_final">
-                    <img src="../../assets/img/github-logo.png"> 
+                    <fa-icon [icon]="faGithub" size="2x" style="color: white;"></fa-icon>
                     CorteQuiz
                 </a>
 
