@@ -6,10 +6,20 @@
     <title>Corte Quiz</title>
 </head>
 <body>
-    <app-registro-login *ngIf="!usuariosService.isLogged()"></app-registro-login>
+    <nav id="div-header">
+    
+        <a routerLink="profile">
+            <fa-icon [icon]="faUser" size="2x"></fa-icon>
+        </a>
+        <a routerLink="game">
+            <h1 id="corte-quiz-titulo" (click)="infoJuegoService.notificarPartidaTerminada()">CORTE QUIZ</h1> <!--Funciona sólo cuando esté en el menu principal-->
+        </a>
+        <a routerLink="about">
+            <fa-icon [icon]="faQuestion" size="2x"></fa-icon>
+        </a>
+    </nav>
 
-    <app-juego *ngIf="usuariosService.isLogged()"></app-juego> 
-
+    <router-outlet></router-outlet>
 </body>
 </html>
 

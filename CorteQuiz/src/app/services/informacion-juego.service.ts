@@ -18,9 +18,9 @@ export class InformacionJuegoService {
                                   3 -> Multijugador */
 
   protected dificultad: number; /* -1 -> Aleatorio
-                                   0 -> Easy
-                                   1 -> Medium
-                                   2 -> Hard */
+                                    0 -> Easy
+                                    1 -> Medium
+                                    2 -> Hard */
 
   protected preguntasCorrectas: number;   // TODOS modos
   protected preguntasIncorrectas: number; // TODOS modos menos VIDAS
@@ -29,13 +29,9 @@ export class InformacionJuegoService {
 
   protected dificultadElegida: boolean; // si ya se eligió una dificultad
   protected categoriaElegida: string;
-  protected elegirCat: boolean; // si todavia no eligio categoria
-  protected perfilAbierto: boolean;
-  protected aboutUsAbierto: boolean;
+  protected elegirCat: boolean;         // si todavia no eligio categoria
 
   constructor() {
-    this.aboutUsAbierto = false;
-    this.perfilAbierto = false;
     this.categoriaElegida = "";
     this.dificultad = -1; // CAMBIAR
     this.modoJuego = -1;
@@ -45,22 +41,6 @@ export class InformacionJuegoService {
     this.vidasRestantes = 3;
     this.dificultadElegida = true;
     this.elegirCat = false;
-  }
-
-  setAboutUsAbierto(abierto: boolean): void {
-    this.aboutUsAbierto = abierto;
-  }
-
-  isAboutUsAbierto(): boolean {
-    return this.aboutUsAbierto;
-  }
-
-  isPerfilAbierto(): boolean {
-    return this.perfilAbierto;
-  }
-
-  setPerfilAbierto(abierto: boolean) {
-    this.perfilAbierto = abierto;
   }
 
   setElegirCat(elegido: boolean): void {
@@ -84,8 +64,6 @@ export class InformacionJuegoService {
       this.setElegirCat(true);
     }
 
-    this.setAboutUsAbierto(false);
-    this.setPerfilAbierto(false);
     this.cargarDatosUsuarioActual();
     this.reiniciarDatos();
     this.procesoCompletadoSubject.next();

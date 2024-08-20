@@ -1,6 +1,3 @@
-<div id="div-header">
-    <h1>CORTE QUIZ</h1>
-</div>
 
 <div id="form-container">
 <form [formGroup]="registerForm">
@@ -77,6 +74,8 @@
         </mat-error>
     </mat-form-field>
 
-    <button class = "botones" type="button" mat-raised-button (click)="onSubmitLogin()">Log In</button>
+    <a routerLink="juego">
+        <button class = "botones" type="button" mat-raised-button (click)="onSubmitLogin()">Log In</button>
+    </a>
 </form>
 </div>

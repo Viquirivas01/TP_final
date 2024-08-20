@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { noCreadoGuard } from 'src/app/guards/no-creado.guard';
+
 
 @Component({
   selector: 'app-multijugador',

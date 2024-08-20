@@ -1,8 +1,17 @@
-p {
+.game-container p {
     font: "roboto", sans-serif;
     display: flex;
     flex-direction: column;
     color: aliceblue;
     text-align: center;
     margin: 3rem;
+}
+
+.game-container {
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
