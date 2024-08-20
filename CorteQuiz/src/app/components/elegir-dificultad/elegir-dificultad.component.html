@@ -1,11 +1,18 @@
-<div id="elegir-dificultad-container">
-    <div id="elegir-dificultad-div">
-        <h2 id = "elegir-dificultad-titulo">Choose difficulty</h2>
-        <p class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(0)">Easy</p>
-        <p class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(1)">Medium</p>
-        <p class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(2)">Hard</p>
-        <p class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(-1)">Random</p>
-        <!-- Si cliquea esto vuelve atrás -->
-        <a routerLink="/game"><button class = "botones">Back</button></a>
+<div class="elegir-dificultad-container">
+    <div class="elegir-dificultad-div">
+        <div class="e-f-header">
+            <a routerLink="/game"><fa-icon [icon]="faChevronLeft" size="3x" style="color: #FFF;"></fa-icon>
+            </a>
+            <h2 id = "elegir-dificultad-titulo">Choose difficulty</h2>  
+             <div></div>
+        </div>
+
+        <div class="e-f-options">
+            <button class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(0)">Easy</button>
+            <button class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(1)">Medium</button>
+            <button class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(2)">Hard</button>
+            <button class = "elegir-dificultad-cuerpo" (click)="elegirDificultad(-1)">Random</button>
+        </div>
     </div>
+
 </div>
