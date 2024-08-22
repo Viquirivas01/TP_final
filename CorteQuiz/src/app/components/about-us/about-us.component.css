@@ -1,6 +1,26 @@
 /* ************** */
+/* ************** */
 /* MAIN CONTAINER */
 /* ************** */
+/* ************** */
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h2, h3 {
+    font-family: "Good Times";
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: x-large;
+}
 
 /* MAIN CONTAINER */
 .main-container {
@@ -42,64 +62,177 @@
     text-align: center;
 }
 
-/* ********************* */
-/* HOW TO PLAY CONTAINER */
-/* ********************* */
-
-
-
-
-
-
-
-/* ********************* */
-/*  ABOUT US CONTAINER   */
-/* ********************* */
-
-/*ul{
-    list-style-type: none;
-}
-
-p, a, li {
-    font-size: larger;
-    color: aliceblue;
-    text-decoration: none;
-}
-
-#aboutUs  {
-    display: flex;
-    font-family: 'Trebuchet MS', sans-serif;
-    text-align: center;
-    
-    flex-direction: column;
-    align-content: center; 
-    justify-content: center; 
-
-    padding: 15px;
-    margin-top: 5%;
-    width: 100%;
-}
-
-.divs-perfil {
-    text-align: center;
-    transition: transform 0.3s, border 0.3s;
-    margin: 10px;
-    width: 220px;
-    border-radius: 5px;
-}
-
-h1{
-    margin-top: 2%;
-}
-
-h2 {
-    font-family: "Good Times";
-}
-
-footer{
-    text-align: center;
-}
-
 img {
-    height: 20px;
-}*/
+    width: 20%;
+}
+
+
+/* ******************************* */
+/* ******************************* */
+/*       HOW TO PLAY CONTAINER     */
+/* ******************************* */
+/* ******************************* */
+
+.how-to-container {
+    display: grid;
+    grid-template-rows: 10% 90%;
+
+    gap: 2rem;
+}
+
+/* ************************ GAME MODES ************************ */
+
+.gm-title {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    
+}
+
+.gm-title h3 {
+    margin-bottom: 0px;
+    height: auto;
+}
+
+.gm-description {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    text-align: center;
+}
+
+
+.game-mode-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 300px));
+    grid-template-rows: 15% 1fr 1fr;
+
+    column-gap: 1.2rem;
+    row-gap: 1rem;
+
+    padding-bottom: 1rem;
+}
+
+/* TIME TRIAL */
+
+.game-mode-container > div:nth-child(1) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.game-mode-container > div:nth-child(2) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    font-size: larger;
+}
+
+.game-mode-container > div:nth-child(3) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.game-mode-container > div:nth-child(3) img {
+    width: 6rem;
+    height: 6rem;
+}
+/* THREE STRIKES */
+
+.game-mode-container > div:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+}
+
+.game-mode-container > div:nth-child(5) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    font-size: larger;
+}
+
+.game-mode-container > div:nth-child(6) {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.game-mode-container > div:nth-child(6) img {
+    width: 6rem;
+    height: 6rem;
+}
+
+/* CATEGORIES */
+
+.game-mode-container > div:nth-child(7) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.game-mode-container > div:nth-child(8) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+
+    font-size: larger;
+}
+
+.game-mode-container > div:nth-child(9) {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.game-mode-container > div:nth-child(9) img {
+    width: 6rem;
+    height: 6rem;
+}
+
+
+/* **************************** */
+/* **************************** */
+/*      ABOUT US CONTAINER      */
+/* **************************** */
+/* **************************** */
+
+.about-us-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-row: 10% 25% 65%;
+}
+
+.about-us-container > div {
+    padding: .7rem;
+}
+
+.about-us-description > p {
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+
+/* CREDITS CONTAINER */
+.credits-container {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* LINKEDIN USERS */
+.linkedin-users {
+    display: flex;
+
+    flex-direction: column;
+    gap: 0.4rem;
+}
+

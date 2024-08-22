@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faQuestion } from '@fortawesome/free-solid-svg-icons';
+
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
 
@@ -16,4 +16,6 @@ export class AppComponent {
   title = 'CorteQuiz';
   faUser = faUser;
   faQuestion = faQuestion;
+  //faBrand = faBrand;
+  
 }
