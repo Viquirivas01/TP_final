@@ -24,6 +24,7 @@
     align-items: center;
     flex-direction: column;
 
+    overflow: hidden;
     gap: 2rem;
     padding: 20px;
     border-radius: 10px;
@@ -32,6 +33,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
     width: 40%;
+
 }
 
 
@@ -60,12 +62,14 @@
 /* ************************** */
 
 .e-f-options {
+    position: relative;
     display: flex;
     gap: 1rem;
 
     align-items: space-evenly;
     justify-content: space-evenly;
     flex-direction: column;
+
 }
 
 .e-f-options > button {
@@ -78,10 +82,10 @@
     width: 13rem;
     height: 5rem;
 
-    background: hsla(217, 100%, 50%, 1);
-    background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, rgb(50, 75, 151, 0.7) 100%);
-    background: -moz-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, rgb(50, 75, 151, 0.7) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, rgb(50, 75, 151, 0.7) 100%);
+    background: rgb(2, 82, 211);
+    background: linear-gradient(90deg, rgb(4, 73, 184) 0%, rgb(50, 75, 151, 0.7) 100%);
+    background: -moz-linear-gradient(90deg, rgb(3, 81, 206) 0%, rgb(50, 75, 151, 0.7) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(2, 78, 201) 0%, rgb(50, 75, 151, 0.7) 100%);
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0061FF", endColorstr="#60EFFF", GradientType=1 );
 }
 
@@ -95,42 +99,34 @@
     
 }
 
-/*
-#elegir-dificultad-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+img {
+    position: absolute;
+
+    width: 11rem;
+    height: 11rem; /*10 como Messi*/
+
+    opacity: 20%;
+
+    right: -12rem;
+    bottom: -1rem;
+    rotate: -4deg;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
 }
 
-#elegir-dificultad-div {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #001f4e;
-    color: #fff;
-    text-align: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
+@media (width < 1230px) {
+    img {
+        position: absolute;
 
-#elegir-dificultad-titulo {
-    font-family: 'Good Times', sans-serif;
-    font-style: oblique;
-    font-size: 35px;
+        width: 11rem;
+        height: 11rem; /*10 como Messi*/
 
-    display: flex;
-    justify-content: center;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
+        opacity: 20%;
 
-.elegir-dificultad-cuerpo {
-    font-size: 20px;
-    padding: 10px;
-}
+        right: -12rem;
+        bottom: -1rem;
+        rotate: -4deg;
 
-.elegir-dificultad-cuerpo:hover {
-    border: 0.2px solid white;
-    border-radius: 5px;
-    display: inline-block;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
+    }
 }
-*/
