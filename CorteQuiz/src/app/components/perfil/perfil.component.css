@@ -89,6 +89,8 @@ h3 {
 
     translate: calc(100vw / 3) -15%;
     rotate: 13deg;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
 }
 
 /* USER */
@@ -109,7 +111,11 @@ h3 {
     translate: calc(100vw / 3) -35%;
     rotate: 20deg;
 
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
+
     z-index: 1;
+
+    
 }
 
 /* THREE STRIKES */
@@ -127,6 +133,8 @@ h3 {
 
     translate: calc(100vw / 5.2) -15%;
     rotate: 20deg;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
 }
 
 /* TIME TRIAL */
@@ -140,10 +148,12 @@ h3 {
 .time-trial-stats img {
     display: block;
     width: 6.6rem;
-    opacity: 26%;
+    opacity: 20%;
 
     translate: calc(100vw / 5.2) -30%;
     rotate: 20deg;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
 }
 
 /* CATEGORIES */
@@ -161,6 +171,8 @@ h3 {
 
     translate: calc(100vw / 5.2) -30%;
     rotate: 20deg;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
 
     z-index: 3;
 }

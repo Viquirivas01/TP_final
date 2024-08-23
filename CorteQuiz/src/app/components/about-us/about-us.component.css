@@ -141,6 +141,8 @@ img {
 .game-mode-container > div:nth-child(3) img {
     width: 6rem;
     height: 6rem;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));
 }
 /* THREE STRIKES */
 
@@ -169,6 +171,8 @@ img {
 .game-mode-container > div:nth-child(6) img {
     width: 6rem;
     height: 6rem;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));
 }
 
 /* CATEGORIES */
@@ -193,6 +197,8 @@ img {
 .game-mode-container > div:nth-child(9) img {
     width: 6rem;
     height: 6rem;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));
 }
 
 
