@@ -3,6 +3,7 @@
 .categorias-container {
     width: 100vw;
     height: 90vh;
+    margin-top: 20px;
 
     display: flex;
     justify-content: center;
@@ -13,9 +14,10 @@
 
 .cats-div {
     width: auto;
+    height: 90%;
 
     display: grid;
-    grid-template-columns: repeat(4, minmax(160px, 250px));
+    grid-template-columns: repeat(4, minmax(120px, 220px));
     grid-auto-rows: 1fr;
 
     gap: 20px;

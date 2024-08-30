@@ -1,81 +1,91 @@
 
 <div id="form-container">
-<form [formGroup]="registerForm">
-    <p class = "inicio-subtitulos">Sign Up</p>
+    <!-- REGISTER -->
+     <div class="register-container">
+        
+        <form [formGroup]="registerForm">
+            <p class = "inicio-subtitulos">Sign Up</p>
+    
+            <mat-form-field>
+                <input matInput placeholder="Name" formControlName="nombre">
+    
+                <mat-error *ngIf="getRegisterNombre().invalid && getRegisterNombre().touched">
+                    Insert a valid name
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input matInput placeholder="Last name" formControlName="apellido">
+    
+                <mat-error *ngIf="getRegisterApellido().invalid && getRegisterApellido().touched">
+                    Insert a valid last name
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input matInput (input)="checkUsernameExists(getRegisterUsername().value)" placeholder="Username"
+                    formControlName="username">
+    
+                <mat-error *ngIf="getRegisterUsername().invalid && getRegisterUsername().touched">
+                    Insert a valid username
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input matInput (input)="checkEmailExists(getRegisterEmail().value)" placeholder="Email"
+                    formControlName="email">
+    
+                <mat-error *ngIf="getRegisterEmail().invalid && getRegisterEmail().touched">
+                    Insert a valid email
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password">
+    
+                <mat-hint *ngIf="getRegisterPassword().dirty">Debe tener 1 mayus, 1 minuscula y 1 digito</mat-hint>
+    
+                <mat-error *ngIf="getRegisterPassword().invalid && getRegisterPassword().touched">
+                    Passowrd must contain at least 1 uppercase letter, 1 lowercase letter y 1 digit.
+                </mat-error>
+            </mat-form-field>
+    
+            <button class = "botones" 
+                [disabled]="checkEmailExists(getRegisterEmail().value) || checkUsernameExists(getRegisterUsername().value) || getRegisterPassword().invalid || getRegisterEmail().invalid || getRegisterUsername().invalid || getRegisterApellido().invalid || getRegisterNombre().invalid"
+                (click)="onSubmitRegister()">Sign Up</button>
+    
+            <p style="color: white-space">{{ getErrorMessage() }}</p>
+        </form>
 
-    <mat-form-field>
-        <input matInput placeholder="Name" formControlName="nombre">
+     </div>
 
-        <mat-error *ngIf="getRegisterNombre().invalid && getRegisterNombre().touched">
-            Insert a valid name
-        </mat-error>
-    </mat-form-field>
+    <!-- LOG-IN -->
+    <div class="login-container">
+    
+        <form [formGroup]="loginForm">
+            <p class = "inicio-subtitulos">Log In</p>
+            <br>
+    
+            <mat-form-field>
+                <input matInput placeholder="Username" formControlName="username_login">
+    
+                <mat-error *ngIf="getLoginUsername().invalid && getLoginUsername().touched">
+                    Insert a valid username
+                </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password_login">
+    
+                <mat-error *ngIf="getLoginPassword().invalid && getLoginPassword().touched">
+                    Insert a valid password
+                </mat-error>
+            </mat-form-field>
+    
+            <a routerLink="juego">
+                <button class="botones" type="button"  (click)="onSubmitLogin()">Log In</button>
+            </a>
+        </form>
 
-    <mat-form-field>
-        <input matInput placeholder="Last name" formControlName="apellido">
-
-        <mat-error *ngIf="getRegisterApellido().invalid && getRegisterApellido().touched">
-            Insert a valid last name
-        </mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput (input)="checkUsernameExists(getRegisterUsername().value)" placeholder="Username"
-            formControlName="username">
-
-        <mat-error *ngIf="getRegisterUsername().invalid && getRegisterUsername().touched">
-            Insert a valid username
-        </mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput (input)="checkEmailExists(getRegisterEmail().value)" placeholder="Email"
-            formControlName="email">
-
-        <mat-error *ngIf="getRegisterEmail().invalid && getRegisterEmail().touched">
-            Insert a valid email
-        </mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput type="password" placeholder="Password" formControlName="password">
-
-        <mat-hint *ngIf="getRegisterPassword().dirty">Debe tener 1 mayus, 1 minuscula y 1 digito</mat-hint>
-
-        <mat-error *ngIf="getRegisterPassword().invalid && getRegisterPassword().touched">
-            Passowrd must contain at least 1 uppercase letter, 1 lowercase letter y 1 digit.
-        </mat-error>
-    </mat-form-field>
-
-    <button class = "botones" mat-raised-button
-        [disabled]="checkEmailExists(getRegisterEmail().value) || checkUsernameExists(getRegisterUsername().value) || getRegisterPassword().invalid || getRegisterEmail().invalid || getRegisterUsername().invalid || getRegisterApellido().invalid || getRegisterNombre().invalid"
-        (click)="onSubmitRegister()">Sign Up</button>
-
-    <p style="color: white-space">{{ getErrorMessage() }}</p>
-</form>
-
-<form [formGroup]="loginForm">
-    <p class = "inicio-subtitulos">Log In</p>
-    <br>
-
-    <mat-form-field>
-        <input matInput placeholder="Username" formControlName="username_login">
-
-        <mat-error *ngIf="getLoginUsername().invalid && getLoginUsername().touched">
-            Insert a valid username
-        </mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput type="password" placeholder="Password" formControlName="password_login">
-
-        <mat-error *ngIf="getLoginPassword().invalid && getLoginPassword().touched">
-            Insert a valid password
-        </mat-error>
-    </mat-form-field>
-
-    <a routerLink="juego">
-        <button class = "botones" type="button" mat-raised-button (click)="onSubmitLogin()">Log In</button>
-    </a>
-</form>
+    </div>
 </div>
