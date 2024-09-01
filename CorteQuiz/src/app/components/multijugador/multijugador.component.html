@@ -1,1 +1,53 @@
-<h1>COMING SOON</h1>
+<app-elegir-dificultad *ngIf="!infoJuegoService.getDificultadElegida()"></app-elegir-dificultad>
+
+<div class="multiplayer-container" *ngIf="infoJuegoService.getDificultadElegida()"> <!-- Si ya se eligió la dificultad-->
+    <div *ngIf="!terminado" class="players-container">
+        <div class="player1">
+            <div class="player-title">Player 1</div>
+            <div class="player-score" id="player-1-score">
+                <span style="color: Tomato">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="player2">
+            <div class="player-title">Player 2</div>
+            <div class="player-score" id="player-2-score">
+                <span style="color: palegreen; font-size: 3rem;">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+                <span style="color: rgb(236, 236, 236)">
+                    <i class="fa-solid fa-circle"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <button (click)="this.terminado = true"></button>
+
+    <app-pregunta-respuesta *ngIf="!terminado"></app-pregunta-respuesta>
+    <div *ngIf="terminado"><h1>Terminado</h1></div>
+    <!-- TBD <app-modal-game-over *ngIf="terminado"></app-modal-game-over> -->
+</div>
