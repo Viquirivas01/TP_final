@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -12,6 +13,7 @@ export class MultijugadorComponent {
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
   terminado: boolean
+  faCircle = faCircle;
 
   constructor() {
 
@@ -19,7 +21,9 @@ export class MultijugadorComponent {
 
   ngOnInit(): void {
     this.infoJuegoService.setDificultadElegida(false); // Promptea que elija dificultad
-    /* CAMBIAR */ this.infoJuegoService.setModoJuego(3); // Le avisa que es el modo de juego de Three Strikes ## CAMBIAR ##
+    this.infoJuegoService.setModoJuego(3); // Le avisa que es el modo de juego de Multiplayer
+
+    
 
     this.terminado = false;
   }
