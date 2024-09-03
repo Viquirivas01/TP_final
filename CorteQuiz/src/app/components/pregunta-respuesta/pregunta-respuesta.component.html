@@ -20,7 +20,7 @@
             </div>
     </div>
 
-    <div id="estadisticas_q_a">
+    <div *ngIf="this.infoJuegoService.getModoJuego() !== 3" id="estadisticas_q_a">
         <ul>
             <p class="texto-respuestas-estadisticas">✅ Correct answers: {{ this.correctas }}</p>
             <p class="texto-respuestas-estadisticas">❌ Incorrect answers: {{ this.incorrectas}} </p>
