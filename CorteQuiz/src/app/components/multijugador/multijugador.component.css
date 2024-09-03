@@ -1,5 +1,59 @@
-h1 {
-    font-family: "Good Times";
-    font-size: 80px;
-    margin-top: 10%;
+/* ################################# */
+/* ##### MULTIPLAYER CONTAINER ##### */
+/* ################################# */
+
+.multiplayer-container {
+    height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
 }
+
+app-pregunta-respuesta {
+    translate: 0px 5rem;
+}
+
+/* ################################# */
+/* ####### PLAYERS CONTAINER ####### */
+/* ################################# */
+
+.players-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.players-container > div {
+    background-color: rgb(0, 54, 131);
+    border-radius: 10px;
+    filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, 0.405));
+
+    padding: 2rem;
+}
+
+.player-title {
+    font-size: larger;
+    font-family: 'Good Times', sans-serif;
+    text-align: center;
+
+    padding-bottom: 10px;
+}
+
+.player-score > span {
+    padding: 5px;
+}
+
+    /* ******************************** */
+    /* *********** PLAYER 1 *********** */
+
+    
+
+
+
+
+
+/* ################################# */
+/* ######### MEDIA QUERIES ######### */
+/* ################################# */

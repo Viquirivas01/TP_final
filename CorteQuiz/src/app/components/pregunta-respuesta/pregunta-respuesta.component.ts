@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
+import { ObservablesService } from 'src/app/services/observables.service';
 
 import {
 	trigger,
@@ -42,6 +43,8 @@ export class PreguntaRespuestaComponent implements OnInit {
 
 	usuariosService: UsuariosService = inject(UsuariosService);
 	infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
+	observablesService: ObservablesService = inject(ObservablesService);
+
 	verificandoRespuesta: boolean = false;
 
 	constructor() {}
@@ -162,10 +165,16 @@ export class PreguntaRespuestaComponent implements OnInit {
 
 	verificarRespuesta(respuestaElegida: string) {
 		this.verificandoRespuesta = true;
+		let modoJuego = this.infoJuegoService.getModoJuego();
+
 		if (this.respuestaCorrecta === respuestaElegida) {
 			this.isDefault = false;
 			this.infoJuegoService.addCorrecta();
 			this.correctas++;
+
+			if(modoJuego === 3) { // si es multiplayer, notificar al observable respuesta correcta
+				this.observablesService.sendData(true);
+			}
 
 			// ANIMACION 
 			this.isDefault = false;
@@ -173,14 +182,19 @@ export class PreguntaRespuestaComponent implements OnInit {
 		else {
 			this.infoJuegoService.addIncorrecta();
 			this.incorrectas++;
-			let modoJuego = this.infoJuegoService.getModoJuego();
+			
 			if (modoJuego === 1 || modoJuego === 2) {
 				this.infoJuegoService.restarVida();
 			} // si es three strikes ó categorías
 
+			if(modoJuego === 3) { // si es multiplayer, notificar al observable respuesta errónea
+				this.observablesService.sendData(false);
+			}
+
 			// ANIMACION 
 			this.isDefault = false;
 		}
+
 		this.preguntasTotales++;
 		setTimeout(() => {
 			this.getPreguntaRespuesta();
