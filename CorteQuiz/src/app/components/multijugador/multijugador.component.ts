@@ -24,6 +24,7 @@ export class MultijugadorComponent {
   curRound: number; // Current round from 1 to 5
   score_p1: number;
   score_p2: number;
+  winner: string;
 
   coloresPlayer1: { [id: string]: string } = {
     'p1_1': '#EEEEEE',
@@ -115,7 +116,33 @@ export class MultijugadorComponent {
       this.round++;
       this.curRound++;
     }
+
+    this.checkWin();
     
+  }
+
+  checkWin(): void {
+    if (this.round > 6 && this.turn === 1) {
+      if (this.score_p1 > this.score_p2) {
+        this.winner = "Player 1";
+        this.terminado = true;
+      }
+      else if (this.score_p2 > this.score_p1) {
+        this.winner = "Player 2";
+        this.terminado = true;
+      }
+    }
+    else if (this.round === 6 && this.turn === 1) {
+      if (this.score_p1 > this.score_p2) {
+        this.winner = "Player 1";
+        this.terminado = true;
+      }
+      else if (this.score_p2 > this.score_p1) {
+        this.winner = "Player 2";
+        this.terminado = true;
+      }
+    }
+    console.log(this.winner);
   }
 
 }

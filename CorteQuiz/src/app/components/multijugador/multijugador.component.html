@@ -49,6 +49,17 @@
 
     <app-pregunta-respuesta *ngIf="!terminado"></app-pregunta-respuesta>
 
-    <div *ngIf="terminado"><h1>Terminado</h1></div>
+    <div *ngIf="terminado">
+        <div class="modal">
+            <div class="modalContent">
+                <h3 class="title">{{this.winner}} wins! 🥇</h3>
+                <p class="subtitle">{{ this.score_p1 }} to {{this.score_p2}}</p>
+             
+                <a routerLink="game">
+                    <button class = "botones" (click)="infoJuegoService.notificarPartidaTerminada()">OK</button>
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- TBD <app-modal-game-over *ngIf="terminado"></app-modal-game-over> -->
 </div>
