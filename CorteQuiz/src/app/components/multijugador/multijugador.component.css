@@ -54,6 +54,46 @@ app-pregunta-respuesta {
 
 
 
-/* ################################# */
-/* ######### MEDIA QUERIES ######### */
-/* ################################# */
+    
+    
+    
+    /* ################################## */
+    /* ##########   WIN MODAL   ######### */
+    /* ################################## */
+    
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+    }
+    
+    .modalContent {
+        padding: 20px;
+        border: none;
+        border-radius: 10px;
+        background-color: #001f4e;
+        color: #fff;
+        text-align: center;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .subtitle {
+        font-size: x-large;
+        margin-bottom: 25px;
+    }
+    
+    .title {
+        font-family: 'Good Times', sans-serif;
+        font-style: oblique;
+        font-size: 35px;
+        text-align: center;
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 45px;
+    }
+
+
+
+    /* ################################# */
+    /* ######### MEDIA QUERIES ######### */
+    /* ################################# */
