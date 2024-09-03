@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { InformacionJuegoService } from 'src/app/services/informacion-juego.service';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { ObservablesService } from 'src/app/services/observables.service';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 export class MultijugadorComponent {
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
+  observablesService: ObservablesService = inject(ObservablesService);
 
   terminado: boolean;
   faCircle = faCircle;
@@ -29,8 +31,12 @@ export class MultijugadorComponent {
     this.infoJuegoService.setDificultadElegida(false); // Promptea que elija dificultad
     this.infoJuegoService.setModoJuego(3); // Le avisa que es el modo de juego de Multiplayer
 
-    
+    // Suscribirse al observable para saber el estado de la respuesta
+    this.observablesService.data$.subscribe(answer => {
+      console.log("La respuesta es ", answer);
+    })
 
     this.terminado = false;
   }
+
 }
