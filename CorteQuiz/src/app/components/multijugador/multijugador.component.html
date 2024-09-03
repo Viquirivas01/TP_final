@@ -26,10 +26,10 @@
         <div class="player2">
             <div class="player-title">Player 2</div>
             <div class="player-score" id="player-2-score">
-                <span style="color: palegreen ">
+                <span style="color: rgb(150, 247, 150) ">
                     <fa-icon [icon]="faCircle" size="2x"></fa-icon>
                 </span>
-                <span style="color: rgb(236, 236, 236)">
+                <span style="color: rgb(237, 232, 82)">
                     <fa-icon [icon]="faCircle" size="2x"></fa-icon>
                 </span>
                 <span style="color: rgb(236, 236, 236)">
@@ -48,7 +48,7 @@
     <!--<button (click)="this.terminado = true"></button>-->
 
     <app-pregunta-respuesta *ngIf="!terminado"></app-pregunta-respuesta>
-    
+
     <div *ngIf="terminado"><h1>Terminado</h1></div>
     <!-- TBD <app-modal-game-over *ngIf="terminado"></app-modal-game-over> -->
 </div>

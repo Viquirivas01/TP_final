@@ -12,8 +12,14 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 export class MultijugadorComponent {
   infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 
-  terminado: boolean
+  terminado: boolean;
   faCircle = faCircle;
+
+  // Main game
+  turn: number;  // Who's playing: 1 or 2
+  round: number; 
+  score_p1: number;
+  score_p2: number;
 
   constructor() {
 
