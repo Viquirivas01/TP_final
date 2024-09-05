@@ -28,3 +28,20 @@
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 45px;
 }
+
+button {
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+
+    font-size: x-large;
+    padding: 10px;
+    width: 13rem;
+    height: 5rem;
+
+    background: rgb(2, 82, 211);
+    background: linear-gradient(90deg, rgb(4, 73, 184) 0%, rgb(50, 75, 151, 0.7) 100%);
+    background: -moz-linear-gradient(90deg, rgb(3, 81, 206) 0%, rgb(50, 75, 151, 0.7) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(2, 78, 201) 0%, rgb(50, 75, 151, 0.7) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0061FF", endColorstr="#60EFFF", GradientType=1 );
+}

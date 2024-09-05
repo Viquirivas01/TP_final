@@ -33,23 +33,23 @@ a {
 
 /* ABOUT CONTAINER */
 .about-container {
-    width: 90vw;
+    width: 95vw;
     gap: 2rem;
 
     display: grid;
 
-    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
     grid-template-rows: 1fr;
 }
 
 /* CHILDREN POSITION AND STYLE */
 
 .about-container > div:nth-child(1) {
-    grid-column: 1 / 4;
+    grid-column: 1 / 5;
 }
 
 .about-container > div:nth-child(2) {
-    grid-column: 4 / -1;
+    grid-column: 5 / -1;
 }
 
 .about-container > div {
@@ -101,13 +101,14 @@ img {
     align-content: center;
     
     text-align: center;
+    font-size: larger;
 }
 
 
 .game-mode-container {
     display: grid;
-    grid-template-columns: repeat(3, minmax(120px, 300px));
-    grid-template-rows: 15% 1fr 1fr;
+    grid-template-columns: repeat(4, minmax(120px, 300px));
+    /*grid-template-rows: 15% 1fr 1fr;*/
 
     column-gap: 1.2rem;
     row-gap: 1rem;
@@ -126,7 +127,6 @@ img {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
 
-    font-size: larger;
 }
 
 .game-mode-container > div:nth-child(3) {
@@ -156,7 +156,6 @@ img {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 
-    font-size: larger;
 }
 
 .game-mode-container > div:nth-child(6) {
@@ -186,7 +185,6 @@ img {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
 
-    font-size: larger;
 }
 
 .game-mode-container > div:nth-child(9) {
@@ -196,6 +194,15 @@ img {
 
 .game-mode-container > div:nth-child(9) img {
     width: 6rem;
+    height: 6rem;
+
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));
+}
+
+/* MULTIPLAYER */
+
+.game-mode-container > div:nth-child(12) img {
+    width: 7rem;
     height: 6rem;
 
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));

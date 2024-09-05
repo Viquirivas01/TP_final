@@ -27,7 +27,7 @@ export class MultijugadorComponent {
   winner: string;
 
   coloresPlayer1: { [id: string]: string } = {
-    'p1_1': '#EEEEEE',
+    'p1_1': '#e6ff69',
     'p1_2': '#EEEEEE',
     'p1_3': '#EEEEEE',
     'p1_4': '#EEEEEE',
@@ -51,7 +51,7 @@ export class MultijugadorComponent {
   }
 
   copyColoresPlayer1: { [id: string]: string } = {
-    'p1_1': '#EEEEEE',
+    'p1_1': '#e6ff69',
     'p1_2': '#EEEEEE',
     'p1_3': '#EEEEEE',
     'p1_4': '#EEEEEE',
@@ -112,9 +112,18 @@ export class MultijugadorComponent {
 
     console.log("Player 1 -> ", this.score_p1, "\nPlayer 2 -> ", this.score_p2, "\nTurn -> ", this.turn, "   |    Round Number -> ", this.curRound);
     this.turn = this.turn * (-1); // Turno del otro jugador
+
+    
+
     if(this.turn === 1) {
       this.round++;
       this.curRound++;
+    }
+
+    if (this.turn === 1) { // Change the color to yellow to indicate who's playing
+      this.coloresPlayer1['p1_' + this.curRound] = '#e6ff69'
+    } else {
+      this.coloresPlayer1['p2_' + this.curRound] = '#e6ff69'
     }
 
     this.checkWin();
