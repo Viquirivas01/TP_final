@@ -3,7 +3,7 @@
 /* ################################# */
 
 .multiplayer-container {
-    height: 90vh;
+    height: 90%;
 
     display: flex;
     flex-direction: column;
@@ -21,6 +21,8 @@ app-pregunta-respuesta {
 /* ################################# */
 
 .players-container {
+
+
     display: flex;
     justify-content: space-around;
 }

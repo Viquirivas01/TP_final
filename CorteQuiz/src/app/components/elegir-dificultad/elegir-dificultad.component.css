@@ -130,3 +130,41 @@ img {
         mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
     }
 }
+
+@media (max-height: 585px) {
+
+    .elegir-dificultad-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    
+        overflow: hidden;
+        gap: 2rem;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #001f4e;
+        color: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    
+        width: auto;
+    
+    }
+    
+
+    .e-f-options {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-left: .5rem;
+        margin-right: .5rem;
+
+        position: relative;
+        display: flex;
+        gap: 1rem;
+
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+
+    }
+}
