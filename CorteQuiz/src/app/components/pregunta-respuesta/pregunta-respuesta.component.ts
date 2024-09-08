@@ -44,6 +44,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 	usuariosService: UsuariosService = inject(UsuariosService);
 	infoJuegoService: InformacionJuegoService = inject(InformacionJuegoService);
 	observablesService: ObservablesService = inject(ObservablesService);
+	q_font_size: string;
 
 	verificandoRespuesta: boolean = false;
 
@@ -66,6 +67,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 	}
 
 	async getPreguntaRespuesta() {
+		this.q_font_size = '30px'
 		
 		let diffs = ["easy", "medium", "hard"];
 		if (this.infoJuegoService.getDificultad() === -1) {
@@ -81,6 +83,9 @@ export class PreguntaRespuestaComponent implements OnInit {
 							if (preg.category === this.infoJuegoService.getCategoriaElegida() && !ok_cat) {
 								this.isDefault = true;
 								this.pregunta = preg.question["text"];
+								if(this.pregunta.length > 20) {
+									this.q_font_size = '20px' /** FIX THIS */
+								}
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
 								this.verificandoRespuesta = false;
