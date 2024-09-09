@@ -67,7 +67,7 @@ export class PreguntaRespuestaComponent implements OnInit {
 	}
 
 	async getPreguntaRespuesta() {
-		this.q_font_size = '30px'
+		this.q_font_size = 'x-large'
 		
 		let diffs = ["easy", "medium", "hard"];
 		if (this.infoJuegoService.getDificultad() === -1) {
@@ -83,9 +83,13 @@ export class PreguntaRespuestaComponent implements OnInit {
 							if (preg.category === this.infoJuegoService.getCategoriaElegida() && !ok_cat) {
 								this.isDefault = true;
 								this.pregunta = preg.question["text"];
-								if(this.pregunta.length > 20) {
-									this.q_font_size = '20px' /** FIX THIS */
+								/* OJO ACA */
+								console.log(this.pregunta.length)
+								if(this.pregunta.length > 70) {
+									this.q_font_size = 'larger'; /** FIX THIS */
+									console.log("ENTRA");
 								}
+								// OJO ACA
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
 								this.verificandoRespuesta = false;
@@ -108,8 +112,16 @@ export class PreguntaRespuestaComponent implements OnInit {
 					if (response.ok) {
 						const data = await response.json();
 		
+						
 						this.isDefault = true;
 						this.pregunta = data[0].question["text"];
+						/* OJO ACA */
+						console.log(this.pregunta.length)
+						if(this.pregunta.length > 70) {
+							this.q_font_size = 'larger'; /** FIX THIS */
+							console.log("ENTRA");
+						}
+						// OJO ACA
 						this.respuestaCorrecta = data[0].correctAnswer;
 						this.desordenarRespuestas(data[0].incorrectAnswers);
 						this.verificandoRespuesta = false;
@@ -136,6 +148,15 @@ export class PreguntaRespuestaComponent implements OnInit {
 							if (preg.difficulty === diffs[this.infoJuegoService.getDificultad()] && !ok_diff) {
 								this.isDefault = true;
 								this.pregunta = preg.question["text"];
+
+								/* OJO ACA */
+								console.log(this.pregunta.length)
+								if(this.pregunta.length > 70) {
+									this.q_font_size = 'larger'; /** FIX THIS */
+									console.log("ENTRA");
+								}
+								// OJO ACA
+
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
 								this.verificandoRespuesta = false;
