@@ -83,13 +83,14 @@ export class PreguntaRespuestaComponent implements OnInit {
 							if (preg.category === this.infoJuegoService.getCategoriaElegida() && !ok_cat) {
 								this.isDefault = true;
 								this.pregunta = preg.question["text"];
-								/* OJO ACA */
+
+								/* TEXT SIZE */
 								console.log(this.pregunta.length)
 								if(this.pregunta.length > 70) {
-									this.q_font_size = 'larger'; /** FIX THIS */
+									this.q_font_size = 'larger'; 
 									console.log("ENTRA");
 								}
-								// OJO ACA
+								
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);
 								this.verificandoRespuesta = false;
@@ -115,13 +116,14 @@ export class PreguntaRespuestaComponent implements OnInit {
 						
 						this.isDefault = true;
 						this.pregunta = data[0].question["text"];
-						/* OJO ACA */
+						
+						/* TEXT SIZE */
 						console.log(this.pregunta.length)
 						if(this.pregunta.length > 70) {
-							this.q_font_size = 'larger'; /** FIX THIS */
+							this.q_font_size = 'larger'; 
 							console.log("ENTRA");
 						}
-						// OJO ACA
+
 						this.respuestaCorrecta = data[0].correctAnswer;
 						this.desordenarRespuestas(data[0].incorrectAnswers);
 						this.verificandoRespuesta = false;
@@ -149,13 +151,12 @@ export class PreguntaRespuestaComponent implements OnInit {
 								this.isDefault = true;
 								this.pregunta = preg.question["text"];
 
-								/* OJO ACA */
+								/* TEXT SIZE */
 								console.log(this.pregunta.length)
 								if(this.pregunta.length > 70) {
-									this.q_font_size = 'larger'; /** FIX THIS */
+									this.q_font_size = 'larger'; 
 									console.log("ENTRA");
 								}
-								// OJO ACA
 
 								this.respuestaCorrecta = preg.correctAnswer;
 								this.desordenarRespuestas(preg.incorrectAnswers);

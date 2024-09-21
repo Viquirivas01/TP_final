@@ -99,3 +99,31 @@ app-pregunta-respuesta {
     /* ################################# */
     /* ######### MEDIA QUERIES ######### */
     /* ################################# */
+
+
+    @media (max-height: 700px) { 
+        .multiplayer-container {
+            display: flex;
+            flex-direction: row;
+
+            gap: 2rem;
+        }
+
+        .players-container {
+            margin: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            gap: 2rem;
+
+        }
+
+        .app-q-a {
+            display: flex;
+            align-items: center;
+
+            translate: 0px 100px;
+        }
+
+    }

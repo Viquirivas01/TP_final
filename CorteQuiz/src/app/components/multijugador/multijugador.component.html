@@ -47,7 +47,10 @@
 
     <!--<button (click)="this.terminado = true"></button>-->
 
-    <app-pregunta-respuesta *ngIf="!terminado"></app-pregunta-respuesta>
+    <div class="app-q-a">
+        <app-pregunta-respuesta *ngIf="!terminado"></app-pregunta-respuesta>
+
+    </div>
 
     <div *ngIf="terminado">
         <div class="modal">
