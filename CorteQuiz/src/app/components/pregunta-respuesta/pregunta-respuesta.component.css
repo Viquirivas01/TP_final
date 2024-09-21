@@ -92,9 +92,11 @@
 .texto-respuestas-estadisticas {
     font-size: 25px;
     padding: 10px;
+
+    line-height: normal;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     #respuestas {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -114,6 +116,12 @@
     
         align-items: center;
 
+    }
+
+    .container_q_a {
+        display: flex;
+
+        gap: 2rem;
     }
     
 }
