@@ -9,10 +9,12 @@
     flex-direction: column;
     justify-content: center;
 
+    gap: 4rem;
+
     
 }
 
-app-pregunta-respuesta {
+.app-q-a app-pregunta-respuesta {
     translate: 0px 5rem;
 }
 

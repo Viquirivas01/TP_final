@@ -6,3 +6,12 @@ p {
     text-align: center;
     margin: 3rem;
 }
+
+div {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+}
