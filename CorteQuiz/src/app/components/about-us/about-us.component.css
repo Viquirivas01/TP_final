@@ -54,12 +54,10 @@ a {
 }
 
 .about-container > div {
-    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
 
     border-radius: 15px;
     filter: drop-shadow(2px 2px 15px rgba(2, 0, 21, 0.466));
 
-    padding: 2rem;
     text-align: center;
 }
 
@@ -77,23 +75,25 @@ img {
 .how-to-container {
     display: grid;
     grid-template-rows: 10% 90%;
-
-    gap: 2rem;
+    padding: 0;
 }
 
 /* ************************ GAME MODES ************************ */
 
 .gm-title {
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: center;
 
-    
+    width: 20rem;
 }
 
 .gm-title h3 {
     margin-bottom: 0px;
     height: auto;
+    font-size: 2rem;
+    line-height: 2.2rem;
+
 }
 
 .gm-description {
@@ -101,96 +101,50 @@ img {
     justify-content: center;
     align-content: center;
     
-    text-align: center;
+    text-align: start;
     font-size: larger;
+
+    padding: 2rem;
 }
 
 
 .game-mode-container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    /* display: grid;
     grid-template-columns: repeat(4, minmax(120px, 300px));
-    /*grid-template-rows: 15% 1fr 1fr;*/
+    grid-template-rows: auto min-content 1fr;
 
     column-gap: 1.2rem;
-    row-gap: 1rem;
+    row-gap: 3rem;
 
-    padding-bottom: 1rem;
+    padding-bottom: 1rem; */
 }
 
 /* TIME TRIAL */
-
-.game-mode-container > div:nth-child(1) {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.game-mode-container > div:nth-child(2) {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-
-}
-
-.game-mode-container > div:nth-child(3) {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-
+.time-trial {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
+    padding: .5rem 2rem;
+    border-radius: 1rem;
 }
 
-.game-mode-container > div:nth-child(3) img {
-    width: 6rem;
-    height: 6rem;
-
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));
-}
 /* THREE STRIKES */
-
-.game-mode-container > div:nth-child(4) {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-
-}
-
-.game-mode-container > div:nth-child(5) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-
-}
-
-.game-mode-container > div:nth-child(6) {
-    grid-column: 2 / 3;
-    grid-row: 3 / 4;
-
+.three-strikes {
     display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-.game-mode-container > div:nth-child(6) img {
-    width: 6rem;
-    height: 6rem;
-
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));
+    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 /* CATEGORIES */
-
-.game-mode-container > div:nth-child(7) {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-}
-
-.game-mode-container > div:nth-child(8) {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-
-}
-
-.game-mode-container > div:nth-child(9) {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
+.categories {
+    display: flex;
+    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 .game-mode-container > div:nth-child(9) img {
@@ -201,12 +155,23 @@ img {
 }
 
 /* MULTIPLAYER */
+.multiplayer {
+    display: flex;
+    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
+    padding: 1rem;
+    border-radius: 1rem;
+}
 
-.game-mode-container > div:nth-child(12) img {
-    width: 7rem;
-    height: 6rem;
+img {
+    width: 6rem;
 
     mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.508), rgb(0, 0, 0));
+    transform: skew(-5deg, 2deg);
+}
+
+.gm-img {
+    display: flex;
+    align-items: center;
 }
 
 
@@ -217,6 +182,9 @@ img {
 /* **************************** */
 
 .about-us-container {
+    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
+    padding: 2rem;
+
     display: grid;
 
     grid-template-columns: 1fr;
