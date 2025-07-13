@@ -1,203 +1,124 @@
-h3 {
-    font-family: "Good Times";
-    font-size: x-large;
-}
-
-/* **************** */
-/* PERFIL CONTAINER */
-/* **************** */
-
-.perfil-container {
-    height: 90vh;
-
+.overall-container {
+    height: 90dvh;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-/* **************** */
-/*   PERFIL GRID    */
-/* **************** */
 
-.perfil {
-    margin-top: 50px;
-    height: 90vh;
-    width: 90vw;
 
-    display: grid;
-    grid-template-columns: repeat(6, minmax(133px, 600px));
-    grid-auto-rows: 1fr;
-
-    gap: 2rem;
-
-    z-index: 1;
+.profile-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo para el layout */
+  margin: 0 auto; /* Centra el contenedor */
+  box-sizing: border-box;
 }
-
-.perfil > div:nth-child(1) {
-    grid-row: 1 / 2;
-    grid-column: 1 / span 3;
-}
-
-.perfil > div:nth-child(2) {
-    grid-row: 1 / 2;
-    grid-column: 4 / -1;
-}
-
-.perfil > div:nth-child(3) {
-    grid-row: 2 / span 1;
-    grid-column: 1 / span 2;
-}
-
-.perfil > div:nth-child(4) {
-    grid-row: 2 / span 1;
-    grid-column: 3 / span 2;
-}
-
-.perfil > div:nth-child(5) {
-    grid-row: 2 / span 1;
-    grid-column: 5 / span 2;
-}
-
-
-
-/* PERFIL CHILDREN STYLE */
-
-.perfil > div {
-    background-image: linear-gradient(100deg, #071c3c 0%, #0d2243 100%);
-
-    border-radius: 15px;
-    filter: drop-shadow(2px 2px 15px rgba(2, 0, 21, 0.466));
-
-    padding: 2rem;
-    text-align: center;
-}
-
-/* ######################################## */
-/* ############# DIVS DESIGNS ############# */
-/* ######################################## */
-
-/* TOTAL STATS */
-
-.total-stats {
-    height: 68%;
-
-    overflow: hidden;
-}
-
-.total-stats img {
-    display: block;
-    width: 6.9rem;
-    opacity: 20%;
-
-    translate: calc(100vw / 3) -15%;
-    rotate: 13deg;
-
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
-}
-
-/* USER */
 
 .user-profile {
-    height: 68%;
-
-    overflow: hidden;
-
-    z-index: 2;
+  grid-column: span 1;
 }
 
-.user-profile img {
-    display: block;
-    width: 6.6rem;
-    opacity: 20%;
-
-    translate: calc(100vw / 3) -35%;
-    rotate: 20deg;
-
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
-
-    z-index: 1;
-
-    
+.total-stats {
+  grid-column: span 1;
 }
 
-/* THREE STRIKES */
-
-.three-strikes-stats {
-    height: 68%;
-
-    overflow: hidden;
+.game-stats-grid {
+  grid-column: 1 / -1; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 }
 
-.three-strikes-stats img {
-    display: block;
-    width: 6.6rem;
-    opacity: 20%;
-
-    translate: calc(100vw / 5.2) -15%;
-    rotate: 20deg;
-
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
+.stat-card {
+  background: rgba(13, 34, 67, 0.6);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(2, 0, 21, 0.3);
+  color: #E0E0E0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* TIME TRIAL */
-
-.time-trial-stats {
-    height: 68%;
-
-    overflow: hidden;
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(2, 0, 21, 0.5);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.time-trial-stats img {
-    display: block;
-    width: 6.6rem;
-    opacity: 20%;
-
-    translate: calc(100vw / 5.2) -30%;
-    rotate: 20deg;
-
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
+/* Cabecera de la Tarjeta */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
 }
 
-/* CATEGORIES */
-
-.categories-stats {
-    height: 68%;
-
-    overflow: hidden;
+.card-icon {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
 }
 
-.categories-stats img {
-    display: block;
-    width: 6.6rem;
-    opacity: 20%;
-
-    translate: calc(100vw / 5.2) -30%;
-    rotate: 20deg;
-
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.174), rgb(0, 0, 0));
-
-    z-index: 3;
+.stat-card h3 {
+  font-family: 'Good Times', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  color: #FFFFFF;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
-/* ####################################### */
-/* ############### BUTTONS ############### */
-/* ####################################### */
+.card-body p {
+  margin: 0.75rem 0;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
 
-button {
-    width: 40%;
-    height: auto;
+.card-body strong {
+  color: #a0c4ff;
+  margin-right: 0.5rem;
+  opacity: 0.9;
+}
 
+.card-body span {
+  color: #FFFFFF;
+  font-weight: bold;
+}
 
-    border-radius: 5px;
-    border: none;
-    color: aliceblue;
-    margin-top: 10px;
-    padding: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+.card-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
 
-    font-size: large;
+.logout-button {
+  background: linear-gradient(135deg, #c33764 0%, #1d2671 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-    z-index: 7;
+.logout-button:hover {
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+  transform: scale(1.05);
+}
+
+@media (max-width: 860px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 }

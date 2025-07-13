@@ -1,56 +1,72 @@
-<div class="perfil-container">
-
-    <div class="perfil">
-        <div class = "user-profile">
-    
-            <h3> {{ usuarioActual.username }} </h3>
-            <p><strong>Name: </strong>{{ usuarioActual.nombre + " " + usuarioActual.apellido}}</p>
-            <p><strong>Email: </strong>{{ usuarioActual.email }}</p>
-            <a routerLink="signup">
-                <button class = "botones"  (click)="logOut()" >Log Out</button>
-            </a>
-            <img src="../../assets/img/user-icon.png" >
+<div class="overall-container">
+    <div class="profile-container">
+      <div class="stat-card user-profile">
+        <div class="card-header">
+          <img src="../../assets/img/user-icon.png" class="card-icon" alt="User Icon">
+          <h3>{{ usuarioActual.username }}</h3>
         </div>
-
-        <div class="total-stats">
-            <h3> Total Stats </h3>
-            <p><strong>Played Games: </strong>{{ usuarioActual.partidas_jugadas_cr + usuarioActual.partidas_jugadas_v + usuarioActual.partidas_jugadas_cat }}</p>
-            <p><strong>Right answers: </strong>{{ usuarioActual.preguntas_correctas_cr + usuarioActual.preguntas_correctas_v + usuarioActual.preguntas_correctas_cat}}</p>
-            <p><strong>Average: </strong>{{(((usuarioActual.preguntas_correctas_cr + usuarioActual.preguntas_correctas_v + usuarioActual.preguntas_correctas_cat) / (usuarioActual.partidas_jugadas_cr + usuarioActual.partidas_jugadas_v + usuarioActual.partidas_jugadas_cat ) ) | number) + " right answer per game"}}</p>
-            <img src="../../assets/img/hashtag-icon.png" >
+        <div class="card-body">
+          <p><strong>Name:</strong> <span>{{ usuarioActual.nombre + " " + usuarioActual.apellido}}</span></p>
+          <p><strong>Email:</strong> <span>{{ usuarioActual.email }}</span></p>
         </div>
+        <div class="card-footer">
+          <a routerLink="/signup">
+            <button class="logout-button" (click)="logOut()">Log Out</button>
+          </a>
+        </div>
+      </div>
     
-        <div class = "time-trial-stats">
+      <div class="stat-card total-stats">
+        <div class="card-header">
+          <img src="../../assets/img/hashtag-icon.png" class="card-icon" alt="Total Stats Icon">
+          <h3>Total Stats</h3>
+        </div>
+        <div class="card-body">
+          <p><strong>Played Games:</strong> <span>{{ usuarioActual.partidas_jugadas_cr + usuarioActual.partidas_jugadas_v + usuarioActual.partidas_jugadas_cat }}</span></p>
+          <p><strong>Right Answers:</strong> <span>{{ usuarioActual.preguntas_correctas_cr + usuarioActual.preguntas_correctas_v + usuarioActual.preguntas_correctas_cat}}</span></p>
+          <p><strong>Average:</strong> <span>{{(((usuarioActual.preguntas_correctas_cr + usuarioActual.preguntas_correctas_v + usuarioActual.preguntas_correctas_cat) / (usuarioActual.partidas_jugadas_cr + usuarioActual.partidas_jugadas_v + usuarioActual.partidas_jugadas_cat ) ) | number) + " right answers per game"}}</span></p>
+        </div>
+      </div>
     
+      <div class="game-stats-grid">
+        <div class="stat-card">
+          <div class="card-header">
+            <img src="../../assets/img/time-trial-icon.png" class="card-icon" alt="Time Trial Icon">
             <h3>Time Trial</h3>
-            <p><strong>Played Games: </strong>{{ usuarioActual.partidas_jugadas_cr }}</p>
-            <p><strong>Right Answers: </strong>{{ usuarioActual.preguntas_correctas_cr }} </p>
-            <p><strong>Wrong Answers: </strong>{{ usuarioActual.preguntas_incorrectas_cr }}</p>
-            <p><strong>High Score: </strong>{{ usuarioActual.preguntas_correctas_high_score_cr }} </p>
-            <img src="../../assets/img/time-trial-icon.png">
-    
+          </div>
+          <div class="card-body">
+              <p><strong>Played:</strong> <span>{{ usuarioActual.partidas_jugadas_cr }}</span></p>
+              <p><strong>Correct:</strong> <span>{{ usuarioActual.preguntas_correctas_cr }}</span></p>
+              <p><strong>Wrong:</strong> <span>{{ usuarioActual.preguntas_incorrectas_cr }}</span></p>
+              <p><strong>High Score:</strong> <span>{{ usuarioActual.preguntas_correctas_high_score_cr }}</span></p>
+          </div>
         </div>
     
-        <div class = "three-strikes-stats">
-    
+        <div class="stat-card">
+          <div class="card-header">
+            <img src="../../assets/img/three-strikes-icon.png" class="card-icon" alt="Three Strikes Icon">
             <h3>Three Strikes</h3>
-            <p><strong>Played Games: </strong>{{ usuarioActual.partidas_jugadas_v }}</p>
-            <p><strong>Right Answers: </strong>{{ usuarioActual.preguntas_correctas_v }} </p>
-            <p><strong>High Score: </strong>{{ usuarioActual.preguntas_correctas_high_score_v }} </p>
-            <br>
-            <img src="../../assets/img/three-strikes-icon.png">
-        
+          </div>
+          <div class="card-body">
+              <p><strong>Played:</strong> <span>{{ usuarioActual.partidas_jugadas_v }}</span></p>
+              <p><strong>Correct:</strong> <span>{{ usuarioActual.preguntas_correctas_v }}</span></p>
+              <p><strong>High Score:</strong> <span>{{ usuarioActual.preguntas_correctas_high_score_v }}</span></p>
+          </div>
         </div>
-        
-        <div class = "categories-stats">
     
+        <div class="stat-card">
+          <div class="card-header">
+            <img src="../../assets/img/categories-icon.png" class="card-icon" alt="Categories Icon">
             <h3>Categories</h3>
-            <p><strong>Played Games: </strong>{{ usuarioActual.partidas_jugadas_cat }}</p>
-            <p><strong>Right Answers: </strong>{{ usuarioActual.preguntas_correctas_cat }} </p>
-            <p><strong>Wrong Answers: </strong>{{ usuarioActual.preguntas_incorrectas_cat }}</p>
-            <p><strong>High Score:</strong> {{ usuarioActual.preguntas_correctas_high_score_cat }} </p>
-            <img src="../../assets/img/categories-icon.png">
-    
+          </div>
+          <div class="card-body">
+              <p><strong>Played:</strong> <span>{{ usuarioActual.partidas_jugadas_cat }}</span></p>
+              <p><strong>Correct:</strong> <span>{{ usuarioActual.preguntas_correctas_cat }}</span></p>
+              <p><strong>Wrong:</strong> <span>{{ usuarioActual.preguntas_incorrectas_cat }}</span></p>
+              <p><strong>High Score:</strong> <span>{{ usuarioActual.preguntas_correctas_high_score_cat }}</span></p>
+          </div>
         </div>
+      </div>
     </div>
+
 </div>
