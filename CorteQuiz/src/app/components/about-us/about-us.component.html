@@ -1,104 +1,75 @@
 <div class="main-container">
-    <div class="about-container">
-        <div class="how-to-container">
-
-            <div class="how-to-title">
-                <h2>How to Play</h2>
-            </div>
-            
-            <div class="game-mode-container">
-                
-                <!-- TIME TRIAL -->
-                <div class="gm-title">
-                    <h3>Time Trial</h3>
-                </div>
-                <div class="gm-description">
-                    <p>You got 60 seconds to answer as many questions as you can</p>
-                </div>
-                <div>
-                    <img src="../../assets/img/time-trial-icon.png">
-                </div>
-
-
-                <!-- THREE STRIKES -->
-                <div class="gm-title">
-                    <h3>Three Strikes</h3>
-                </div>
-                <div class="gm-description">
-                    <p>You got 3 lives, answer poorly 3 times and you're out!</p>
-                </div>
-                <div>
-                    <img src="../../assets/img/three-strikes-icon.png">
-                </div>
-
-
-                <!-- CATEGORIES -->
-                <div class="gm-title">
-                    <h3>Categories</h3>
-                </div>
-                <div class="gm-description">
-                    <p>You got 5 lives to answer as many questions as you can in the category that you choose
-                </div>
-                <div>
-                    <img src="../../assets/img/categories-icon.png">
-                </div>
-
-                <!-- MULTIPLAYER -->
-                <div class="gm-title">
-                    <h3>Multi P</h3>
-                </div>
-                <div class="gm-description">
-                    <p>Penalty shootout-like gamemode. Score more questions than your opponent to win!
-                </div>
-                <div>
-                    <img src="../../assets/img/multiplayer-icon.png">
-                </div>
-            
-            </div>                
-
+  <div class="about-container">
+    <div class="info-card how-to-container">
+      <div class="card-header">
+        <img src="../../assets/img/interrogation-mark.png" class="card-icon" alt="How to Play Icon">
+        <h2>How to Play</h2>
+      </div>
+      <div class="game-modes-wrapper">
+        <div class="game-mode-item">
+          <img src="../../assets/img/time-trial-icon.png" class="gm-icon">
+          <div class="gm-text">
+            <h3>Time Trial</h3>
+            <p>You have 60 seconds to answer as many questions as you can.</p>
+          </div>
         </div>
-    
-            <div class="about-us-container">
-                <div>
-                    <h2>About Us</h2>
-                </div>
-
-                <div class="about-us-description">
-                    <p>
-                        We are three students from UTN Mar del Plata, Argentina. This is our final project for
-                        Laboratory 4 and Investigation Methodology.
-                    </p>
-                </div>
-
-                <div class="credits-container">
-                    <div class="linkedin-users">
-
-                        <a href="https://www.linkedin.com/in/malena-bridi-1b6b3b291/">
-                            <fa-icon [icon]="faLinkedin" size="1x" style="color: white;"></fa-icon>
-                            Malena Bridi
-                        </a>
-                        <a href="https://www.linkedin.com/in/martin-leonardi-/">
-                            <fa-icon [icon]="faLinkedin" size="1x" style="color: white;"></fa-icon>
-                            Martin Leonardi
-                        </a>
-                        <a href="https://www.linkedin.com/in/victoria-rivas-855184170/">
-                            <fa-icon [icon]="faLinkedin" size="1x" style="color: white;"></fa-icon>
-                            Victoria Rivas
-                        </a>
-                        
-                    </div>
-                    
-                    <div class="github-repo">
-                        <a href="https://github.com/Viquirivas01/TP_final">
-                            <fa-icon [icon]="faGithub" size="1x" style="color: white;"></fa-icon>
-                            CorteQuiz
-                        </a>
-
-                    </div>
-
-                </div>
-
+        <div class="game-mode-item">
+          <img src="../../assets/img/three-strikes-icon.png" class="gm-icon">
+          <div class="gm-text">
+            <h3>Three Strikes</h3>
+            <p>You get 3 lives. Answer incorrectly 3 times and you're out!</p>
+          </div>
         </div>
+        <div class="game-mode-item">
+          <img src="../../assets/img/categories-icon.png" class="gm-icon">
+          <div class="gm-text">
+            <h3>Categories</h3>
+            <p>You have 5 lives to answer questions in your chosen category.</p>
+          </div>
+        </div>
+        <div class="game-mode-item">
+          <img src="../../assets/img/multiplayer-icon.png" class="gm-icon">
+          <div class="gm-text">
+            <h3>Multiplayer</h3>
+            <p>Penalty shootout-style mode. Score more than your opponent to win!</p>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
+    <div class="info-card about-us-card">
+      <div class="card-header">
+        <img src="../../assets/img/interrogation-mark.png" class="card-icon" alt="About Us Icon">
+        <h2>About Us</h2>
+      </div>
+      <div class="card-body">
+        <p>
+          We are three students from UTN Mar del Plata, Argentina. This is our final project for
+          Laboratory 4 and Investigation Methodology.
+        </p>
+      </div>
+      <div class="card-footer credits-container">
+        <div class="linkedin-users">
+          <a href="https://www.linkedin.com/in/malena-bridi-1b6b3b291/" target="_blank" rel="noopener noreferrer">
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+            <span>Malena Bridi</span>
+          </a>
+          <a href="https://www.linkedin.com/in/martin-leonardi-/" target="_blank" rel="noopener noreferrer">
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+            <span>Martín Leonardi</span>
+          </a>
+          <a href="https://www.linkedin.com/in/victoria-rivas-855184170/" target="_blank" rel="noopener noreferrer">
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+            <span>Victoria Rivas</span>
+          </a>
+        </div>
+        <div class="github-repo">
+          <a href="https://github.com/Viquirivas01/TP_final" target="_blank" rel="noopener noreferrer">
+            <fa-icon [icon]="faGithub"></fa-icon>
+            <span>Project Repository</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -70,6 +70,8 @@
     justify-content: space-evenly;
     flex-direction: column;
 
+    transition: all .3s;
+
 }
 
 .e-f-options > button {
@@ -77,26 +79,42 @@
     border: none;
     border-radius: 8px;
 
+    transition: all 2.3s ease-in-out;
+
+
     font-size: x-large;
     padding: 10px;
     width: 13rem;
     height: 5rem;
 
-    background: rgb(2, 82, 211);
     background: linear-gradient(90deg, rgb(4, 73, 184) 0%, rgb(50, 75, 151, 0.7) 100%);
-    background: -moz-linear-gradient(90deg, rgb(3, 81, 206) 0%, rgb(50, 75, 151, 0.7) 100%);
-    background: -webkit-linear-gradient(90deg, rgb(2, 78, 201) 0%, rgb(50, 75, 151, 0.7) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0061FF", endColorstr="#60EFFF", GradientType=1 );
 }
 
 
 .e-f-options > button:hover {
-    border: 0.2px solid white;
+    border: 2px solid white;
     border-radius: 5px;
     display: inline-block;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 
-    
+}
+
+
+#easy:hover {
+    background: linear-gradient(90deg, rgb(4, 184, 58) 0%, rgba(50, 151, 63, 0.7) 100%);
+
+}
+#medium:hover {
+    background: linear-gradient(90deg, rgb(184, 133, 4) 0%, rgba(151, 124, 50, 0.7) 100%);
+
+}
+#hard:hover {
+    background: linear-gradient(90deg, rgb(184, 4, 4) 0%, rgba(151, 50, 50, 0.7) 100%);
+
+}
+#random:hover {
+    background: linear-gradient(90deg, rgb(130, 4, 184) 0%, rgba(70, 182, 176, 0.7) 100%);
+
 }
 
 img {

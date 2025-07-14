@@ -18,7 +18,7 @@
 
 .image-div {
     text-align: center;
-    transition: transform 0.3s, border 0.3s;
+    transition: border .1s ease-in-out;
     margin: 25px;
     width: 220px;
     border-radius: 5px;
